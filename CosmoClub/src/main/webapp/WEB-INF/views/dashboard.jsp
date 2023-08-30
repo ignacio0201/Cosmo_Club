@@ -198,14 +198,17 @@
 
                 <div class="col-sm-4 col-12 p-3">
                     <!--Foto del día-->
+                    
+                    <!--Foto del día-->
                     <div class="p-2 bg-light border rounded-3 text-center">
-                        <h2>Astronomy Picture Of The Day</h2>
-                        <div class="img-fluid">
-                        <img id="pic" src="" alt="NASA Picture Of The Day" />
-                        </div>
-                        <h3 id="title"></h3>
-                        
-                    </div>
+                      <h2>Astronomy Picture Of The Day</h2>
+                      <div class="img-fluid">
+                      <img id="pic" src="" alt="NASA Picture Of The Day" />
+                      </div>
+                      <h3 id="title"></h3>
+                      
+                  </div>
+                  <!--Foto del día-->
                     <!--Foto del día-->
 
                     <!--Conectados-->
