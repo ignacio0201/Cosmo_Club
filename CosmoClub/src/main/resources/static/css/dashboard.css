@@ -1,0 +1,160 @@
+/* Fonts */
+@font-face {
+    font-family: Pixel;
+    src: url(../fonts/poxel/poxel-font.ttf);
+}
+@font-face {
+    font-family: Altone;
+    src: url(../fonts/altone/AltoneTrial-Regular.ttf);
+}
+@font-face {
+    font-family: Sanva;
+    src: url(../fonts/sanva/sanva\ font.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/monserrat/MontserratAlternates-Light.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+body{
+    background-color: aliceblue;
+}
+
+#side_nav{
+    background: url(../img/sidebar-foto-2.png);
+    background-size: cover;
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.4s;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+}
+.content{
+    min-height: 100vh;
+    width: 100%;
+    font-family: Poppins;
+}
+hr.h-color{
+    background: white;
+}
+
+.sidebar li.active{
+    background: white;
+    border-radius: 8px;
+}
+.sidebar li.active a, 
+.sidebar li.active a:hover{
+    color: darkblue;
+}
+.sidebar li a{
+    color: white;
+    font-size: 20px;
+}
+@media(max-width: 767px){
+    #side_nav{
+        margin-left: -250px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+    #side_nav.active{
+        margin-left: 0;
+    
+    }
+}
+.welcome-text{
+    font-family: Pixel;
+}
+.icono {
+    width: 10rem;
+    align-items: center;
+}
+.icono-navbar{
+    width: 2rem;
+}
+.img-cursos {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+.img-perfil {
+    width: 3rem;
+}
+.progress {
+    width: 15rem;
+}
+.foro{
+    height: 55vh;
+}
+.conectados {
+    height: 255px;
+}
+.checked {
+    color: orange;
+}
+.bd-placeholder-img{
+    object-fit: cover;
+}
+#pic {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+.rounded-circle-border {
+    display: inline-block;
+    border: 2px solid green; /* Color y grosor del borde */
+    border-radius: 50%; /* Asegura que el borde sea redondeado */
+    padding: 2px; /* Espacio entre el borde y la imagen */
+}
+
+
+
+/*STYLE DE LA BARRA DE PROGRESO*/
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c2647;
+    margin: 0 0 10px;
+}
+.progress{
+    height: 30px;
+    background: #fff;
+    border-top: 5px solid #1c2647;
+    border-bottom: 5px solid #1c2647;
+    border-radius: 0;
+    margin-bottom: 25px;
+    overflow: visible;
+    position: relative;
+}
+.progress:before,
+.progress:after{
+    content: "";
+    width: 5px;
+    background: #1c2647;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    bottom: 0;
+}
+.progress:after{
+    left: auto;
+    right: -5px;
+}
+.progress .progress-bar{
+    border: none;
+    box-shadow: none;
+    -webkit-animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+    animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+}
+@-webkit-keyframes animate-positive{
+    0%{ width: 0; }
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
+}

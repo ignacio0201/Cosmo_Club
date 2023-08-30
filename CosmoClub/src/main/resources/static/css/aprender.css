@@ -1,0 +1,164 @@
+/* Fonts */
+@font-face {
+    font-family: Pixel;
+    src: url(../fonts/poxel/poxel-font.ttf);
+}
+@font-face {
+    font-family: Altone;
+    src: url(../fonts/altone/AltoneTrial-Regular.ttf);
+}
+@font-face {
+    font-family: Sanva;
+    src: url(../fonts/sanva/sanva\ font.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/monserrat/MontserratAlternates-Light.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+#side_nav{
+    background: url(../img/sidebar-foto-2.png);
+    background-size: cover;
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.4s;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+}
+.content{
+    background-color: #E8F3F5;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Poppins;
+}
+hr.h-color{
+    background: white;
+}
+
+.sidebar li.active{
+    background: white;
+    border-radius: 8px;
+}
+.sidebar li.active a, 
+.sidebar li.active a:hover{
+    color: darkblue;
+}
+.sidebar li a{
+    color: white;
+    font-size: 20px;
+}
+@media(max-width: 767px){
+    #side_nav{
+        margin-left: -250px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+    #side_nav.active{
+        margin-left: 0;
+    }
+}
+.content h1{
+    font-family: Pixel;
+}
+.icono {
+    width: 10rem;
+    align-items: center;
+}
+.icono-navbar{
+    width: 2rem;
+}
+.img-perfil {
+    width: 3rem;
+}
+
+
+/*STYLE DE LA BARRA DE PROGRESO*/
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c2647;
+    margin: 0 0 10px;
+}
+.progress{
+    width: 10rem;
+    height: 30px;
+    background: #fff;
+    border-top: 5px solid #1c2647;
+    border-bottom: 5px solid #1c2647;
+    border-radius: 0;
+    margin-bottom: 25px;
+    overflow: visible;
+    position: relative;
+}
+.progress:before,
+.progress:after{
+    content: "";
+    width: 5px;
+    background: #1c2647;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    bottom: 0;
+}
+.progress:after{
+    left: auto;
+    right: -5px;
+}
+.progress .progress-bar{
+    border: none;
+    box-shadow: none;
+    -webkit-animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+    animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+}
+@-webkit-keyframes animate-positive{
+    0%{ width: 0; }
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
+}
+
+
+/*STYLE DEL CURSO EN SI*/
+
+
+.my-courses{
+	background-color: white;
+	height: 350px;
+}
+.card-mycourses{
+    height: 10rem;
+}
+.img-mycourses1{
+    height: 8rem;
+    object-fit: cover;
+}
+.img-mycourses2{
+    height: 8rem;
+    object-fit: cover;
+}
+
+.title-1{
+	height: 20px;
+	
+}
+.progress-bar{
+	background-image: linear-gradient(#4e2bfc, #0ec8f6);
+}
+
+.carousel-control-next-icon{
+	color: white;
+	background-color: #225D97;
+	border-radius: 50px;
+	padding: 10px;
+}
+#carouselExample a{
+    background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
+}
+

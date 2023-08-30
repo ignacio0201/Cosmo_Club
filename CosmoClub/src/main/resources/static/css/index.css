@@ -1,0 +1,336 @@
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+/* Fonts */
+@font-face {
+    font-family: Pixel;
+    src: url(/fonts/poxel/poxel-font.ttf);
+}
+@font-face {
+    font-family: Altone;
+    src: url(/fonts/altone/AltoneTrial-Regular.ttf);
+}
+@font-face {
+    font-family: Sanva;
+    src: url(/fonts/sanva/sanva\ font.ttf);
+}
+@font-face {
+    font-family: MontserratRegular;
+    src: url(/fonts/montserrat/MontserratAlternates-Regular.ttf);
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
+/* General styles */
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    /* Estilos normales */
+    background-color: transparent; /* Establece el color de fondo transparente */
+    transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Estilo para la barra de navegación al hacer scroll */
+.navbar.sticky {
+    background-color: #0000009a; 
+}
+
+.logo{
+    background-color: transparent;
+    width: 60px;
+}
+.logo-name{
+    font-size: 27px;
+    font-weight: 500;
+    color: white;
+    margin-right: 18px;
+}
+.navbar {
+    font-family: Altone;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    background-color: transparent;
+  }
+  .navbar-nav .nav-link {
+    color: white;
+  }
+  .navbar-nav .nav-link.active {
+    font-weight: lighter;
+    color: #42b2f0;
+  }
+  .navbar-nav .nav-link:hover{
+    color: #42b2f0;
+  }
+
+/* Seccion Hero */
+.hero{
+    background-image: url('/img/background_seccion1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+   
+    min-height: 450px;
+    text-align: center;
+    /* padding: 20px; */
+    color: white;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.title-hero{
+    display: inline-block;
+    font-family: Pixel;
+    font-size: 8.0rem;
+}
+
+/* Animacion titulo hero */
+.phrase {
+    display: inline-block;
+    white-space: pre;
+}
+.title-hero.show-long {
+    animation: fadeInLongPhrase 4s ease-in-out forwards;
+}
+@keyframes fadeInPhrase {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    25%,
+    75% {
+        opacity: 1;
+    }
+}
+@keyframes fadeInPhraseLong {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+}
+
+
+.subtitle-hero{
+    font-size: 2.7rem;
+    font-weight: lighter;
+    margin-top: 20px;
+}
+.buttons-box{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between; 
+}
+.btn-hero-iniciar{
+    /* font-family: Altone; */
+    background-color: transparent;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 1.0rem;
+    border: none;
+    color: white;
+    padding: 10px 40px;
+   
+}
+.btn-hero-registro {
+    font-family: Sanva;
+    background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 1.0rem;
+    border: none;
+    color: black;
+    padding: 10px 50px;
+}
+.btn-hero-iniciar:hover{
+    background-color: white;
+    color: black; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 1px 5px 20px #ffffff;
+}
+.btn-hero-registro:hover{
+    color: white;
+    transition: color 0.3s ease, color 0.3s ease;
+    box-shadow: 1px 5px 20px #59D9E4;
+}
+
+/* Seccion-2 */
+.seccion-2{
+    background-image: url(/img/background_seccion2.jpg);
+    font-family: MontserratRegular, sans-serif;
+    height: 100vh;
+    background-color: black; 
+    width: 100%;
+    color: white;
+}
+.seccion-2-title{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: white;
+    vertical-align: top;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.seccion-2 p{
+    text-align: center;
+    padding: 0px 100px;
+    font-size: 2.0rem;
+    margin-top: 100px;
+}
+
+/* Seccion-3 */
+.seccion-3{
+    height: 100vh;
+    background-image: url(/img/background_seccion3.jpeg);
+    width: 100%;
+    font-family: MontserratRegular, sans-serif;
+}
+.info-seccion-3{
+    background-color: rgba(0, 0, 0, 0.313);
+    padding: 10px ;
+    color: white;
+    max-width: 50%;
+    width: 550px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.716);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.info-seccion-3:hover {
+    transform: scale(1.02); 
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.716);
+}
+.seccion-3-title{
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.8rem;
+}
+.seccion-3 p{
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+/* Seccion-4 GALERIA */
+.seccion-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/img/background_seccion4.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    width: 100%;
+    font-family: MontserratRegular, sans-serif;
+}
+.info-seccion-4 {
+    background-color: rgba(0, 0, 0, 0.313);
+    padding: 10px ;
+    color: white;
+    max-width: 50%;
+    width: 550px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.716);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.info-seccion-4:hover {
+    transform: scale(1.02); 
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.716);
+}
+.seccion-4-title {
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2.8rem;
+}
+.seccion-4 p {
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.carousel {
+    margin-top: 35px;
+    max-width: 1000px; 
+    vertical-align: top;
+    margin-left: 220px;
+    box-shadow: 10px 10px 100px #01f6f28a;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.carousel:hover{
+    box-shadow: 10px 10px 100px #01fffb;
+}
+
+/* Seccion-5 */
+.seccion-5{
+    height: 100vh;
+    /* background-color: rgb(47, 136, 35);  */
+    background-image: url(/img/background_seccion5.jpg);
+    background-size: 100%;
+    /* width: 100%; */
+}
+.seccion-5-title{
+    color: white;
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 200px;
+}
+
+
+
+/* SCROLL  */
+
+/* Cambiar el color de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra */
+}
+::-webkit-scrollbar-track {
+    background-color: #072739; /* Color del fondo de la barra */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #42b3f067; /* Color del pulgar de la barra */
+    border-radius: 5px; /* Bordes redondeados para el pulgar */
+}
+/* Cambiar el color del pulgar cuando está en hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #42b3f0b2;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 1009px){
+    .logo-name, .logo{
+        display: none;
+    }
+}
+@media screen and (max-width: 378px){
+    .navbar-toggler{
+        margin-top: 16px;
+    }
+}
+@media screen and (max-width: 1000px){
+    .seccion-2-title{
+        font-size: 2.0rem;
+    }
+}
+@media screen and (max-width: 1000px){
+    .seccion-2 p{
+        font-size: 1.0rem;
+        margin-top: 30px;
+    }
+}
