@@ -40,7 +40,7 @@ public class UserController {
 	
 	@GetMapping("/sesion")
 	public String sesion(@ModelAttribute("user")User user, BindingResult result, HttpSession session,Model model) {
-		return "views/session.jsp";
+		return "views/sesion-test.jsp";
 	}
 	
 	@PostMapping("/register")
@@ -48,7 +48,7 @@ public class UserController {
         userValidator.validate(user, result);
         if (result.hasErrors()) {
             model.addAttribute("showRegisterForm", true); // Establecer la variable para mostrar el formulario de registro
-            return "views/session.jsp";
+            return "views/sesion-test.jsp";
         }
         userService.registerUser(user);
         session.setAttribute("userId", user.getId());
@@ -66,7 +66,7 @@ public class UserController {
 	        return "redirect:/dashboard";
 	    } else {
 	        model.addAttribute("user", new User());
-	        return "/views/session.jsp";
+	        return "/views/sesion-test.jsp";
 	    }
 	}
 	@GetMapping("/logout")
@@ -96,10 +96,18 @@ public class UserController {
 	}
 	
 	@GetMapping("/aprender")
-	public String learn() {
-		
-		return "views/aprender.jsp";
+	public String aprender(HttpSession session, Model model) {
+	    Long userId = (Long) session.getAttribute("userId");
+
+	    if (userId != null) {
+	        User user = userService.findUserById(userId);
+	        model.addAttribute("user", user);
+	        return "views/aprender.jsp";
+	    } else {
+	        return "redirect:/";
+	    }
 	}
+	
 	@GetMapping("/galeria")
 	public String galeria(HttpSession session, Model model) {
 	    Long userId = (Long) session.getAttribute("userId");

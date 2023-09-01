@@ -68,7 +68,7 @@ hr.h-color{
     
     }
 }
-.welcome-text{
+.content h1{
     font-family: Pixel;
 }
 .icono {
@@ -123,6 +123,7 @@ hr.h-color{
     margin: 0 0 10px;
 }
 .progress{
+    width: 10rem;
     height: 30px;
     background: #fff;
     border-top: 5px solid #1c2647;
