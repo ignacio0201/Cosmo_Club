@@ -65,7 +65,7 @@
     <section id="inicio" class="hero align-items-stretch ">
         <div class="hero-principal ">
             <h1 class="title-hero">
-                <span class="fixed-text">HOLA CATA</span>
+                <span class="fixed-text">EXPLORA</span>
             </h1>
             <div>
                 <h1 class="title-hero"><span class="phrase"></span></h1>
