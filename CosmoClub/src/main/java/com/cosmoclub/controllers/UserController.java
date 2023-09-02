@@ -8,11 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cosmoclub.models.Comment;
+import com.cosmoclub.models.Post;
 import com.cosmoclub.models.User;
 import com.cosmoclub.repositories.UserRepository;
+import com.cosmoclub.services.CommentService;
+import com.cosmoclub.services.PostService;
 import com.cosmoclub.services.UserService;
 import com.cosmoclub.validators.UserValidator;
 
@@ -32,15 +37,36 @@ public class UserController {
 	@Autowired 
 	private UserValidator userValidator;
 	
+	@Autowired
+	private PostService postService;
+	
+	@Autowired
+	private CommentService commentService;
+	
 	@GetMapping("/")
-	public String index() {
-		
-		return "views/index.jsp";
+	public String index(HttpSession session) {
+		Long userId = (Long) session.getAttribute("userId");
+		if(userId != null) {
+			return "redirect:/dashboard";
+		}else {
+			return "views/index.jsp";
+		}
+	}
+	
+	@GetMapping("/{noExiste}")
+	public String vistaNoExistente(
+			@PathVariable("noExiste") String noExiste) {
+		return "redirect:/";
 	}
 	
 	@GetMapping("/sesion")
 	public String sesion(@ModelAttribute("user")User user, BindingResult result, HttpSession session,Model model) {
-		return "views/session.jsp";
+		Long userId = (Long) session.getAttribute("userId");
+		if(userId != null) {
+			return "redirect:/dashboard";
+		}else {
+			return "views/session.jsp";
+		}
 	}
 	
 	@PostMapping("/register")
@@ -83,27 +109,33 @@ public class UserController {
 	
 	@GetMapping("/dashboard")
 	public String inicio(HttpSession session, Model model) {
-	    List<User> connectedUsers = userService.getAllConnectedUsers();
-	    model.addAttribute("connectedUsers", connectedUsers);
-
 	    Long userId = (Long) session.getAttribute("userId");
 	    if (userId != null) {
+	    	List<User> connectedUsers = userService.getAllConnectedUsers();
+		    model.addAttribute("connectedUsers", connectedUsers);
 	        User user = userService.findUserById(userId);
 	        model.addAttribute("user", user);
-	    }
-
-	    return "views/dashboard.jsp";
+	        return "views/dashboard.jsp";
+	    } else {
+	        return "redirect:/";
+	    } 
 	}
 	
 	@GetMapping("/aprender")
-	public String learn() {
-		
-		return "views/aprender.jsp";
+	public String learn(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		if (userId != null) {
+	        User user = userService.findUserById(userId);
+	        model.addAttribute("user", user);
+	        return "views/aprender.jsp";
+		} else {
+	        return "redirect:/";
+	    }
 	}
+	
 	@GetMapping("/galeria")
 	public String galeria(HttpSession session, Model model) {
 	    Long userId = (Long) session.getAttribute("userId");
-
 	    if (userId != null) {
 	        User user = userService.findUserById(userId);
 	        model.addAttribute("user", user);
@@ -115,7 +147,6 @@ public class UserController {
 	@GetMapping("/perfil")
 	public String perfil(HttpSession session, Model model) {
 	    Long userId = (Long) session.getAttribute("userId");
-
 	    if (userId != null) {
 	        User user = userService.findUserById(userId);
 	        model.addAttribute("user", user);
@@ -125,8 +156,70 @@ public class UserController {
 	        return "redirect:/";
 	    }
 	}
+	
+	@GetMapping("/foro")
+	public String foro(@ModelAttribute("newPost") Post newPost, HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+	    if (userId != null) {
+	        User user = userService.findUserById(userId);
+	        model.addAttribute("user", user);
+	        List<Post> allPosts = postService.findAllPosts();
+	        model.addAttribute("allPosts", allPosts);
+	        return "views/foro.jsp";
+	    } else {
+	        return "redirect:/";
+	    }
+	}
 
-
-
+	@PostMapping("/crear-post")
+	public String crearPost(@Valid @ModelAttribute("newPost") Post newPost, BindingResult result, Model model, HttpSession session) {
+		if (result.hasErrors()) {
+			return "foro.jsp";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		User user = userService.findUserById(userId);
+		postService.createPost(newPost);
+		return "redirect:/foro";
+	}
+	
+	@GetMapping("/post/{id}")
+	public String verPost(@PathVariable("id") Long postId, @ModelAttribute("newComment") Comment newComment, HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		if (userId != null) {
+			User user = userService.findUserById(userId);
+	        model.addAttribute("user", user);
+			Post post = postService.findPost(postId);
+			model.addAttribute("post", post);
+			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
+			model.addAttribute("allCommentsPost", allCommentsPost);
+			return "views/post.jsp";
+		} else {
+	        return "redirect:/";
+	    }
+	}
+	
+	@PostMapping("/post/{id}/comment")
+	public String comentarPost(@Valid @ModelAttribute("newComment") Comment newComment, BindingResult result, HttpSession session) {
+		if (result.hasErrors()) {
+			return "views/post.jsp";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		User user = userService.findUserById(userId);
+		commentService.createComment(newComment);
+		return "redirect:/post/{id}";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
