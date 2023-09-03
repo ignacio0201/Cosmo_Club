@@ -110,87 +110,187 @@
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga1.jpg" alt="">
+                    <img src="img/galeria/bennu-1.jpg" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Bennu</h3>
+                        <p>Esta imagen en mosaico del asteroide Bennu está compuesta por 12 imágenes PolyCam recogidas el 2 de diciembre por la nave espacial OSIRIS-REx desde una distancia de 24 km.</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga2.jpg" alt="">
+                    <img src="img/galeria/a_silver_of_the_sun-2.jpg" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Una Plata del Sol</h3>
+                        <p>La Luna se ve pasando por delante del Sol durante un eclipse solar desde Ross Lake, Northern Cascades National Park, Washington el 21 de agosto de 2017.</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga3.jpg" alt="">
+                    <img src="img/galeria/nebula_ojo_de_gato-3.jpg" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Nebulosa Ojo de Gato</h3>
+                        <p>La nebulosa Ojo de Gato es una nebulosa planetaria en la constelación del Dragón a unos 3000 años luz.​</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
+                    <img src="img/galeria/galaxia_espiral_mrk 1337-4.jpg" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Galaxia Espiral Mrk 1337</h3>
+                        <p>La imagen muestra la galaxia Mrk 1337, una brillante y hermosa galaxia que nadie visitará durante mucho tiempo. Eso es porque Mrk 1337 está a 120 millones de años luz de la Tierra.</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga5.jpg" alt="">
+                    <img src="img/galeria/estrella_earendel-5.png" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Estrella Earendel</h3>
+                        <p> En esta imagen, el Arco del Amanecer aparece como una raya roja justo debajo del pico de difracción en la posición de las 5 en punto.</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga1.jpg" alt="">
+                    <img src="img/galeria/cumulo_galacito_brillante-6.jpg" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Cúmulo Galáctico Brillante</h3>
+                        <p>El brillante y reluciente contenido del cúmulo globular NGC 6652 brilla en esta imagen repleta de estrellas del telescopio espacial Hubble de la NASA/ESA.</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga6.jpg" alt="">
+                    <img src="img/galeria/galaxia_espiral_UGC_12295-7.jpg" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Galaxia Espiral UGC 12295</h3>
+                        <p>En esta imagen del telescopio espacial Hubble de la NASA y la ESA, la tranquila galaxia espiral UGC 12295 toma el sol tranquilamente. Esta galaxia se encuentra a unos 192 millones de años-luz de distancia, en la constelación de Piscis, y se ve casi de frente desde la Tierra, mostrando una barra central brillante y unos brazos espirales muy apretados.</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga12.jpg" alt="">
+                    <img src="img/galeria/interaccion_galaxias-8.jpeg" alt="">
                     <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
+                        <h3>Interacción de Galaxias</h3>
+                        <p>Esta nueva imagen del telescopio espacial Hubble de la NASA muestra galaxias en interacción conocidas como AM 1214-255. Estas galaxias contienen núcleos galácticos activos, o AGN.</p>
                     </div>
                 </a>
                 <a data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="50"
                 data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga7.jpg" alt="">
+                    <img src="img/galeria/remanente_supernova_snr0519-9.jpg" alt="">
+                    <div class="image-overlay">
+                        <h3>Supernova SNR 0519</h3>
+                        <p>El remanente de supernova denominado SNR 0519-69.0 (abreviado SNR 0519) son los restos de la explosión de una estrella enana blanca. Tras alcanzar una masa crítica, bien por haber extraído materia de una estrella compañera o por haberse fusionado con otra enana blanca, la estrella sufrió una explosión termonuclear y se destruyó.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/galaxia_de_la_rueda_de_carro-10.png" alt="">
+                    <div class="image-overlay">
+                        <h3>Galaxia de la Rueda de Carro</h3>
+                        <p>Esta galaxia se formó como resultado de una colisión a gran velocidad ocurrida hace unos 400 millones de años. La Rueda de Carro está compuesta por dos anillos, uno interior brillante y otro exterior colorido. Ambos anillos se expanden hacia el exterior desde el centro de la colisión como ondas de choque.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/nuestro_sol-11.jpg" alt="">
+                    <div class="image-overlay">
+                        <h3>Nuestro Sol</h3>
+                        <p>En esta imagen, que combina observaciones del Nuclear Spectroscopic Telescope Array, NuSTAR (en azul), se destacan las regiones activas y fulgurantes de nuestro Sol; en verde, los rayos X de baja energía de la nave espacial japonesa Hinode; y en amarillo y rojo, la luz ultravioleta extrema del Solar Dynamics Observatory, SDO.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/moonikin_campos-12.jpg" alt="">
+                    <div class="image-overlay">
+                        <h3>Moonikin Campos</h3>
+                        <p>En esta imagen de abril de 2023, el Moonikin Campos de la NASA, un maniquí que voló en la prueba de vuelo Artemis I más allá de la Luna, disfruta de un momento de tranquilidad durante las pruebas de trineo de aceleración en la Base Wright-Patterson de la Fuerza Aérea en Ohio.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/galaxia_andromeda-13.jpeg" alt="">
+                    <div class="image-overlay">
+                        <h3>Galaxia Andrómeda</h3>
+                        <p>Esta imagen de la galaxia de Andrómeda, o M31, incluye datos de la misión Herschel de la ESA (Agencia Espacial Europea), complementados con datos del observatorio Planck de la ESA, ya retirado, y de dos misiones retiradas de la NASA: el Satélite Astronómico Infrarrojo (IRAS) y el Explorador del Fondo Cósmico (COBE).</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/bandas_jupiter-14.jpg" alt="">
+                    <div class="image-overlay">
+                        <h3>Bandas de Júpiter</h3>
+                        <p>La apariencia en bandas de Júpiter es creada por la "capa meteorológica" que forma las nubes. En esta imagen compuesta, la imagen de la izquierda muestra la energía térmica de Júpiter emitida en luz infrarroja, con bandas nubosas oscuras que aparecen como siluetas contra el resplandor térmico de Júpiter. La imagen de la derecha muestra el aspecto de Júpiter en luz visible, con las "zonas" nubosas blancas y los "cinturones" relativamente libres de nubes que aparecen como colores rojo-marrón.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/galaxia_espiral_NGC_628-15.jpeg" alt="">
+                    <div class="image-overlay">
+                        <h3>Galaxia Espiral NGC 628</h3>
+                        <p>La galaxia espiral NGC 628, también conocida como Messier 74, galaxia del Abanico o incluso 'la galaxia perfecta', por sus brazos enrollados, ha sido retratada por muchos telescopios, incluidos el Hubble o el Spitzer. Y aunque a penas lleva unos meses en funcionamiento, parece que el James Webb también ha apuntado sus potentes instrumentos hacia su centro.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/nebulosa_orion_infrarrojo-16.jpg" alt="">
+                    <div class="image-overlay">
+                        <h3>Nebulosa de Orión en infrarrojo</h3>
+                        <p>Esta imagen de la nebulosa de Orión, obtenida a partir de datos de tres telescopios, muestra dos enormes cavernas excavadas por estrellas gigantes invisibles que pueden emitir hasta un millón de veces más luz que nuestro Sol. Toda esa radiación rompe los granos de polvo que hay allí, ayudando a crear el par de cavidades.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/fases_lunares-17.jpg" alt="">
+                    <div class="image-overlay">
+                        <h3>Fases Lunares</h3>
+                        <p>Las fases lunares son los diferentes aspectos visibles de la Luna a medida que orbita alrededor de la Tierra. Estas fases son el resultado de la interacción entre la posición relativa de la Luna, la Tierra y el Sol.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/eclipse_lunar_2019-18.jpg" alt="">
+                    <div class="image-overlay">
+                        <h3>Eclipse Lunar 2019</h3>
+                        <p>Fotografía tomada por Kalfukoyam Treuquil, La Araucanía, Chile. En esta fotografía se puede apreciar el Eclipse Superlunar ocurrido el 21 de enero de 2019, siendo el primero de los dos eclipses​ lunares de 2019.</p>
+                    </div>
+                </a>
+                <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="50"
+            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
+                    <img src="img/galeria/ga4.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -200,7 +300,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga8.jpg" alt="">
+                    <img src="img/galeria/ga9.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -210,7 +310,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
+                    <img src="img/galeria/ga10.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -220,7 +320,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga9.jpg" alt="">
+                    <img src="img/galeria/ga11.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -230,7 +330,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
+                    <img src="img/galeria/ga4.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -240,7 +340,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga9.jpg" alt="">
+                    <img src="img/galeria/ga12.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -250,7 +350,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
+                    <img src="img/galeria/ga13.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -260,7 +360,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga9.jpg" alt="">
+                    <img src="img/galeria/ga14.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -270,7 +370,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
+                    <img src="img/galeria/ga4.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -280,7 +380,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga9.jpg" alt="">
+                    <img src="img/galeria/ga15.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
@@ -290,107 +390,7 @@
             data-aos-easing="ease-in-back"
             data-aos-delay="50"
             data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga9.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga10.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga11.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga12.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga13.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga14.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga4.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga15.jpg" alt="">
-                    <div class="image-overlay">
-                        <h3>Andrómeda</h3>
-                        <p>Andrómeda es una galaxia</p>
-                    </div>
-                </a>
-                <a data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="50"
-            data-aos-offset="0" href="#" class="img-gallery" data-title="Título de la imagen 1" data-description="Descripción de la imagen 1">
-                    <img src="img/ga12.jpg" alt="">
+                    <img src="img/galeria/ga12.jpg" alt="">
                     <div class="image-overlay">
                         <h3>Andrómeda</h3>
                         <p>Andrómeda es una galaxia</p>
