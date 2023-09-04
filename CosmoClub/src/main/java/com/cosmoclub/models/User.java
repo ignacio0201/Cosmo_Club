@@ -94,31 +94,48 @@ public class User {
     private List<Progress> progress;
     
    @OneToOne(mappedBy="host", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private  Gallery gallery; 
-   
-   @ManyToMany(fetch = FetchType.LAZY)
-   @JoinTable(
-   name = "messages", 
-   joinColumns = @JoinColumn(name = "receptor_id"), 
-   inverseJoinColumns = @JoinColumn(name = "emisor_id")
-   )
-   private List<User> receptor;
-   
-   @ManyToMany(fetch = FetchType.LAZY)
-   @JoinTable(
-   name = "messages", 
-   joinColumns = @JoinColumn(name = "emisor_id"), 
-   inverseJoinColumns = @JoinColumn(name = "receptor_id")
-   )
-   private List<User> emisor;
-  
-   
+    private  Gallery gallery;    
    
    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
    private List<Notification> notification;
+   
+   //Union con los mensajes y chatroom
+   
+   @OneToMany(mappedBy = "user")
+   private List<Mensaje> messages;
+
+   @OneToMany(mappedBy = "user1")
+   private List<ChatRoom> chatRoomsUser1;
+
+   @OneToMany(mappedBy = "user2")
+   private List<ChatRoom> chatRoomsUser2;
 
 	public User() {
 		super();
+	}
+	
+	public List<Mensaje> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Mensaje> messages) {
+		this.messages = messages;
+	}
+
+	public List<ChatRoom> getChatRoomsUser1() {
+		return chatRoomsUser1;
+	}
+
+	public void setChatRoomsUser1(List<ChatRoom> chatRoomsUser1) {
+		this.chatRoomsUser1 = chatRoomsUser1;
+	}
+
+	public List<ChatRoom> getChatRoomsUser2() {
+		return chatRoomsUser2;
+	}
+
+	public void setChatRoomsUser2(List<ChatRoom> chatRoomsUser2) {
+		this.chatRoomsUser2 = chatRoomsUser2;
 	}
 
 	public Long getId() {
@@ -263,23 +280,7 @@ public class User {
 
 	public void setGallery(Gallery gallery) {
 		this.gallery = gallery;
-	}
-
-	public List<User> getReceptor() {
-		return receptor;
-	}
-
-	public void setReceptor(List<User> receptor) {
-		this.receptor = receptor;
-	}
-
-	public List<User> getEmisor() {
-		return emisor;
-	}
-
-	public void setEmisor(List<User> emisor) {
-		this.emisor = emisor;
-	}
+	}	
 
 	public List<Notification> getNotification() {
 		return notification;

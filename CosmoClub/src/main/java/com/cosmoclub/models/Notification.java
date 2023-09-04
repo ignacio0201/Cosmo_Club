@@ -28,11 +28,7 @@ public class Notification {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
-    private User user;
-	
-	@OneToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="message_id")
-    private Message message;
+    private User user;	
 	
 	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="post_id")
@@ -79,14 +75,6 @@ public class Notification {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public Message getMessage() {
-		return message;
-	}
-
-	public void setMessage(Message message) {
-		this.message = message;
 	}
 
 	public Post getPost() {

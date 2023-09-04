@@ -54,6 +54,8 @@ public class UserService {
 		userRepo.save(user);
 	}
 	
-	
+	public List <User> findUsersLike(String q){
+		return userRepo.findByNameLike(q);
+}
 
 }
