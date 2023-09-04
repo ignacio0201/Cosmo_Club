@@ -36,6 +36,7 @@
     height: 100vh;
     z-index: 999;
     background: url(../img/sidebar-foto-2.png);
+    background-size: cover;
     color: #fff;
     transition: all 0.3s;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
@@ -193,7 +194,7 @@
     color: #ffffffbf;
 }
 
-.welcome-text{
+.container-fluid h1{
     font-family: Pixel;
 }
 .logo {

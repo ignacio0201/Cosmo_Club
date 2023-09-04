@@ -68,7 +68,7 @@ hr.h-color{
     
     }
 }
-.content h1{
+.family-pixel{
     font-family: Pixel;
 }
 .icono {
@@ -90,10 +90,10 @@ hr.h-color{
     width: 15rem;
 }
 .foro{
-    height: 55vh;
+    height: 50vh;
 }
 .conectados {
-    height: 255px;
+    height: 45%;
 }
 .checked {
     color: orange;

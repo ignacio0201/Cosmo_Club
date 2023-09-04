@@ -40,7 +40,7 @@ public class UserController {
 	
 	@GetMapping("/sesion")
 	public String sesion(@ModelAttribute("user")User user, BindingResult result, HttpSession session,Model model) {
-		return "views/sesion-test.jsp";
+		return "views/sesion.jsp";
 	}
 	
 	@PostMapping("/register")
@@ -48,7 +48,7 @@ public class UserController {
         userValidator.validate(user, result);
         if (result.hasErrors()) {
             model.addAttribute("showRegisterForm", true); // Establecer la variable para mostrar el formulario de registro
-            return "views/sesion-test.jsp";
+            return "views/sesion.jsp";
         }
         userService.registerUser(user);
         session.setAttribute("userId", user.getId());
@@ -66,7 +66,8 @@ public class UserController {
 	        return "redirect:/dashboard";
 	    } else {
 	        model.addAttribute("user", new User());
-	        return "/views/sesion-test.jsp";
+	        model.addAttribute("loginError", "Credenciales inválidas"); // Agrega el mensaje de error
+	        return "/views/sesion.jsp";
 	    }
 	}
 	@GetMapping("/logout")

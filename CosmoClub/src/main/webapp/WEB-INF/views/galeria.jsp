@@ -518,13 +518,13 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-md navbar-light bg-body-tertiary">
+            <nav class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn me-2">
                         <i class='bx bx-align-left' ></i>
                         <span></span>
                     </button>
-                    <h1 class=" text-uppercase my-3">Buen dia, ${user.name} ${user.last_name}!</h1>
+                    <h1 class="text-uppercase my-3">Buen dia, ${user.name} ${user.last_name}!</h1>
             
                     <!-- Botón del menú para pantallas pequeñas -->
                     <button class="btn me-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -542,11 +542,11 @@
                             </div>
                         </div>
                         <!-- Example single danger button -->
-                        <div class="dropdown dropstart mt-3 mt-md-0">
+                        <div class="dropdown dropstart">
                             <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
                             </a>
-                            <ul class="dropdown-menu text-center">
+                            <ul class="dropdown-menu">
                                 <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="/perfil">Configuración</a></li>

@@ -475,7 +475,7 @@
           </svg>
         </div>
     
-        <h3 class="title">Volando al inicio</h3>
+        <h3 class="title"></h3>
       </div>
       <div class="sidebar" id="side_nav">
         <div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
@@ -498,9 +498,9 @@
     </div>
     <div class="content container-fluid">
         <!--NavBar-->
-        <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <nav class="navbar navbar-expand-md bg-white">
           <div class="container-fluid">
-            <h1>BUEN DIA, CATALINA DIAZ!</h1>
+            <h1 class="family-pixel text-uppercase">Buen dia, ${user.name} ${user.last_name}!</h1>
             <div class="d-flex justify-content-between d-md-none d-block">
               <button class="btn px-1 py-0 open-btn me-2"><i class="fa-solid fa-bars-staggered"></i></button>
               <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white"><img class="icono-navbar" src="img/logo.jpeg" alt=""></span></a>
@@ -508,29 +508,29 @@
             <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa-solid fa-bars-staggered"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-              <div class="col-md-4 d-flex align-items-center text-center">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <div class="col-md-4 col-12 d-flex align-items-center text-center">
                   <!-- Contenedor para centrar vertical y horizontalmente -->
                   <div class="d-flex flex-column align-items-center">
-                      <h3 class="progress-title">NIVEL</h3>
+                      <h3 class="progress-title my-2">NIVEL</h3>
                       <div class="progress">
-                          <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width:40%;"></div>
+                          <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
                       </div>
                   </div>
               </div>
               <!-- Example single danger button -->
               <div class="dropdown dropstart">
-                <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
-                </a>
-                <ul class="dropdown-menu">
-                  <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
-                  <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
-                </ul>
+                  <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
+                      <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                  </ul>
               </div>
-            </div>
+          </div>
           </div>
       </nav>
         <!--NavBar-->
@@ -538,12 +538,11 @@
 
             <div class="col-sm-8 col-12 p-3">
                 <!--Carrusel con los cursos--> 
-                <div class="cursos mb-3 p-3 bg-light border rounded-3"> 
+                <div class="cursos mb-3 p-3 border border-info rounded-3"> 
                     <h3>MIS CURSOS</h3>
                     <div class="container">
                       <span id="rateMe1"></span>
                     </div>
-                    
                     
                     <div id="carouselExample" class="carousel slide">
                       <div class="carousel-inner">
@@ -585,7 +584,7 @@
                 </div>
                 <!--Carrusel con los cursos--> 
                 <!--Parte del foro-->
-                <div class="foro p-3 bg-light border rounded-3 overflow-y-scroll">
+                <div class="foro p-3 border border-info rounded-3 overflow-y-scroll">
                     
                       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
@@ -657,8 +656,8 @@
                 <!--Foto del día-->
                 
                 <!--Foto del día-->
-                <div class="p-2 bg-light border rounded-3 text-center">
-                  <h2>Astronomy Picture Of The Day</h2>
+                <div class="p-2 border border-info rounded-3 text-center">
+                  <h2 class="family-pixel text-uppercase">Foto astronomica del dia</h2>
                   <div class="img-fluid">
                   <img id="pic" src="" alt="NASA Picture Of The Day" />
                   </div>
@@ -669,21 +668,21 @@
                 <!--Foto del día-->
 
                 <!--Conectados-->
-                <div class="p-3 mt-3 bg-light border rounded-3 overflow-y-scroll">
-                  <div class="bg-light border rounded-3 p-3">
-                    <h3>Usuarios conectados</h3>
+                <div class="conectados p-3 mt-3 border border-info rounded-3 overflow-y-scroll">
+                  <div class="border border-white px-4">
+                    <h3 class="family-pixel text-uppercase">Usuarios conectados</h3>
                     <c:forEach var="user" items="${connectedUsers}">
                       <div class="p-2">
                         <div class="rounded-circle-border">
                             <img class="img-perfil rounded-circle" alt="" src="img/profile.jpg">
                         </div>
                         <div class="d-inline-block align-middle ms-2">
-                            <p class="d-inline">${user.name} ${user.last_name}</p>
+                            <p class="d-inline">${user.name} ${user.last_name} <a href="#"><i class='bx bx-envelope'></i></a></p>
                             <ul style="color: green; list-style-type: none; padding-left: 0; margin: 0;">
-                                <li>Online</li>
+                                <li>Conectado</li>
                             </ul>
                         </div>
-                        <hr class="opacity-80">
+                        
                     </div>
                     
                     

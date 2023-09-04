@@ -473,7 +473,7 @@
           </svg>
         </div>
     
-        <h3 class="title">Volando a aprender...</h3>
+        <h3 class="title"></h3>
       </div>
 
         <div class="sidebar" id="side_nav">
@@ -611,65 +611,67 @@
                     </button>	
                   </div>
               </section>
-              
-                <div class="row rounded-4 my-courses p-2 d-flex flex-wrap">
-                  <div class ="d-flex flex-column justify-content-start title-1 mt-4">
-                    <h3 class="">Mis Cursos</h3>
-                  </div>
-                  
-                  <div class="col-md-3 col-sm-6">
-                    <div class="card shadow-sm card-mycourses">
-                      <img class="bd-placeholder-img card-img-top img-mycourses2" width="100%" src="img/agujeros-negros.jpg" alt="">
-                      <div class="card-body">
-                        <p class="text-center">Agujeros Negros</p>
-                        <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
+
+              <section>
+                <div class="border rounded-3 p-3 bg-white">
+                  <h3 class="">Mis Cursos</h3>
+
+                  <div class="row justify-content-center">
+                    <div class="col-md-3">
+                      <div class="card shadow-sm card-mycourses">
+                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/agujeros-negros.jpg" alt="">
+                        <div class="card-body">
+                          <p class="text-center">Agujeros Negros</p>
+                          <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
+                          </div>
                         </div>
                       </div>
                     </div>
+  
+                    <div class="col-md-3">
+                      <div class="card shadow-sm card-mycourses" >
+                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/sistema-solar.jpeg" alt="">
+                        <div class="card-body">
+                          <p class="text-center">Sistema Solar</p>
+                          <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="card shadow-sm card-mycourses">
+                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/agujeros-negros.jpg" alt="">
+                        <div class="card-body">
+                          <p class="text-center">Agujeros Negros</p>
+                          <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="card shadow-sm card-mycourses">
+                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/agujeros-negros.jpg" alt="">
+                        <div class="card-body">
+                          <p class="text-center">Agujeros Negros</p>
+                          <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
 
-                  <div class="col-md-3 col-sm-6">
-                    <div class="card shadow-sm card-mycourses">
-                      <img class="bd-placeholder-img card-img-top img-mycourses2" width="100%" src="img/sistema-solar.jpeg" alt="">
-                      <div class="card-body">
-                        <p class="text-center">Sistema Solar</p>
-                        <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-md-3 col-sm-6">
-                    <div class="card shadow-sm card-mycourses">
-                      <img class="bd-placeholder-img card-img-top img-mycourses2" width="100%" src="img/galaxia.png" alt="">                      
-                      <div class="card-body">
-                        <p class="text-center">Galaxias</p>                        
-                        <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar bg-success progress-bar-lg" style="width: 50%"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-md-3 col-sm-6">
-                    <div class="card shadow-sm card-mycourses">
-                      <img class="bd-placeholder-img card-img-top img-mycourses2" width="100%" src="img/nebulosas.sp.jpg" alt="">                      
-                      <div class="card-body">
-                        <p class="text-center">Nebulosas</p>
-                        <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar bg-success progress-bar-lg" style="width: 80%"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  
                 </div>
-                
-              </section>
+                  
+                  
 
+              </section>
             </div>
 
         </div>

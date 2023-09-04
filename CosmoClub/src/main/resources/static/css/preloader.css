@@ -14,8 +14,8 @@ Image URL : https://images.unsplash.com/photo-1480497490787-505ec076689f?ixlib=r
   height: 100vh;
   top: 0;
   left: 0;
-  background: url(../img/background_index.jpg);
-  object-fit: contain;
+  background: #c9f0ff;
+  background-size: cover;
   overflow: hidden;
   z-index: 1000;
   transition: opacity 0.5s 0.4s;
