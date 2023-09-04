@@ -65,7 +65,7 @@ public class UserController {
 		if(userId != null) {
 			return "redirect:/dashboard";
 		}else {
-			return "views/session.jsp";
+			return "views/sesion.jsp";
 		}
 	}
 	
@@ -74,7 +74,7 @@ public class UserController {
         userValidator.validate(user, result);
         if (result.hasErrors()) {
             model.addAttribute("showRegisterForm", true); // Establecer la variable para mostrar el formulario de registro
-            return "views/session.jsp";
+            return "views/sesion.jsp";
         }
         userService.registerUser(user);
         session.setAttribute("userId", user.getId());
@@ -92,7 +92,7 @@ public class UserController {
 	        return "redirect:/dashboard";
 	    } else {
 	        model.addAttribute("user", new User());
-	        return "/views/session.jsp";
+	        return "/views/sesion.jsp";
 	    }
 	}
 	@GetMapping("/logout")

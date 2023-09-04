@@ -97,10 +97,16 @@
 
     <!-- Seccion 3 -->
     <section id="aprender" class="seccion-3">
-        <div class="row ">
-            <div class="col-5 info-seccion-3">
-                <h2 class="seccion-3-title">Aprender</h2>
-                <p>Aquí encontrarás un rincón dedicado al fascinante mundo del cosmos, diseñado para satisfacer tu curiosidad y enriquecer tu comprensión sobre los misterios del universo. Nuestro objetivo es proporcionarte contenido educativo y entretenido que abarca desde conceptos básicos hasta descubrimientos astronómicos avanzados.</p>
+        <div class="container m-auto">
+            <div class="row ">
+                <div class="col-5 info-seccion-3 p-4" style="width: 450px">
+                    <h2 class="seccion-3-title">Aprender</h2>
+                    <p>Aquí encontrarás un rincón dedicado al fascinante mundo del cosmos, diseñado para satisfacer tu curiosidad y enriquecer tu comprensión sobre los misterios del universo. Nuestro objetivo es proporcionarte contenido educativo y entretenido que abarca desde conceptos básicos hasta descubrimientos astronómicos avanzados.</p>            
+                </div>
+                <div class="col-1"></div>
+				<div class="col-6 d-flex align-items-center">
+					<img alt="" src="../img/aprender.png" width="800" height="400">
+				</div>
             </div>
         </div>
     </section>
@@ -171,7 +177,19 @@
 
     <!-- Seccion 5 -->
     <section id="foro" class="seccion-5">
-        <h2 class="seccion-5-title">Foro</h2>
+        <div class="container m-auto">
+	        <div class="row">
+	            <div class="col-5 info-seccion-3 p-4" style="width: 450px">
+	                <h2 class="seccion-5-title">Foro</h2>
+	                <p>El foro es un espacio virtual donde entusiastas y expertos en astronomía se reúnen para discutir y compartir su pasión por el universo. En este foro, podrás participar en conversaciones emocionantes sobre observaciones estelares, eventos astronómicos, telescopios, técnicas de astrofotografía, podrás resolver tus dudas  y mucho más. Únete a esta comunidad de amantes del cosmos para aprender, intercambiar ideas y maravillarte con los misterios del espacio exterior.</p>
+	           		
+				</div>
+				<div class="col-1"></div>
+				<div class="col-6 d-flex align-items-center">
+					<img alt="" src="../img/aprender.png" width="800" height="400">
+				</div>
+	        </div>
+        </div>
     </section>
 
     <footer>
