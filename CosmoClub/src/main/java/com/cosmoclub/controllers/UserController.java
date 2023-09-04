@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cosmoclub.models.User;
-import com.cosmoclub.repositories.UserRepository;
 import com.cosmoclub.services.UserService;
 import com.cosmoclub.validators.UserValidator;
 
@@ -23,8 +22,6 @@ import jakarta.validation.Valid;
 @Controller
 public class UserController {
 	
-	@Autowired
-	private UserRepository userRepository;
 
 	@Autowired
 	private UserService userService;
