@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +66,7 @@
     <section id="inicio" class="hero align-items-stretch ">
         <div class="hero-principal ">
             <h1 class="title-hero">
-                <span class="fixed-text">EXPLORA</span>
+                <span class="fixed-text text-uppercase">EXPLORA</span>
             </h1>
             <div>
                 <h1 class="title-hero"><span class="phrase"></span></h1>
@@ -96,20 +97,12 @@
 
     <!-- Seccion 3 -->
     <section id="aprender" class="seccion-3">
-   		<div class="container m-auto">
-	        <div class="row">
-	            <div class="col-5 info-seccion-3 p-4" style="width: 450px">
-	                <h2 class="seccion-3-title">Aprender</h2>
-	                <p>Aquí encontrarás un rincón dedicado al fascinante mundo del cosmos, diseñado para satisfacer tu curiosidad y enriquecer tu comprensión sobre los misterios del universo. Nuestro objetivo es proporcionarte contenido educativo y entretenido que abarca desde conceptos básicos hasta descubrimientos astronómicos avanzados.</p>
-	           		
-				</div>
-				<div class="col-1"></div>
-				<div class="col-6 d-flex align-items-center">
-					<img alt="" src="../img/aprender.png" width="800" height="400">
-				</div>
-	        </div>
+        <div class="row ">
+            <div class="col-5 info-seccion-3">
+                <h2 class="seccion-3-title">Aprender</h2>
+                <p>Aquí encontrarás un rincón dedicado al fascinante mundo del cosmos, diseñado para satisfacer tu curiosidad y enriquecer tu comprensión sobre los misterios del universo. Nuestro objetivo es proporcionarte contenido educativo y entretenido que abarca desde conceptos básicos hasta descubrimientos astronómicos avanzados.</p>
+            </div>
         </div>
-        
     </section>
 
     <!-- Seccion 4 -->
@@ -178,19 +171,7 @@
 
     <!-- Seccion 5 -->
     <section id="foro" class="seccion-5">
-        <div class="container m-auto">
-	        <div class="row">
-	            <div class="col-5 info-seccion-3 p-4" style="width: 450px">
-	                <h2 class="seccion-5-title">Foro</h2>
-	                <p>El foro es un espacio virtual donde entusiastas y expertos en astronomía se reúnen para discutir y compartir su pasión por el universo. En este foro, podrás participar en conversaciones emocionantes sobre observaciones estelares, eventos astronómicos, telescopios, técnicas de astrofotografía, podrás resolver tus dudas  y mucho más. Únete a esta comunidad de amantes del cosmos para aprender, intercambiar ideas y maravillarte con los misterios del espacio exterior.</p>
-	           		
-				</div>
-				<div class="col-1"></div>
-				<div class="col-6 d-flex align-items-center">
-					<img alt="" src="../img/aprender.png" width="800" height="400">
-				</div>
-	        </div>
-        </div>
+        <h2 class="seccion-5-title">Foro</h2>
     </section>
 
     <footer>
@@ -203,6 +184,6 @@
         crossorigin="anonymous"></script>
 
     <script src="../js/index.js"></script>
-	
+
 </body>
 </html>
