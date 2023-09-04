@@ -64,6 +64,9 @@ public class User {
 	@Transient
     private MultipartFile imgFile;
 	
+	@Column( columnDefinition = "TEXT")
+	private String descripcion;
+	
 	@Size(min = 8, message = "Contraseña debe tener más de 8 caracteres.")
 	@Column(nullable = false)
 	private String password;
