@@ -130,7 +130,6 @@ section{
     justify-content: space-between; 
 }
 .btn-hero-iniciar{
-    /* font-family: Altone; */
     background-color: transparent;
     font-weight: 600;
     border-radius: 30px;
@@ -138,7 +137,6 @@ section{
     border: none;
     color: white;
     padding: 10px 40px;
-   
 }
 .btn-hero-registro {
     font-family: Sanva;
@@ -176,7 +174,7 @@ section{
     font-weight: bolder;
     color: white;
     vertical-align: top;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -184,7 +182,7 @@ section{
     text-align: center;
     padding: 0px 100px;
     font-size: 2.0rem;
-    margin-top: 100px;
+    margin-top: 35px;
 }
 
 /* Seccion-3 */
@@ -261,7 +259,6 @@ section{
     font-weight: 500;
 }
 .carousel {
-    margin-top: 35px;
     max-width: 1000px; 
     vertical-align: top;
     margin-left: 220px;
@@ -275,14 +272,39 @@ section{
 /* Seccion-5 */
 .seccion-5{
     height: 100vh;
-    /* background-color: rgb(47, 136, 35);  */
     background-image: url(/img/background_seccion5.jpg);
     background-size: 100%;
-    /* width: 100%; */
+    font-family: MontserratRegular, sans-serif;
+}
+.info-seccion-5{
+    background-color: rgba(0, 0, 0, 0.600);
+    padding: 10px ;
+    color: white;
+    max-width: 50%;
+    width: 550px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.716);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.info-seccion-5:hover {
+    transform: scale(1.02); 
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.716);
 }
 .seccion-5-title{
     color: white;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3.3rem;
 }
+.seccion-5 p{
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/*FOOTER*/
 footer{
     background-color: black;
     color: white;

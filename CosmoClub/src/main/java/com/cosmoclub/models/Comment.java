@@ -18,10 +18,10 @@ import jakarta.validation.constraints.NotEmpty;
 @Entity
 @Table(name = "comments")
 public class Comment {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	
 	@NotEmpty(message = "El comentario no puede estar vacio.")
 	@Column(columnDefinition = "TEXT",nullable = false)
