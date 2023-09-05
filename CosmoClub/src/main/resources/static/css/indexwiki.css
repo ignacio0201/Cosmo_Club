@@ -1,20 +1,40 @@
 @charset "ISO-8859-1";
-
-.titulo{
-	
-	
-	height: 250px;
+/* Fonts */
+@font-face {
+  font-family: Pixel;
+  src: url(../fonts/poxel/poxel-font.ttf);
+}
+.family-pixel{
+  font-family: Pixel;
+}
+@font-face {
+  font-family: Altone;
+  src: url(../fonts/altone/AltoneTrial-Regular.ttf);
+}
+@font-face {
+  font-family: Sanva;
+  src: url(../fonts/sanva/sanva\ font.ttf);
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/monserrat/MontserratAlternates-Light.ttf);
+}
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+.family-poppins{
+  font-family: Poppins;
 }
 
 .container{
 	background-color: #dffaff;
-  width: fit-content;
 }
 
-.buscar{
-	    width: 250px;
+.icono {
+  width: 10rem;
+  align-items: center;
 }
-
 
 .sidebar {
 	position: fixed;
@@ -22,16 +42,18 @@
 	left: 0;
 	width: 250px;
 	height: 100%;
-	background-color: #f4f4f4;
 	padding: 20px;
 	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+}
+.accordion-button:not(.collapsed){
+  color: var(--bs-accordion-active-color);
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
 }
 
 .sidebar a {
 	display: block;
 	margin-bottom: 10px;
 	text-decoration: none;
-	color: #333;
 }
 
 .tags {
@@ -83,11 +105,11 @@
 }
 
 .tag:hover {
-  background-color: blue;
+  background-color: rgb(0, 247, 255);
   color: white;
 }
 
 .tag:hover::after {
-  border-left-color: blue;
+  border-left-color: rgb(0, 213, 255);
 }
 

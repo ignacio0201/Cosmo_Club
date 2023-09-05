@@ -12,10 +12,13 @@
 </head>
 <body>
 	<div class="container rounded border">
+
 		<a href="/foro">Volver al foro</a>
 		<p>${post.user.name} ${post.user.last_name}</p>
 		<h3>${post.title}</h3>
 		<p>${post.content}</p>
+
+		<p style="color: orange;">${numberCommentsPost} personas han comentado esto</p>
 		
 		
 		<div class="form-container">

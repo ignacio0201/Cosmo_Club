@@ -2,20 +2,36 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="stylesheet" href="/css/wiki.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<title>${wiki.titulo}</title>
-</head>
-<body>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${wiki.titulo}</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+	<!--CSS personalizado-->
+	<link rel="stylesheet" href="/css/wiki.css">
+	<!--Iconos-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat+Alternates&display=swap" rel="stylesheet">
 	
-	<div class="sidebar">
-    	<h2 class="mb-5 text-center"><a href="/wiki">WikiCosmos</a></h2>
+</head>
+<body class="family-poppins">
+	
+	<div class="sidebar bg-info">
+		<div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
+            <h1 class="fs-4">
+              <img class="icono" src="img/icon.jpeg" alt="">
+              <h2 class="mb-5 text-center family-pixel text-uppercase"><a href="/wiki">WikiCosmos</a></h2>
+            </h1>
+        </div>
+    	
 	    <div class="accordion" id="accordionExample">
 	        <c:forEach var="etiqueta" items="${articulosPorEtiqueta}">
 	            <div class="accordion-item mb-3">
@@ -40,9 +56,9 @@
 	
 	
 	
-	<div id="content">
-		<div class="row my-5">
-	        <div class="col-12 d-flex justify-content-center">
+	<div class="container">
+		<div class="my-5 border p-2">
+	        <div class="d-flex justify-content-center">
 	            <form accept-charset="UTF-8" action="/buscar" method="post">
 	                <label class="">Busca aqui un articulo</label>
 	                <input class="search buscar" type="search"  id="inputArticulo" name="articulo" placeholder="Busca un articulo">
@@ -50,18 +66,21 @@
 	            </form>
 	        </div>
 	    </div>
-		<div id="editor">
-			<h1>${wiki.titulo}</h1>
-			${wiki.contenido}
+		<div class="border rounded-3 p-4">
+			<div class="editor">
+				<h1 class="family-pixel text-uppercase">${wiki.titulo}</h1>
+				${wiki.contenido}
+			</div>
 		</div>
 		
-		<ul class="tags">
+		<ul class="tags mt-3">
 			<c:forEach items="${tags}" var="tag">
 			<li><a href="#" class="tag" onclick="buscarPorTag('${tag.etiqueta}')">${tag.etiqueta}</a></li>
 			</c:forEach>
 		</ul>
 		
 	</div>
-<script src="/js/busqueda.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	<script src="/js/busqueda.js"></script>
 </body>
 </html>

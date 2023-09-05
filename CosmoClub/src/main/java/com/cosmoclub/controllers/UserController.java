@@ -196,10 +196,12 @@ public class UserController {
 			User user = userService.findUserById(userId);
 			Post post = postService.findPost(postId);
 			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
+			Long numberCommentsPost = commentService.countCommentsByPostId(postId); //this
 	        
 			model.addAttribute("user", user);
 			model.addAttribute("post", post);
 			model.addAttribute("allCommentsPost", allCommentsPost);
+			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
 			return "views/post.jsp";
 		} else {
 	        return "redirect:/";
@@ -213,9 +215,11 @@ public class UserController {
 			User user = userService.findUserById(userId);
 			Post post = postService.findPost(postId);
 			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
+			Long numberCommentsPost = commentService.countCommentsByPostId(postId); //this
 			model.addAttribute("user", user);
 			model.addAttribute("post", post);
 			model.addAttribute("allCommentsPost", allCommentsPost);
+			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
 			return "views/post.jsp";
 		}
 		Long userId = (Long) session.getAttribute("userId");

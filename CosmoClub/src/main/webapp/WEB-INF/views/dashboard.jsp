@@ -8,17 +8,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CosmoClub</title>
-    <link rel="icon" type="image/x-icon" href="img/icon.jpeg">
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
     <script src="https://kit.fontawesome.com/9e0d9f4598.js" crossorigin="anonymous"></script>
     <!--CSS personalizado-->
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/preloader.css">
+    <!--Iconos-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat+Alternates&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main-container d-flex">
@@ -583,6 +585,7 @@
 
                 </div>
                 <!--Carrusel con los cursos--> 
+                
                 <!--Parte del foro-->
                 <div class="foro p-3 border border-info rounded-3 overflow-y-scroll">
                     

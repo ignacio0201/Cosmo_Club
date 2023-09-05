@@ -1,4 +1,36 @@
 @charset "ISO-8859-1";
+/* Fonts */
+@font-face {
+  font-family: Pixel;
+  src: url(../fonts/poxel/poxel-font.ttf);
+}
+.family-pixel{
+  font-family: Pixel;
+}
+@font-face {
+  font-family: Altone;
+  src: url(../fonts/altone/AltoneTrial-Regular.ttf);
+}
+@font-face {
+  font-family: Sanva;
+  src: url(../fonts/sanva/sanva\ font.ttf);
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/monserrat/MontserratAlternates-Light.ttf);
+}
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+.family-poppins{
+  font-family: Poppins;
+}
+
+.icono {
+  width: 10rem;
+  align-items: center;
+}
 
 .sidebar {
 	position: fixed;
@@ -20,13 +52,11 @@
 
 /* Estilos para el contenido principal */
 #content {
-	margin-left: 295px; /* Ancho de la barra lateral más margen */
-	padding: 20px;
+	margin-left: 270px; /* Ancho de la barra lateral más margen */
+  background: #dffaff;
 }
 
-#editor {
-	border: 1px solid #ccc;
-	padding: 10px;
+.editor {
 	min-height: 500px;
 }
 /* Estilos para el input de búsqueda */

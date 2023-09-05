@@ -31,4 +31,8 @@ public class CommentService {
 	public List<Comment> commentsByPost(Long id){
 		return commentRepo.findAllCommentByPostId(id);
 	}
+	
+	public Long countCommentsByPostId(Long postId) {
+        return commentRepo.countByPostId(postId); //this
+    }
 }

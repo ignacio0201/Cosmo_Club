@@ -500,10 +500,10 @@
 	
 			<div class="form-container bg-white border rounded-3 p-4">
 				<form:form action="/crear-post" method="post" modelAttribute="newPost">
-					<h1>Create a new post</h1>
+					<h4>Create a new post</h4>
 					<hr>
 					
-					<input type="file"/>
+					
 					
 						
 					<form:input path="title" type ="text" placeholder="Título del post..." />
@@ -514,6 +514,8 @@
 					
 					<input type="hidden" id="user" name="user" value="${user.id}" />
 					<input type="submit" value="Create">
+					
+					<input type="file"/>
 				</form:form>
 			</div>
 			
