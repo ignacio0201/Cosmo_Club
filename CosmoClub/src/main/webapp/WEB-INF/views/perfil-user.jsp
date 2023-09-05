@@ -25,7 +25,7 @@
 				    <div class="profile-img d-flex justify-content-center mt-3">
 				        <label for="profile-image" class="img-perfil rounded-circle me-2" style="cursor: pointer;">
 				            <img src="<c:url value='${user.user_img}' />" class="rounded-circle" alt="Profile Image">
-				            <input id="profile-image" type="file" name="profileImage" style="display: none;">
+				            <input id="profile-image" type="file" name="profileImage" style="display: none;" accept="image/*">
 				        </label>
 				    </div>
 				</form>
