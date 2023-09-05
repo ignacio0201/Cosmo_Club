@@ -56,7 +56,9 @@ public class PlantillaController {
 		
 		model.addAttribute("articulosPorEtiqueta", articulosPorEtiqueta);
 		model.addAttribute("ultimoArticulo", ultimoArticulo);
-		model.addAttribute("tags", ultimoArticulo.getEtiquetas());
+		 if (ultimoArticulo != null) {
+		        model.addAttribute("tags", ultimoArticulo.getEtiquetas());
+		    }
 		model.addAttribute("ultimosArticulos", ultimosArticulos);
 		model.addAttribute("cantidadArticulos", cantidadArticulos);
 		

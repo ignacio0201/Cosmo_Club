@@ -119,18 +119,18 @@
 			</div>
 		</div>
 		<div class="row d-flex flex-row">
-		    <div class="col-12 col-md-6 p-3 articulo">
-		        <h6>Ultimo artículo agregado.</h6>
-		        <c:if test="${not empty ultimoArticulo}">
-		            <h3>${ultimoArticulo.titulo}</h3>
-		            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...<a href="/${ultimoArticulo.id}"> Leer más</a></p>
-		            <ul class="tags">
-						<c:forEach items="${tags}" var="tag">
-						<li><a href="#" class="tag" onclick="buscarPorTag('${tag.etiqueta}')">${tag.etiqueta}</a></li>
-						</c:forEach>
-					</ul>    
-		        </c:if>
-		    </div>
+		   <div class="col-7 p-3 bg-secondary articulo">
+			    <h6>Ultimo artículo agregado.</h6>
+			    <c:if test="${not empty ultimoArticulo}">
+			        <h3>${ultimoArticulo.titulo}</h3>
+			        <c:if test="${not empty ultimoArticulo.etiquetas}">
+			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...<a href="/${ultimoArticulo.id}"> Leer más</a></p>
+			        </c:if>
+			        <c:if test="${empty ultimoArticulo.etiquetas}">
+			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...</p>
+			        </c:if>
+			    </c:if>
+			</div>
 		
 		    <div class="col-md-4">
 		        <div class="row bg-info lista p-4">
