@@ -12,7 +12,7 @@ import com.cosmoclub.repositories.UserRepository;
 public class UserValidator implements Validator{
 	
 	@Autowired
-	private UserRepository userRepo;
+	private UserRepository userRepository;
 
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -28,7 +28,7 @@ public class UserValidator implements Validator{
 		}
 		
 		 // Verifica si ya existe un usuario con el mismo correo electrónico en el repo
-		if (userRepo.existsByEmail(user.getEmail())) {
+		if (userRepository.existsByEmail(user.getEmail())) {
             errors.rejectValue("email", "Duplicate.user.email"); // un error si el correo electrónico ya está en uso
         }
 	}

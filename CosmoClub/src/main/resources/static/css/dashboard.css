@@ -68,7 +68,7 @@ hr.h-color{
     
     }
 }
-.welcome-text{
+.family-pixel{
     font-family: Pixel;
 }
 .icono {
@@ -90,10 +90,10 @@ hr.h-color{
     width: 15rem;
 }
 .foro{
-    height: 55vh;
+    height: 50vh;
 }
 .conectados {
-    height: 255px;
+    height: 45%;
 }
 .checked {
     color: orange;
@@ -123,6 +123,7 @@ hr.h-color{
     margin: 0 0 10px;
 }
 .progress{
+    width: 10rem;
     height: 30px;
     background: #fff;
     border-top: 5px solid #1c2647;

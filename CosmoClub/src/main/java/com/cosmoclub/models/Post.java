@@ -30,8 +30,12 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty(message = "El título no puede estar vacío.")
+	@Column(nullable = false)
+	private String title;
+
 	@NotEmpty(message = "El post no puede estar vacio.")
-	@Column(columnDefinition = "TEXT",nullable = false)
+	@Column(columnDefinition = "TEXT", nullable = false)
 	private String content;
 	
 	@Column(columnDefinition = "DATETIME", updatable=false)
@@ -63,7 +67,6 @@ public class Post {
     private List<User> rating_user;
 
 	public Post() {
-		super();
 	}
 
 	public Long getId() {
@@ -73,7 +76,20 @@ public class Post {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public String getContent() {
 		return content;
 	}
