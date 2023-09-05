@@ -53,20 +53,13 @@
 
 
                 <ul class="list-unstyled px-2">
-                    <li class=""><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i
-                                class='bx bx-home'></i> Dashboard</a></li>
-                    <li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i
-                                class='bx bx-book'></i> Aprender</a></li>
-                    <li class="active"><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i
-                                class='bx bx-images'></i> Galeria</a></li>
-                    <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i
-                                class='bx bxs-invader'></i> Juegos</a></li>
-                    <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat'></i>
-                            Mensajes</a></li>
-                    <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i
-                                class='bx bxl-wikipedia'></i> Wiki</a></li>
-                    <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i
-                                class='bx bx-group'></i> Foro</a></li>
+                    <li class=""><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
+                    <li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book'></i> Aprender</a></li>
+                    <li class="active"><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images'></i> Galeria</a></li>
+                    <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader'></i> Juegos</a></li>
+                    <li class=""><a href="/chat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
+                    <li class=""><a href="/wiki" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxl-wikipedia' ></i> WikiCosmo</a></li>
+                    <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
                 </ul>
 
 

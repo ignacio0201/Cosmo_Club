@@ -491,11 +491,11 @@
             <li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
             <li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>
             <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
-            <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> Mensajes</a></li>
-            <li class=""><a href="/wiki" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxl-wikipedia' ></i> Wiki</a></li>
+            <li class=""><a href="/chat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
+            <li class=""><a href="/wiki" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxl-wikipedia' ></i> WikiCosmo</a></li>
             <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
         </ul>
-    </div>
+      </div>
     <div class="content container-fluid">
         <!--NavBar-->
         <nav class="navbar navbar-expand-md bg-white">
@@ -586,68 +586,25 @@
                 <!--Parte del foro-->
                 <div class="foro p-3 border border-info rounded-3 overflow-y-scroll">
                     
-                      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                          <h3 class="mb-0"><strong class="d-inline-block mb-2 me-3 text-primary-emphasis"><img class="img-perfil rounded-circle" src="https://pps.whatsapp.net/v/t61.24694-24/368499855_1266445330725277_104771332505258502_n.jpg?ccb=11-4&oh=01_AdTNJsS4SrKXSQgxm3Z1KZ7groMF934fVBIyUcHLWazPmw&oe=64F93BFA&_nc_cat=111" alt=""></strong>Ignacio Miranda</h3>
-                          <div class="mb-1 text-body-secondary">X personas han comentado</div>
-                          <p class="card-text mb-auto">¿Alguien sabe que tipo de estrella es esta? segun sus caracteristicas creo que puede ser una gigante roja.</p>
-                          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                            Continuar leyendo...
-                          </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                          <img class="bd-placeholder-img" width="200" height="250"  src="https://www.republica.com/wp-content/uploads/2017/12/estrella-gigante-roja.jpg" alt="">
-                        </div>
+                  <c:forEach items="${allPosts}" var="post">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                      <div class="col p-4 d-flex flex-column position-static">
+                        <h3 class="mb-0">
+                          <strong class="d-inline-block mb-2 me-3 text-primary-emphasis">
+                            <img class="img-perfil rounded-circle" src="https://pps.whatsapp.net/v/t61.24694-24/368499855_1266445330725277_104771332505258502_n.jpg?ccb=11-4&oh=01_AdTNJsS4SrKXSQgxm3Z1KZ7groMF934fVBIyUcHLWazPmw&oe=64F93BFA&_nc_cat=111" alt="">
+                          </strong>${post.user.name} ${post.user.last_name}
+                        </h3>
+                        <div class="mb-1 text-body-secondary">X personas han comentado</div>
+                        <p class="card-text mb-auto">${post.content}</p>
+                        <a href="/publicacion/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
+                          Continuar leyendo...
+                        </a>
                       </div>
-
-                      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                          <h3 class="mb-0"><strong class="d-inline-block mb-2 me-3 text-primary-emphasis"><img class="img-perfil rounded-circle" src="https://pps.whatsapp.net/v/t61.24694-24/328147270_687920663092225_4671165301290676944_n.jpg?ccb=11-4&oh=01_AdSjD_mJNlLVhcDq8Uv4fFEhw6QkPyAWUgMv6NWIaewgxA&oe=64F281D2&_nc_cat=100" alt=""></strong>Sebastian Gonzalez</h3>
-                          <div class="mb-1 text-body-secondary">X personas han comentado</div>
-                          <p class="card-text mb-auto">Estas cosas que se ven aqui, son estrellas o galaxias? Alguien ayudeme por favor!!!!1</p>
-                          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                            Continuar leyendo...
-                            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-                          </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                          <img class="bd-placeholder-img" width="200" height="250"  src="https://apod.nasa.gov/apod/image/2308/M31Perseid_Pedrero_3232.jpg" alt="">
-                        </div>
+                      <div class="col-auto d-none d-lg-block">
+                        <img class="bd-placeholder-img" width="200" height="250"  src="https://www.republica.com/wp-content/uploads/2017/12/estrella-gigante-roja.jpg" alt="">
                       </div>
-  
-                      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                          <h3 class="mb-0">
-                            <strong class="d-inline-block mb-2 me-3 text-primary-emphasis">
-                              <img class="img-perfil rounded-circle" src="https://pps.whatsapp.net/v/t61.24694-24/344720804_926019668667378_3450403035177647938_n.jpg?ccb=11-4&oh=01_AdQWCmjaAHaoZ2UD62cq6BToHl6A7bmteEmE8FPVvDYCYg&oe=64F3CE71&_nc_cat=101" alt="">
-                            </strong>Kalfukoyam Treuquil
-                          </h3>
-                          <div class="mb-1 text-body-secondary">X personas han comentado</div>
-                          <p class="card-text mb-auto">Las fotos de la nasa son falsas despierten, los reptilianos controlan todo lo que nos rodea.</p>
-                          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                            Continuar leyendo...
-                            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-                          </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                          <img class="bd-placeholder-img" width="200" height="250"  src="https://www.canal26.com/media/image/2023/04/17/539327.jpg" alt="">
-                        </div>
-                      </div>
-  
-                      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                          <h3 class="mb-0"><strong class="d-inline-block mb-2 me-3 text-primary-emphasis"><img class="img-perfil rounded-circle" src="https://pps.whatsapp.net/v/t61.24694-24/350792996_6600753049975418_8295724012510613437_n.jpg?ccb=11-4&oh=01_AdSJ6alPeNez71lmlmN76_p0X5W5F6wpXcA0NOv3vel0HQ&oe=64F157D6&_nc_cat=108" alt=""></strong>Catalina Diaz</h3>
-                          <div class="mb-1 text-body-secondary">X personas han comentado</div>
-                          <p class="card-text mb-auto">¿Los astronautas habrán ido a la luna de verdad? Pregunta seria</p>
-                          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                            Continuar leyendo...
-                            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-                          </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                          <img class="bd-placeholder-img" width="200" height="250"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg/800px-Bruce_McCandless_II_during_EVA_in_1984.jpg" alt="">
-                        </div>
-                      </div>
+                    </div>
+                </c:forEach>
                 </div>
                 <!--Parte del foro-->
             </div>

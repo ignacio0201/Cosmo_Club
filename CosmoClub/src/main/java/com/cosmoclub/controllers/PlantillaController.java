@@ -218,7 +218,7 @@ public class PlantillaController {
 	    return "redirect:/wiki";
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/wiki/{id}")
 	public String articulo(@PathVariable Long id, Model model) {
 		    
 		

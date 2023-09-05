@@ -12,7 +12,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-	<div class="sidebar">
+	<div class="sidebar bg-info">
     	<h2 class="mb-5 text-center"><a href="/wiki">WikiCosmos</a></h2>
 	    <div class="accordion" id="accordionExample">
 	        <c:forEach var="etiqueta" items="${articulosPorEtiqueta}">
@@ -37,8 +37,8 @@
 	</div>
 
 
-	<div class="container p-5">
-		<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg bg-white mb-3">
 		    <div class="container-fluid">
 		        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
 		            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,47 +46,20 @@
 		        </button>
 		        <div class="collapse navbar-collapse" id="navbarNav">
 		            <ul class="navbar-nav">
-		                <li class="nav-item">
-		                    <a class="nav-link active" href="/dashboard">
-		                        <i class='bx bx-home'></i> Dashboard
-		                    </a>
-		                </li>
-		                <li class="nav-item">
-		                    <a class="nav-link" href="/aprender">
-		                        <i class='bx bx-book'></i> Aprender
-		                    </a>
-		                </li>
-		                <li class="nav-item">
-		                    <a class="nav-link" href="/galeria">
-		                        <i class='bx bx-images'></i> Galeria
-		                    </a>
-		                </li>
-		                <li class="nav-item">
-		                    <a class="nav-link" href="#">
-		                        <i class='bx bxs-invader'></i> Juegos
-		                    </a>
-		                </li>
-		                <li class="nav-item">
-		                    <a class="nav-link" href="#">
-		                        <i class='bx bx-chat'></i> Mensajes
-		                    </a>
-		                </li>
-		                <li class="nav-item">
-		                    <a class="nav-link" href="/wiki">
-		                        <i class='bx bxl-wikipedia'></i> Wiki
-		                    </a>
-		                </li>
-		                <li class="nav-item">
-		                    <a class="nav-link" href="#">
-		                        <i class='bx bx-group'></i> Foro
-		                    </a>
-		                </li>
+		                <li class="nav-item"><a class="nav-link active" href="/dashboard"><i class='bx bx-home'></i> Dashboard</a></li>
+		                <li class="nav-item"><a class="nav-link" href="/aprender"><i class='bx bx-book'></i> Aprender</a></li>
+		                <li class="nav-item"><a class="nav-link" href="/galeria"><i class='bx bx-images'></i> Galeria</a></li>
+		                <li class="nav-item"><a class="nav-link" href="#"><i class='bx bxs-invader'></i> Juegos </a></li>
+						<li class="nav-item"><a class="nav-link" href="/chat"><i class='bx bx-chat' ></i> CosmoChat</a></li>
+		                <li class="nav-item"><a class="nav-link" href="/wiki"><i class='bx bxl-wikipedia'></i> WikiCosmos</a></li>
+		                <li class="nav-item"><a class="nav-link" href="/foro"><i class='bx bx-group'></i> Foro</a></li>
 		            </ul>
 		        </div>
 		    </div>
 		</nav>
-		<div class="d-flex flex-column justify-content-center">
-			<div class="row bg-primary titulo">
+
+		<div class="d-flex flex-column justify-content-center p-4">
+			<div class="row border bg-white titulo">
 				<div class=" p-4 d-flex flex-column align-items-center justify-content-around">
 					<h2 class="">Bienvenidos a WikiCosmos</h2>
 					<p> Una enciclopedia de contenido libre sobre astronomia, que todos pueden editar y agregar articulos.
@@ -95,7 +68,7 @@
 				
 			</div>
 			<div class="row">
-				<div class="my-4 p-4 d-flex flex-column align-items-center justify-content-center bg-primary-subtle">
+				<div class="my-4 p-4 d-flex flex-column align-items-center justify-content-center bg-white border">
 					<p>
     					Actualmente hay <a href="/buscar?articulo=">${cantidadArticulos} Artículos</a> en la Wiki.
 					</p>
@@ -118,8 +91,8 @@
 				
 			</div>
 		</div>
-		<div class="row d-flex flex-row">
-		   <div class="col-7 p-3 bg-secondary articulo">
+		<div class="row d-flex flex-row p-4">
+		   <div class="col-7 p-3 bg-white border articulo">
 			    <h6>Ultimo artículo agregado.</h6>
 			    <c:if test="${not empty ultimoArticulo}">
 			        <h3>${ultimoArticulo.titulo}</h3>
@@ -132,8 +105,8 @@
 			    </c:if>
 			</div>
 		
-		    <div class="col-md-4">
-		        <div class="row bg-info lista p-4">
+		    <div class="col-md-4 ms-5">
+		        <div class="row bg-white border lista p-4">
 		            <h6>Últimos 10 artículos agregados.</h6>
 		            <c:if test="${not empty ultimosArticulos}">
 		                <ol class="list-group list-group-numbered">
@@ -143,7 +116,7 @@
 		                </ol>
 		            </c:if>
 		        </div>
-		        <div class="row bg-light-subtle agregar mt-4">
+		        <div class="row bg-white border text-center mt-4">
 		            <p>Para agregar un artículo haz click <a href="/nuevo">Aquí</a></p>
 		        </div>
 		    </div>
