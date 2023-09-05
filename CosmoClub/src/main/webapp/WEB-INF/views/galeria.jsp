@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -88,7 +89,7 @@
                         <!-- Example single danger button -->
                         <div class="dropdown dropstart mt-3 mt-md-0">
                             <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
+                                <img class="img-perfil rounded-circle me-2" src="<c:url value='${user.user_img}'/>" alt="">
                             </a>
                             <ul class="dropdown-menu text-center">
                                 <li><p class="">${user.name} ${user.last_name}</p></li>

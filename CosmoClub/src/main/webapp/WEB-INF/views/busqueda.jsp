@@ -41,7 +41,7 @@
 						<div class="accordion-body">
 							<ul>
 								<c:forEach var="articulo" items="${etiqueta.value}">
-									<li><a href="/${articulo.id}">${articulo.titulo}</a></li>
+									<li><a href="/wiki/${articulo.id}">${articulo.titulo}</a></li>
 								</c:forEach>
 							</ul>
 						</div>
@@ -73,7 +73,7 @@
 					<c:forEach items="${articulosEncontrados.content}" var="articulo">
 						<div class="articulo mb-5">
 							<h3>
-								<a href="/${articulo.id}">${articulo.titulo}</a>
+								<a href="/wiki/${articulo.id}">${articulo.titulo}</a>
 							</h3>
 							<p>${fn:substring(articulo.contenido, 0, 250)}...</p>
 							<ul class="tags">

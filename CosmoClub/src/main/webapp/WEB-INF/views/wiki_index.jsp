@@ -26,7 +26,7 @@
 	                    <div class="accordion-body">
 	                        <ul>
 	                            <c:forEach var="articulo" items="${etiqueta.value}">
-	                                <li><a href="/${articulo.id}">${articulo.titulo}</a></li>
+	                                <li><a href="/wiki/${articulo.id}">${articulo.titulo}</a></li>
 	                            </c:forEach>
 	                        </ul>
 	                    </div>
@@ -124,7 +124,7 @@
 			    <c:if test="${not empty ultimoArticulo}">
 			        <h3>${ultimoArticulo.titulo}</h3>
 			        <c:if test="${not empty ultimoArticulo.etiquetas}">
-			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...<a href="/${ultimoArticulo.id}"> Leer más</a></p>
+			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...<a href="/wiki/${ultimoArticulo.id}"> Leer más</a></p>
 			        </c:if>
 			        <c:if test="${empty ultimoArticulo.etiquetas}">
 			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...</p>
@@ -138,7 +138,7 @@
 		            <c:if test="${not empty ultimosArticulos}">
 		                <ol class="list-group list-group-numbered">
 		                    <c:forEach var="articulo" items="${ultimosArticulos}">
-		                        <li class="list-group-item list-group-item-action"><a href="/${articulo.id}">${articulo.titulo}</a></li>
+		                        <li class="list-group-item list-group-item-action"><a href="/wiki/${articulo.id}">${articulo.titulo}</a></li>
 		                    </c:forEach>
 		                </ol>
 		            </c:if>

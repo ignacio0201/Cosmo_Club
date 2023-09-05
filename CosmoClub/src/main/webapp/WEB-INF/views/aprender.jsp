@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +41,7 @@
             <!--NavBar-->
             <nav class="navbar navbar-expand-md bg-body-tertiary">
                 <div class="container-fluid">
-                  <h1>BUEN DIA, CATALINA DIAZ!</h1>
+                  <h1 class="welcome-text text-uppercase">Hola, ${user.name} ${user.last_name}!</h1>
                   <div class="d-flex justify-content-between d-md-none d-block">
                     <button class="btn px-1 py-0 open-btn me-2"><i class="fa-solid fa-bars-staggered"></i></button>
                     <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white"><img class="icono-navbar" src="img/logo.jpeg" alt=""></span></a>
@@ -61,7 +62,7 @@
                     <!-- Example single danger button -->
                     <div class="dropdown dropstart">
                       <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
+                        <img class="img-perfil rounded-circle me-2" src="<c:url value='${user.user_img}'/>" alt="">
                       </a>
                       <ul class="dropdown-menu">
                         <li><p class="text-center">${user.name} ${user.last_name}</p></li>

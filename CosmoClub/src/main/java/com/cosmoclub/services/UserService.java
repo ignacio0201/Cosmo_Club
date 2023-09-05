@@ -54,6 +54,24 @@ public class UserService {
 		userRepo.save(user);
 	}
 	
+	public User editarUsuario(Long id, User user) {
+        Optional<User> optionalUser = userRepo.findById(id);
+
+        if (optionalUser.isPresent()) {
+            User usuarioExistente = optionalUser.get();
+
+            usuarioExistente.setName(user.getName());
+            usuarioExistente.setLast_name(user.getLast_name());
+            usuarioExistente.setEmail(user.getEmail());
+            usuarioExistente.setPais(user.getPais());
+            usuarioExistente.setDescripcion(user.getDescripcion());
+
+         
+            return userRepo.save(usuarioExistente);
+        } else {
+            return null; 
+        }
+    }
 	
 
 }

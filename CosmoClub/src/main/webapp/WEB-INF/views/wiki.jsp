@@ -28,7 +28,7 @@
 	                    <div class="accordion-body">
 	                        <ul>
 	                            <c:forEach var="articulo" items="${etiqueta.value}">
-	                                <li><a href="/${articulo.id}">${articulo.titulo}</a></li>
+	                                <li><a href="/wiki/${articulo.id}">${articulo.titulo}</a></li>
 	                            </c:forEach>
 	                        </ul>
 	                    </div>

@@ -17,6 +17,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
@@ -57,6 +59,9 @@ public class User {
 	 
 	@Column(columnDefinition = "ENUM('Admin','Usuario')")
 	 public String rol;
+	
+	@Column
+	public String pais;
 	
 	@Column
 	public String user_img;
@@ -292,7 +297,31 @@ public class User {
 		this.notification = notification;
 	}
 
-	
+	@PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 	
 }
 

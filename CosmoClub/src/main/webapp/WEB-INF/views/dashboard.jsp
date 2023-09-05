@@ -64,7 +64,7 @@
                     <!-- Example single danger button -->
                     <div class="dropdown dropstart">
                       <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
+                        <img class="img-perfil rounded-circle me-2" src="<c:url value='${user.user_img}'/>" alt="">
                       </a>
                       <ul class="dropdown-menu">
                         <li><p class="text-center">${user.name} ${user.last_name}</p></li>

@@ -1,3 +1,10 @@
+@font-face {
+    font-family: Pixel;
+    src: url(../fonts/poxel/poxel-font.ttf);
+}
+h2{
+	font-family: Pixel;
+}
 .contenido{
 	background-color: #E8F3F5;
 }
@@ -18,4 +25,102 @@
 	width: 525px;
 	height: 300px;
 	background-image: linear-gradient(to right, #E0E0FC, #D9F5F9);
+}
+
+i.bi-pencil {
+    color: black;
+}
+
+.img-perfil{
+	width: 300px;
+	height: 300px;
+}
+
+.bi-person{
+	font-size: 2.9rem;
+}
+
+.bi-pencil{
+	font-size: 2rem;
+}
+
+.nombre{
+	font-size: 25px;
+}
+.bi-envelope-fill{
+	font-size: 2rem;
+}
+.email{
+	font-size: 25px;
+}
+.custom-dropdown .dropdown-toggle::before {
+        content: "\25BE"; /* Código del carácter Unicode para una flecha hacia abajo */
+        margin-right: 0.5rem; /* Espacio entre la flecha y el texto */
+}
+ .custom-dropdown .dropdown-toggle::after {
+        display: none;
+}
+.actividad ul li{
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c2647;
+    margin: 0 0 10px;
+}
+.progress{
+    height: 30px;
+    background: #fff;
+    border-top: 5px solid #1c2647;
+    border-bottom: 5px solid #1c2647;
+    border-radius: 0;
+    margin-bottom: 25px;
+    overflow: visible;
+    position: relative;
+}
+.progress:before,
+.progress:after{
+    content: "";
+    width: 5px;
+    background: #1c2647;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    bottom: 0;
+}
+.progress:after{
+    left: auto;
+    right: -5px;
+}
+.progress .progress-bar{
+    border: none;
+    box-shadow: none;
+    -webkit-animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+    animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+}
+@-webkit-keyframes animate-positive{
+    0%{ width: 0; }
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
+}
+footer p{
+	font-size: 23px;
+	font-family: Pixel;
+}
+img{
+	width: 300px;
+	height: 300px;
+}
+.bi-globe{
+	font-size: 2rem;
+}
+.pais{
+	font-size: 25px;
+}
+.descripcion{
+	font-size: 20px;
 }
