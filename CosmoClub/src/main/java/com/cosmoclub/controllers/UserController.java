@@ -174,7 +174,12 @@ public class UserController {
 	@PostMapping("/crear-post")
 	public String crearPost(@Valid @ModelAttribute("newPost") Post newPost, BindingResult result, Model model, HttpSession session) {
 		if (result.hasErrors()) {
-			return "foro.jsp";
+			Long userId = (Long) session.getAttribute("userId");
+	        User user = userService.findUserById(userId);
+	        model.addAttribute("user", user);
+	        List<Post> allPosts = postService.findAllPosts();
+	        model.addAttribute("allPosts", allPosts);
+			return "views/foro.jsp";
 		}
 		Long userId = (Long) session.getAttribute("userId");
 		User user = userService.findUserById(userId);
@@ -187,10 +192,11 @@ public class UserController {
 		Long userId = (Long) session.getAttribute("userId");
 		if (userId != null) {
 			User user = userService.findUserById(userId);
-	        model.addAttribute("user", user);
 			Post post = postService.findPost(postId);
-			model.addAttribute("post", post);
 			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
+	        
+			model.addAttribute("user", user);
+			model.addAttribute("post", post);
 			model.addAttribute("allCommentsPost", allCommentsPost);
 			return "views/post.jsp";
 		} else {
@@ -198,15 +204,31 @@ public class UserController {
 	    }
 	}
 	
-	@PostMapping("/post/{id}/comment")
-	public String comentarPost(@Valid @ModelAttribute("newComment") Comment newComment, BindingResult result, HttpSession session) {
+	@PostMapping("/post/{postId}/comment")
+	public String comentarPost(@PathVariable("postId") Long postId, @Valid @ModelAttribute("newComment") Comment newComment, BindingResult result, HttpSession session, Model model) {
 		if (result.hasErrors()) {
+			Long userId = (Long) session.getAttribute("userId");
+			User user = userService.findUserById(userId);
+			Post post = postService.findPost(postId);
+			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
+			model.addAttribute("user", user);
+			model.addAttribute("post", post);
+			model.addAttribute("allCommentsPost", allCommentsPost);
 			return "views/post.jsp";
 		}
 		Long userId = (Long) session.getAttribute("userId");
-		User user = userService.findUserById(userId);
-		commentService.createComment(newComment);
-		return "redirect:/post/{id}";
+	    User user = userService.findUserById(userId);
+	    Post post = postService.findPost(postId);
+	    
+	    List<Comment> comments = post.getComments();
+	    newComment.setUser(user);
+	    newComment.setPost(post);
+	    comments.add(newComment);
+	    post.setComments(comments);
+	    
+	    commentService.createComment(newComment);
+	    postService.createPost(post);
+		return "redirect:/post/" + post.getId();
 	}
 	
 	

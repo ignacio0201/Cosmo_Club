@@ -50,7 +50,7 @@ public class Post {
 	   private List<ImgPost> images;
     
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
-	   private List<Comment> comment;
+	   private List<Comment> comments;
     
     @OneToOne(mappedBy="post", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private  Notification notification; 
@@ -130,12 +130,12 @@ public class Post {
 		this.images = images;
 	}
 
-	public List<Comment> getComment() {
-		return comment;
+	public List<Comment> getComments() {
+		return comments;
 	}
 
-	public void setComment(List<Comment> comment) {
-		this.comment = comment;
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 
 	public MultipartFile getImgFile() {

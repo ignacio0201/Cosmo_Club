@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CosmoClubaa</title>
+<title>CosmoClub</title>
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
@@ -19,7 +19,7 @@
 		
 		
 		<div class="form-container">
-			<form:form action="/post/${id}/comment" method="post" modelAttribute="newComment">
+			<form:form action="/post/${post.id}/comment" method="post" modelAttribute="newComment">
 				
 				<form:textarea path="comment" rows="4" cols="50" placeholder="Deja un comentario"/>
 				<form:errors path="comment"/>
@@ -32,7 +32,7 @@
 		
 		<div>
 			
-			<c:forEach items="${allCommentsPost}" var="comment">
+			<c:forEach items="${post.comments}" var="comment">
 			        <div>
 			            <p style="color: blue;">${comment.user.name} ${comment.user.last_name}</p>
 			            <p>${comment.comment}</p>
