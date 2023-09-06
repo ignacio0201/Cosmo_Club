@@ -51,12 +51,6 @@ req.addEventListener("load", function(){
 })
 
 
-//Estrellas de calificación en el dashboard/foro
-// Rating Initialization
-$(document).ready(function() {
-    $('#rateMe1').mdbRate();
-  });
-
 
 
 

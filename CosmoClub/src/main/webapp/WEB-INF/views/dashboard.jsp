@@ -523,7 +523,7 @@
               <!-- Example single danger button -->
               <div class="dropdown dropstart">
                   <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
+                      <img class="img-perfil rounded-circle me-2" src="<c:url value='${user.user_img}'/>" alt="">
                   </a>
                   <ul class="dropdown-menu">
                       <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
@@ -619,7 +619,8 @@
                 <div class="p-2 border border-info rounded-3 text-center">
                   <h2 class="family-pixel text-uppercase">Foto astronomica del dia</h2>
                   <div class="img-fluid">
-                  <img id="pic" src="" alt="NASA Picture Of The Day" />
+                  <!--<video id="pic" src="https://www.youtube.com/watch?v=QmCFdFGNwmo" alt="NASA Picture Of The Day"></video>-->
+                  <iframe width="400" height="340" src="https://www.youtube.com/embed/QmCFdFGNwmo?si=Sp8Y5IS2-pWVLPn0?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
                   </div>
                   <h3 id="title"></h3>
                   
