@@ -92,7 +92,7 @@ public class PlantillaController {
 	public String buscarArticuloPaginado(@RequestParam("articulo") String articulo, @RequestParam(defaultValue = "0") int page, Model model) {
 		
 		 if (articulo.isEmpty()) {
-		        // Si el parámetro articulo está vacío, redirigir a la búsqueda con todos los artículos
+		       
 			 	return "redirect:/buscar-todos";
 		    }
 	   
@@ -124,11 +124,11 @@ public class PlantillaController {
 	
 	@GetMapping("/buscar-todos")
 	public String mostrarTodosLosArticulos(@RequestParam(defaultValue = "0") int page, Model model) {
-	    // Realiza la consulta para obtener todos los artículos sin aplicar ningún filtro de búsqueda
+	
 	    Pageable pageable = PageRequest.of(page, 5);
 	    Page<Plantilla> todosLosArticulos = plantillaService.buscarArticulosPaginados("", pageable);
 
-	    // Resto de la lógica para obtener las etiquetas y configurar el modelo
+	 
 	    @SuppressWarnings("unchecked")
 		Map<Tag, List<Plantilla>> articulosPorEtiqueta = (Map<Tag, List<Plantilla>>) servletContext.getAttribute("articulosPorEtiqueta");
 	    
@@ -137,22 +137,22 @@ public class PlantillaController {
 	        List<String> etiquetasArticulo = articuloEncontrado.getEtiquetas().stream().map(Tag::getEtiqueta).toList();
 	        etiquetasPorArticulo.add(etiquetasArticulo);
 	    }
-	    // Esto puede ser similar a lo que tienes en el método de búsqueda actual
+	  
 
 	    model.addAttribute("articulosEncontrados", todosLosArticulos);
 	    model.addAttribute("etiquetasPorArticulo", etiquetasPorArticulo);
 	    model.addAttribute("articulosPorEtiqueta", articulosPorEtiqueta);
 
-	    // Puedes agregar cualquier otro dato que desees mostrar en la vista
+	   
 
-	    return "views/busqueda.jsp"; // Debes usar la misma vista que para la búsqueda
+	    return "views/busqueda.jsp"; 
 	}
 	
 	@PostMapping("/buscar")
 	public String buscarArticulo(@RequestParam("articulo") String articulo, Model model, @RequestParam(defaultValue = "0") int page) {
 		
 		 if (articulo.isEmpty()) {
-		        // Si el parámetro articulo está vacío, redirigir a la búsqueda con todos los artículos
+		  
 			 return "redirect:/buscar-todos";
 		    }
 	    

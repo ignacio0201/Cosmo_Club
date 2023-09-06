@@ -13,4 +13,6 @@ public interface UserRepository extends CrudRepository<User,Long>{
 	boolean existsByEmail(String email);
 	
 	List<User> findByStatus (String status);
+	
+	
 }
