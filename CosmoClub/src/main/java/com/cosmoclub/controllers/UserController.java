@@ -91,7 +91,11 @@ public class UserController {
 		String defaultProfileImage = "/img/profile.jpg";
         user.setUser_img(defaultProfileImage);
         userService.registerUser(user);
+        
         session.setAttribute("userId", user.getId());
+        
+        user.setStatus("active");
+        userService.save(user);
         return "redirect:/dashboard";
     }
 	
@@ -112,7 +116,10 @@ public class UserController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 	    Long userId = (Long) session.getAttribute("userId");
-	        session.invalidate();
+	    User user = userService.findUserById(userId);
+		user.setStatus("inactive");
+		userService.save(user);
+	    session.invalidate();
 	    return "redirect:/";
 	}
 	
