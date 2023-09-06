@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
-<body class="family-poppins">
+<body class="body family-poppins">
 	<div class="preloader">
 		<svg
 		  class="outer-space"
@@ -520,7 +520,7 @@
 		                <li class="nav-item"><a class="nav-link active" href="/dashboard"><i class='bx bx-home'></i> Dashboard</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/aprender"><i class='bx bx-book'></i> Aprender</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/galeria"><i class='bx bx-images'></i> Galeria</a></li>
-		                <li class="nav-item"><a class="nav-link" href="#"><i class='bx bxs-invader'></i> Juegos </a></li>
+		                <li class="nav-item"><a class="nav-link" href="/juegos"><i class='bx bxs-invader'></i> Juegos </a></li>
 						<li class="nav-item"><a class="nav-link" href="/chat"><i class='bx bx-chat' ></i> CosmoChat</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/wiki"><i class='bx bxl-wikipedia'></i> WikiCosmos</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/foro"><i class='bx bx-group'></i> Foro</a></li>

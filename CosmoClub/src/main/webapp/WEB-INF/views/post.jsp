@@ -39,6 +39,7 @@
 			        <div>
 			            <p style="color: blue;">${comment.user.name} ${comment.user.last_name}</p>
 			            <p>${comment.comment}</p>
+						<p style="color: gray;">${comment.timeAgo}</p>
 			    	</div>
 				<hr>
 			</c:forEach>

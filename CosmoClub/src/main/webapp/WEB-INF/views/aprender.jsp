@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -489,50 +490,37 @@
                 <li class=""><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
                 <li class="active"><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
                 <li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>
-                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
+                <li class=""><a href="/juegos" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
                 <li class=""><a href="/chat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
                 <li class=""><a href="/wiki" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxl-wikipedia' ></i> WikiCosmo</a></li>
                 <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
             </ul>
         </div>
-        <div class="content">
+        <div class="content container-fluid">
             <!--NavBar-->
-            <nav class="navbar navbar-expand-md bg-body-tertiary">
-                <div class="container-fluid">
-                  <h1 class="text-uppercase">BUEN DIA, ${user.name} ${user.last_name}!</h1>
-                  <div class="d-flex justify-content-between d-md-none d-block">
-                    <button class="btn px-1 py-0 open-btn me-2"><i class="fa-solid fa-bars-staggered"></i></button>
-                    <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white"><img class="icono-navbar" src="img/logo.jpeg" alt=""></span></a>
-                  </div>
-                  <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars-staggered"></i>
-                  </button>
-                  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <div class="col-md-4 d-flex align-items-center text-center">
-                        <!-- Contenedor para centrar vertical y horizontalmente -->
-                        <div class="d-flex flex-column align-items-center">
-                            <h3 class="progress-title">NIVEL</h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width:40%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Example single danger button -->
-                    <div class="dropdown dropstart">
-                      <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="img-perfil rounded-circle me-2" src="img/profile.jpg" alt="">
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
-                        <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            </nav>
-            <!--NavBar-->
+        <nav class="navbar navbar-expand-md bg-white mt-3">
+          <div class="container-fluid justify-content-between">
+            <h1 class="family-pixel text-uppercase">Buen dia, ${user.name} ${user.last_name}!</h1>
+            <div class="d-flex flex-column align-items-center">
+              <h3 class="progress-title my-2">NIVEL</h3>
+              <div class="progress">
+                  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
+              </div>
+            </div>
+            <div class="dropdown dropstart">
+              <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
+              </a>
+              <ul class="dropdown-menu">
+                  <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
+                  <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+              </ul>
+          </div>
+          </div>
+        </nav>
+        <!--NavBar-->
             <div class="content p-4">
 
               <section class="row">
@@ -544,30 +532,31 @@
                         <div class="carousel-item active rounded-5 col-sm-12 ">
                             <div class="d-flex justify-content-evenly rounded-5">
 
-                                <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
-                                    <img src="img/galaxia.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
-                                    <div class="card-body d-flex flex-column align-items-center">
-                                      <h5 class="card-title text-center">Galaxias</h5>
-                                      <p class="card-text mb-0 text-justify">El curso de Galaxias es un emocionante viaje a través del espacio que explora la formación y evolución de las galaxias, destacando sus tipos y otros aspectos cósmicos, como la distribución de la materia y la interacción gravitatoria entre ellas.</p>
-                                      <a href="#" class="btn btn-primary w-50 border-0 rounded-pill ">INSCRIBIRME</a>
-                                  </div>
-                                </div>
-
+                                
                                 <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
                                     <img src="img/sistema-solar.jpeg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                                     <div class="card-body d-flex flex-column align-items-center">
                                       <h5 class="card-title text-center">Sistema Solar</h5>
                                       <p class="card-text mb-0 text-justify">El curso sobre el Sistema Solar es una aventura educativa que te llevará a explorar nuestro vecindario cósmico. Aprenderás sobre el sol, los 8 planetas y sus lunas, asteroides y cometas que componen nuestro sistema.</p>
-                                      <a href="#" class="btn btn-primary w-50 border-0 rounded-pill ">INSCRIBIRME</a>
+                                      <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">INSCRITO</a>
                                   </div>
                                 </div>
+
+                                <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
+                                  <img src="img/galaxia.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                                  <div class="card-body d-flex flex-column align-items-center">
+                                    <h5 class="card-title text-center">Galaxias</h5>
+                                    <p class="card-text mb-0 text-justify">El curso de Galaxias es un emocionante viaje a través del espacio que explora la formación y evolución de las galaxias, destacando sus tipos y otros aspectos cósmicos, como la distribución de la materia y la interacción gravitatoria entre ellas.</p>
+                                    <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                </div>
+                              </div>
 
                                 <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
                                   <img src="img/nebulosas.sp.jpg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                                   <div class="card-body d-flex flex-column align-items-center">
                                     <h5 class="card-title text-center">Nebulosas</h5>
                                     <p class="card-text mb-0 text-justify">En este curso, explorarás el fascinante mundo de las nebulosas. A través de las unidades decubrirás cómo su estudio revela pistas sobre la evolución de las galaxias y la creación de nuevas estrellas.</p>
-                                    <a href="#" class="btn btn-primary w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                    <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                                 </div>
                               </div>
                               
@@ -582,7 +571,7 @@
                                 <div class="card-body d-flex flex-column align-items-center">
                                   <h5 class="card-title text-center">Agujeros Negros</h5>
                                   <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                  <a href="#" class="btn btn-primary w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                  <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                               </div>
                             </div>
                             <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
@@ -590,7 +579,7 @@
                               <div class="card-body d-flex flex-column align-items-center">
                                 <h5 class="card-title text-center">Exo Planetas</h5>
                                 <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                <a href="#" class="btn btn-primary w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                             </div>
                             </div>
                             <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
@@ -598,7 +587,7 @@
                               <div class="card-body d-flex flex-column align-items-center">
                                 <h5 class="card-title text-center">Sol</h5>
                                 <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                <a href="#" class="btn btn-primary w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                             </div>
                             </div>
                           </div>
@@ -616,48 +605,14 @@
                 <div class="border rounded-3 p-3 bg-white">
                   <h3 class="">Mis Cursos</h3>
 
-                  <div class="row justify-content-center">
-                    <div class="col-md-3">
-                      <div class="card shadow-sm card-mycourses">
-                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/agujeros-negros.jpg" alt="">
-                        <div class="card-body">
-                          <p class="text-center">Agujeros Negros</p>
-                          <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="row justify-content-start">
+                    
   
                     <div class="col-md-3">
                       <div class="card shadow-sm card-mycourses" >
-                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/sistema-solar.jpeg" alt="">
+                        <a href="/curso"><img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/sistema-solar.jpeg" alt=""></a>
                         <div class="card-body">
                           <p class="text-center">Sistema Solar</p>
-                          <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <div class="card shadow-sm card-mycourses">
-                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/agujeros-negros.jpg" alt="">
-                        <div class="card-body">
-                          <p class="text-center">Agujeros Negros</p>
-                          <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <div class="card shadow-sm card-mycourses">
-                        <img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/agujeros-negros.jpg" alt="">
-                        <div class="card-body">
-                          <p class="text-center">Agujeros Negros</p>
                           <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
                           </div>

@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Base64;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.cosmoclub.cache.ImageCache;
 import com.cosmoclub.components.PaisesDelMundo;
 import com.cosmoclub.models.Comment;
 import com.cosmoclub.models.Post;
@@ -58,11 +62,7 @@ public class UserController {
 	@GetMapping("/")
 	public String index(HttpSession session) {
 		Long userId = (Long) session.getAttribute("userId");
-		if(userId != null) {
-			return "redirect:/dashboard";
-		}else {
 			return "views/index.jsp";
-		}
 	}
 	
 	@GetMapping("/{noExiste}")
@@ -118,39 +118,132 @@ public class UserController {
 	
 	@GetMapping("/dashboard")
 	public String inicio(HttpSession session, Model model) {
+	    List<User> connectedUsers = userService.getAllConnectedUsers();
+	    model.addAttribute("connectedUsers", connectedUsers);
+
 	    Long userId = (Long) session.getAttribute("userId");
-	    	List<User> connectedUsers = userService.getAllConnectedUsers();
-	    	List<Post> allPosts = postService.findAllPosts();
-	        model.addAttribute("allPosts", allPosts);
-		    model.addAttribute("connectedUsers", connectedUsers);
+	    if (userId != null) {
 	        User user = userService.findUserById(userId);
 	        model.addAttribute("user", user);
+	        
+	        byte[] imageData = ImageCache.getImageFromCache(userId);
+	        if (imageData == null) {
+	            String profileImageFileName = user.getUser_img();
+	            
+	            if (profileImageFileName != null) {
+	                try {
+	                    String profileImagePath = "src/main/resources/static" + profileImageFileName; 
+	                    Path imagePath = Paths.get(profileImagePath);
+	                    
+	                    if (Files.exists(imagePath)) {
+	                        imageData = Files.readAllBytes(imagePath);
+	                        
+	                        // Agrega la imagen al caché para futuras solicitudes
+	                        ImageCache.addImageToCache(userId, imageData);
+	                    }
+	                } catch (IOException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        }
+	        if (imageData != null) {
+	            // Genera el Base64 de la imagen
+	            String userImageBase64 = Base64.getEncoder().encodeToString(imageData);
+	            
+	            // Agrega el Base64 al modelo
+	            model.addAttribute("userImageBase64", userImageBase64);
+	        }
+
+	        // Agregar el código para obtener y agregar los recuentos de comentarios aquí
+	        List<Post> allPosts = postService.findAllPosts();
+	        model.addAttribute("allPosts", allPosts);
+
+	        // Crear un mapa para almacenar los recuentos de comentarios por postId
+	        Map<Long, Long> commentCounts = new HashMap<>();
+	        for (Post post : allPosts) {
+	            Long postId = post.getId();
+	            Long numberCommentsDash = commentService.countCommentsByPostId(postId);
+	            commentCounts.put(postId, numberCommentsDash);
+	        }
+
+	        model.addAttribute("commentCounts", commentCounts);
+
 	        return "views/dashboard.jsp";
+	    } else {
+	        return "redirect:/";
+	    }
 	}
+
 	
 	@GetMapping("/aprender")
 	public String learn(HttpSession session, Model model) {
+		 Long userId = (Long) session.getAttribute("userId");
+
+		    if (userId != null) {
+		    	  User user = userService.findUserById(userId);
+			        model.addAttribute("user", user);
+			        
+			        byte[] imageData = ImageCache.getImageFromCache(userId);
+			        if (imageData != null) {
+			            // Generar la URL de la imagen en el caché basada en el userId
+			        	 String userImageBase64 = Base64.getEncoder().encodeToString(imageData);
+
+			     
+			             model.addAttribute("userImageBase64", userImageBase64);
+			        }
+		        model.addAttribute("user", user);
+		        return "views/aprender.jsp";
+		    } else {
+		        return "redirect:/";
+		    }
+	}
+	
+	@GetMapping("/curso")
+	public String curso(HttpSession session, Model model) {
 		Long userId = (Long) session.getAttribute("userId");
-		if (userId != null) {
-	        User user = userService.findUserById(userId);
-	        model.addAttribute("user", user);
-	        return "views/aprender.jsp";
-		} else {
-	        return "redirect:/";
-	    }
+		return "views/curso.jsp";
+	}
+	@GetMapping("/unidad")
+	public String unidad(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		return "views/unidad.jsp";
+	}
+	@GetMapping("/juegos")
+	public String juegos(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		return "views/juegos.jsp";
+	}
+	@GetMapping("/cosmochat")
+	public String chat(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		return "views/chat.jsp";
 	}
 	
 	@GetMapping("/galeria")
 	public String galeria(HttpSession session, Model model) {
 	    Long userId = (Long) session.getAttribute("userId");
+
 	    if (userId != null) {
 	        User user = userService.findUserById(userId);
+	        model.addAttribute("user", user);
+	        
+	        byte[] imageData = ImageCache.getImageFromCache(userId);
+	        if (imageData != null) {
+	            // Generar la URL de la imagen en el caché basada en el userId
+	        	 String userImageBase64 = Base64.getEncoder().encodeToString(imageData);
+
+	             // Agrega el Base64 al modelo
+	             model.addAttribute("userImageBase64", userImageBase64);
+	        }
+	        
+	        
 	        model.addAttribute("user", user);
 	        return "views/galeria.jsp";
 	    } else {
 	        return "redirect:/";
 	    }
 	}
+	
 	@GetMapping("/perfil")
 	public String perfil(HttpSession session, Model model) {
 	    Long userId = (Long) session.getAttribute("userId");
@@ -158,6 +251,15 @@ public class UserController {
 	    if (userId != null) {
 	        User user = userService.findUserById(userId);
 	        model.addAttribute("user", user);
+	        
+	        byte[] imageData = ImageCache.getImageFromCache(userId);
+	        if (imageData != null) {
+	           
+	        	 String userImageBase64 = Base64.getEncoder().encodeToString(imageData);
+
+	        
+	             model.addAttribute("userImageBase64", userImageBase64);
+	        }
 
 	        return "views/perfil-user.jsp";
 	    } else {
@@ -166,7 +268,7 @@ public class UserController {
 	}
 
 	@PostMapping("/perfil")
-	public String actualizarImagenPerfil(@RequestParam("profileImage") MultipartFile profileImage, HttpSession session) {
+	public String actualizarImagenPerfil(@RequestParam("profileImage") MultipartFile profileImage, HttpSession session, Model model) {
 	    Long userId = (Long) session.getAttribute("userId");
 
 	    if (userId != null) {
@@ -174,17 +276,24 @@ public class UserController {
 
 	        if (!profileImage.isEmpty()) {
 	            try {
-	                String profileImageFileName = userId + ".jpg";
-	                String profileImagePath = "src/main/resources/static/img/" + profileImageFileName;
+	                byte[] imageData = profileImage.getBytes();                
+	                // Agrega la imagen al caché
+	                ImageCache.addImageToCache(userId, imageData);
+	                String staticImageFileName = "user_" + userId + ".jpg";
+	                String staticImagePath = "/img/" + staticImageFileName;
+	                user.setUser_img(staticImagePath);
 
-	                Path imagePath = Paths.get(profileImagePath);
-	                Files.write(imagePath, profileImage.getBytes());
-
-	                // Actualiza solo el campo user_img en el objeto usuario
-	                user.setUser_img("img/" + profileImageFileName);
-
-	                // Guarda el objeto usuario actualizado en la base de datos
 	                userService.save(user);
+
+	                // Convierte la imagen en base64 y agrega al modelo para su visualización en la página
+	                String userImageBase64 = "data:image/jpeg;base64," + Base64.getEncoder().encodeToString(imageData);
+	                model.addAttribute("userImageBase64", userImageBase64);
+
+	                // Guarda la imagen en la carpeta 'img' dentro de 'static'
+	                String staticImgPath = "src/main/resources/static/img/";
+
+	                Files.write(Paths.get(staticImgPath + staticImageFileName), imageData);
+
 	            } catch (IOException e) {
 	                e.printStackTrace();
 	            }
@@ -297,6 +406,12 @@ public class UserController {
 			model.addAttribute("post", post);
 			model.addAttribute("allCommentsPost", allCommentsPost);
 			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
+			
+			// Calcular la diferencia de tiempo y formatearla para cada comentario
+            for (Comment comment : allCommentsPost) {
+                String timeAgo = commentService.calcularFecha(comment.getCreatedAt());
+                comment.setTimeAgo(timeAgo);
+            }
 			return "views/post.jsp";
 		} else {
 	        return "redirect:/";

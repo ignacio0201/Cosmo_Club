@@ -492,56 +492,43 @@
             <li class="active"><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
             <li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
             <li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>
-            <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
-            <li class=""><a href="/chat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
+            <li class=""><a href="/juegos" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
+            <li class=""><a href="/cosmochat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
             <li class=""><a href="/wiki" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxl-wikipedia' ></i> WikiCosmo</a></li>
             <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
         </ul>
       </div>
     <div class="content container-fluid">
         <!--NavBar-->
-        <nav class="navbar navbar-expand-md bg-white">
-          <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-white mt-3">
+          <div class="container-fluid justify-content-between">
             <h1 class="family-pixel text-uppercase">Buen dia, ${user.name} ${user.last_name}!</h1>
-            <div class="d-flex justify-content-between d-md-none d-block">
-              <button class="btn px-1 py-0 open-btn me-2"><i class="fa-solid fa-bars-staggered"></i></button>
-              <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white"><img class="icono-navbar" src="img/logo.jpeg" alt=""></span></a>
+            <div class="d-flex flex-column align-items-center">
+              <h3 class="progress-title my-2">NIVEL</h3>
+              <div class="progress">
+                  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
+              </div>
             </div>
-            <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa-solid fa-bars-staggered"></i>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <div class="col-md-4 col-12 d-flex align-items-center text-center">
-                  <!-- Contenedor para centrar vertical y horizontalmente -->
-                  <div class="d-flex flex-column align-items-center">
-                      <h3 class="progress-title my-2">NIVEL</h3>
-                      <div class="progress">
-                          <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
-                      </div>
-                  </div>
-              </div>
-              <!-- Example single danger button -->
-              <div class="dropdown dropstart">
-                  <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img class="img-perfil rounded-circle me-2" src="<c:url value='${user.user_img}'/>" alt="">
-                  </a>
-                  <ul class="dropdown-menu">
-                      <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
-                      <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
-                  </ul>
-              </div>
+            <div class="dropdown dropstart">
+              <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
+              </a>
+              <ul class="dropdown-menu">
+                  <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
+                  <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+              </ul>
           </div>
           </div>
-      </nav>
+        </nav>
         <!--NavBar-->
         <div class="row">
 
             <div class="col-sm-8 col-12 p-3">
                 <!--Carrusel con los cursos--> 
-                <div class="cursos mb-3 p-3 border border-info rounded-3"> 
-                    <h3>MIS CURSOS</h3>
+                <div class="cursos mb-3 p-3 bg-white border rounded-4"> 
+                    <h3>CURSOS</h3>
                     <div class="container">
                       <span id="rateMe1"></span>
                     </div>
@@ -549,25 +536,25 @@
                     <div id="carouselExample" class="carousel slide">
                       <div class="carousel-inner">
                         <div class="carousel-item active">
-                          <a href="https://www.youtube.com/"><img src="img/sistema-solar.jpeg" class="d-block w-100 img-cursos" alt="..."></a>                      
+                          <a href="/curso"><img src="img/sistema-solar.jpeg" class="d-block w-100 img-cursos" alt="..."></a>                      
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Sistema solar</h4>
                           </div>
                         </div>
                         <div class="carousel-item">
-                          <a href="https://www.youtube.com/"><img src="img/planetas.png" class="d-block w-100 img-cursos" alt="..."></a>                      
+                          <a href=""><img src="img/planetas.png" class="d-block w-100 img-cursos" alt="..."></a>                      
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Exo Planetas</h4>
                           </div>
                         </div>
                         <div class="carousel-item">
-                          <a href="https://www.youtube.com/"><img src="img/sol.png" class="d-block w-100 img-cursos" alt="..."></a>
+                          <a href=""><img src="img/sol.png" class="d-block w-100 img-cursos" alt="..."></a>
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Estrellas</h4>
                           </div>
                         </div>
                         <div class="carousel-item">
-                          <a href="https://www.youtube.com/"><img src="img/galaxia.png" class="d-block w-100 img-cursos" alt="..."></a>
+                          <a href=""><img src="img/galaxia.png" class="d-block w-100 img-cursos" alt="..."></a>
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Galaxias</h4>
                           </div>
@@ -587,19 +574,21 @@
                 <!--Carrusel con los cursos--> 
                 
                 <!--Parte del foro-->
-                <div class="foro p-3 border border-info rounded-3 overflow-y-scroll">
-                    
+                <div class="foro p-3 bg-white border rounded-4 overflow-y-scroll">
+
                   <c:forEach items="${allPosts}" var="post">
+                       <c:set var="postId" value="${post.id}" />
+                     <c:set var="numberCommentsDash" value="${commentCounts[postId]}" />
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                       <div class="col p-4 d-flex flex-column position-static">
                         <h3 class="mb-0">
                           <strong class="d-inline-block mb-2 me-3 text-primary-emphasis">
-                            <img class="img-perfil rounded-circle" src="https://pps.whatsapp.net/v/t61.24694-24/368499855_1266445330725277_104771332505258502_n.jpg?ccb=11-4&oh=01_AdTNJsS4SrKXSQgxm3Z1KZ7groMF934fVBIyUcHLWazPmw&oe=64F93BFA&_nc_cat=111" alt="">
+                            <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
                           </strong>${post.user.name} ${post.user.last_name}
                         </h3>
-                        <div class="mb-1 text-body-secondary">X personas han comentado</div>
+                        <div class="mb-1 text-body-secondary">${numberCommentsDash} personas han comentado esto</div>
                         <p class="card-text mb-auto">${post.content}</p>
-                        <a href="/publicacion/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
+                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
                           Continuar leyendo...
                         </a>
                       </div>
@@ -607,8 +596,10 @@
                         <img class="bd-placeholder-img" width="200" height="250"  src="https://www.republica.com/wp-content/uploads/2017/12/estrella-gigante-roja.jpg" alt="">
                       </div>
                     </div>
+
                 </c:forEach>
                 </div>
+                    <!--Parte del foro-->
                 <!--Parte del foro-->
             </div>
 
@@ -616,7 +607,7 @@
                 <!--Foto del día-->
                 
                 <!--Foto del día-->
-                <div class="p-2 border border-info rounded-3 text-center">
+                <div class="p-2 bg-white border rounded-4 text-center">
                   <h2 class="family-pixel text-uppercase">Foto astronomica del dia</h2>
                   <div class="img-fluid">
                   <!--<video id="pic" src="https://www.youtube.com/watch?v=QmCFdFGNwmo" alt="NASA Picture Of The Day"></video>-->
@@ -629,13 +620,13 @@
                 <!--Foto del día-->
 
                 <!--Conectados-->
-                <div class="conectados p-3 mt-3 border border-info rounded-3 overflow-y-scroll">
+                <div class="conectados bg-white p-3 mt-3 border rounded-4 overflow-y-scroll">
                   <div class="border border-white px-4">
                     <h3 class="family-pixel text-uppercase">Usuarios conectados</h3>
                     <c:forEach var="user" items="${connectedUsers}">
                       <div class="p-2">
                         <div class="rounded-circle-border">
-                            <img class="img-perfil rounded-circle" alt="" src="img/profile.jpg">
+                            <img class="img-perfil rounded-circle" alt="" src="<c:url value='${user.user_img}'/>">
                         </div>
                         <div class="d-inline-block align-middle ms-2">
                             <p class="d-inline">${user.name} ${user.last_name} <a href="#"><i class='bx bx-envelope'></i></a></p>

@@ -13,6 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotEmpty;
 
 @Entity
@@ -26,6 +27,9 @@ public class Comment {
 	@NotEmpty(message = "El comentario no puede estar vacio.")
 	@Column(columnDefinition = "TEXT",nullable = false)
 	private String comment;
+	
+	@Transient
+    private String timeAgo;
 	
 	 @Column(columnDefinition = "DATETIME", updatable=false)
 	    private Date createdAt;
@@ -86,6 +90,12 @@ public class Comment {
 	}
 	public void setPost(Post post) {
 		this.post = post;
+	}
+	public String getTimeAgo() {
+		return timeAgo;
+	}
+	public void setTimeAgo(String timeAgo) {
+		this.timeAgo = timeAgo;
 	}
     
     

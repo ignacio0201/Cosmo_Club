@@ -487,20 +487,20 @@
 			</div>
 	
 			<ul class="list-unstyled px-2">
-				<li class="active"><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
+				<li class=""><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
 				<li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
 				<li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>
-				<li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
+				<li class=""><a href="/juegos" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
 				<li class=""><a href="/chat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
 				<li class=""><a href="/wiki" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxl-wikipedia' ></i> WikiCosmo</a></li>
-				<li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
+				<li class="active"><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
 			</ul>
 		  </div>
 		<div class="content p-5">
 	
 			<div class="form-container bg-white border rounded-3 p-4">
 				<form:form action="/crear-post" method="post" modelAttribute="newPost">
-					<h4>Create a new post</h4>
+					<h4>Crea un post</h4>
 					<hr>
 					
 					
@@ -526,7 +526,7 @@
 				<c:forEach items="${allPosts}" var="post">
 						
 						<div>
-							<a href="/post/${post.id}">
+							<a class="text-decoration-none text-dark" href="/post/${post.id}">
 								<p>${post.user.name} ${post.user.last_name}</p>
 								<h3>${post.title}</h3>
 								<p>${post.content}</p>
