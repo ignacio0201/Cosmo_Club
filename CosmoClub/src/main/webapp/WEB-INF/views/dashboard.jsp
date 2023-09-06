@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -587,17 +588,20 @@
                           </strong>${post.user.name} ${post.user.last_name}
                         </h3>
                         <div class="mb-1 text-body-secondary">${numberCommentsDash} personas han comentado esto</div>
-                        <p class="card-text mb-auto">${post.content}</p>
+                        <p class="card-text mb-auto">
+                          <c:set var="limitedContent" value="${fn:substring(post.content, 0, 200)}" />
+                          ${limitedContent}...
+                        </p>
                         <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
                           Continuar leyendo...
                         </a>
                       </div>
                       <div class="col-auto d-none d-lg-block">
-                        <img class="bd-placeholder-img" width="200" height="250"  src="https://www.republica.com/wp-content/uploads/2017/12/estrella-gigante-roja.jpg" alt="">
+                        <!--<img class="bd-placeholder-img" width="200" height="250"  src="" alt="">-->
                       </div>
                     </div>
 
-                </c:forEach>
+                  </c:forEach>
                 </div>
                     <!--Parte del foro-->
                 <!--Parte del foro-->
@@ -629,7 +633,7 @@
                             <img class="img-perfil rounded-circle" alt="" src="<c:url value='${user.user_img}'/>">
                         </div>
                         <div class="d-inline-block align-middle ms-2">
-                            <p class="d-inline">${user.name} ${user.last_name} <a href="#"><i class='bx bx-envelope'></i></a></p>
+                            <p class="d-inline">${user.name} ${user.last_name} <a href="/cosmochat"><i class='bx bx-envelope'></i></a></p>
                             <ul style="color: green; list-style-type: none; padding-left: 0; margin: 0;">
                                 <li>Conectado</li>
                             </ul>

@@ -5,9 +5,6 @@
 h2{
 	font-family: Pixel;
 }
-.contenido{
-	background-color: #E8F3F5;
-}
 
 .perfil{
 	width: 525px;
@@ -111,10 +108,6 @@ footer p{
 	font-size: 23px;
 	font-family: Pixel;
 }
-img{
-	width: 300px;
-	height: 300px;
-}
 .bi-globe{
 	font-size: 2rem;
 }
@@ -123,4 +116,78 @@ img{
 }
 .descripcion{
 	font-size: 20px;
+}
+
+/*sidebar style*/
+
+#side_nav{
+    background: url(../img/sidebar-foto-2.png);
+    background-size: cover;
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.4s;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+}
+.content{
+    min-height: 100vh;
+    width: 100%;
+    font-family: Poppins;
+    background: #d5f9fd;
+}
+hr.h-color{
+    background: white;
+}
+
+.sidebar li.active{
+    background: white;
+    border-radius: 8px;
+}
+.sidebar li.active a, 
+.sidebar li.active a:hover{
+    color: darkblue;
+}
+.sidebar li a{
+    color: white;
+    font-size: 20px;
+}
+@media(max-width: 767px){
+    #side_nav{
+        margin-left: -250px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+    #side_nav.active{
+        margin-left: 0;
+    
+    }
+}
+.family-pixel{
+    font-family: Pixel;
+}
+.icono {
+    width: 10rem;
+    align-items: center;
+}
+.icono-navbar{
+    width: 2rem;
+}
+.img-cursos {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+.img-nav {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+.img-perfil {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
 }

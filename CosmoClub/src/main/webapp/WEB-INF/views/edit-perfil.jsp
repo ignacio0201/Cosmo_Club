@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
@@ -15,6 +15,7 @@
 </head>
 <body>
 	 <div class="container">
+		
 	    <div class="contenido p-5 d-flex flex-row justify-content-between">
 	        <div class="perfil rounded-5 border border-secondary-subtle p-3 d-flex flex-column ">
 			    <header class="text-center d-flex justify-content-between align-items-center">
@@ -53,7 +54,7 @@
 				    </div>
 				    <div class="d-flex flex-column align-items-center">
 				    	<header class="text center">
-				    		<h5><i class="bi bi-pencil-square"></i>Agrega una descripción</h5>
+				    		<h5><i class="bi bi-pencil-square"></i>Agrega una descripcion</h5>
 				    		
 				    	</header>
 				    	 <form:label path="descripcion" for="" class=""></form:label>
@@ -75,7 +76,7 @@
 						        Ultimo mes
 						    </a>
 						    <ul class="dropdown-menu">
-						        <li><a class="dropdown-item" href="#">Ultimo año</a></li>
+						        <li><a class="dropdown-item" href="#">Ultimo aÃ±o</a></li>
 						        <li><a class="dropdown-item" href="#">Desde el inicio</a></li>
 						    </ul>
 						</div>
@@ -86,29 +87,29 @@
 						  <li class="mb-2">Has jugado 4 horas.</li>
 						  <li class="mb-2">Completaste 1 curso.</li>
 						  <li class="mb-2">Has comentado 4 post del foro.</li>
-						  <li class="mb-2">Añadiste una pagina al Wikicosmo.</li>
+						  <li class="mb-2">AÃ±adiste una pagina al Wikicosmo.</li>
 						</ul>
 					</div>
 	            </div>
 	
 	            <div class="nivel rounded-5 border border-secondary-subtle p-4 px-5">
 	            	<header class="text-center">
-	            		<h2>Cambiar Contraseña</h2>
+	            		<h2>Cambiar ContraseÃ±a</h2>
 	            	</header>
 	            	<form method="post" action="/perfil/${user.id}/editpwd">
 				        <div class="form-group">
-				            <label for="contrasenaActual">Contraseña Actual</label>
+				            <label for="contrasenaActual">ContraseÃ±a Actual</label>
 				            <input type="password" class="form-control" id="contrasenaActual" name="contrasenaActual" required>
 				        </div>
 				        <div class="form-group">
-				            <label for="nuevaContrasena">Nueva Contraseña</label>
+				            <label for="nuevaContrasena">Nueva ContraseÃ±a</label>
 				            <input type="password" class="form-control" id="nuevaContrasena" name="nuevaContrasena" required>
 				        </div>
 				        <div class="form-group">
-				            <label for="confirmarContrasena">Confirmar Nueva Contraseña</label>
+				            <label for="confirmarContrasena">Confirmar Nueva ContraseÃ±a</label>
 				            <input type="password" class="form-control" id="confirmarContrasena" name="confirmarContrasena" required>
 				        </div>
-				        <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+				        <button type="submit" class="btn btn-light text-dark">Cambiar ContraseÃ±a</button>
 				    </form>
 				     <c:if test="${not empty error}">
 				        <div class="alert alert-danger mt-3">
