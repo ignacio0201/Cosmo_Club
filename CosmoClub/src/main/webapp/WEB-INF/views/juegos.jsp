@@ -1,1 +1,1 @@
-<h1>HOLA</h1>
+<link rel="stylesheet" href="../css/juegos.css">
