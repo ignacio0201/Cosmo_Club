@@ -177,4 +177,7 @@ hr.h-color{
 #carouselExample a{
     background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
 }
+.carousel-item{
+    height: 420px;
+}
 

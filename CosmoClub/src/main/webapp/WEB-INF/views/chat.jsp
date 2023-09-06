@@ -132,7 +132,7 @@
 	border-radius: 20px;
 	padding: 10px;
 	/*color fondo mensajes*/
-	background: url('/resources/img/imagenHolografica3.png') no-repeat
+	background: url('/img/img-chat/imagenHolografica3.png') no-repeat
 		center center;
 	background-size: cover;
 	background-color: rgb(168, 221, 255);
@@ -143,7 +143,7 @@ body {
 	background: rgb(125, 126, 218);
 	color: white;
 	margin: 0px;
-	background-image: url('/resources/img/pixel2.png');
+	background-image: url('/img/img-chat/pixel2.png');
 	/* Ruta de la imagen PNG transparente */
 	background-repeat: repeat;
 }
@@ -157,12 +157,18 @@ body {
 	margin-bottom: auto;
 	border-radius: 20px;
 	padding: 1.5rem;
-	background: url('/resources/img/imagenHolografica3.png') no-repeat center center;
+	background: url('/img/img-chat/imagenHolografica3.png') no-repeat center center;
 	background-size: cover;
 	background-color: rgb(168, 221, 255);
 	display: block;
 	margin-top: 7rem;
 	z-index: -2;
+}
+.boton-volver {
+	border-radius: 20px;
+	background: url('/img/img-chat/imagenHolografica3.png') no-repeat center center;
+	background-size: cover;
+	background-color: rgb(168, 221, 255);
 }
 
 .alturas, .my-5 {
@@ -260,6 +266,7 @@ padding-top:30px;
 		<div class="row alturas">	
 			<div class="col-3">				
 				<div class="row mb-3 koko">
+                    <button type="button" class="btn boton-volver mb-3"><a class="text-white" href="/dashboard">Volver al inicio</a></button>
 				    <form action="/buscarUsuarioChat" method="POST" class="form-inline" id="searchForm">
 				        <div class="input-group">
 				            <input type="text" class="buscar-input" data-usuario-id="${usuarioSeleccionado.id}" id="search" name="q" placeholder="Buscar usuario...">

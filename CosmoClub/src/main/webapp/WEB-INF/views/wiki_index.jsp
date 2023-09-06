@@ -521,7 +521,7 @@
 		                <li class="nav-item"><a class="nav-link" href="/aprender"><i class='bx bx-book'></i> Aprender</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/galeria"><i class='bx bx-images'></i> Galeria</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/juegos"><i class='bx bxs-invader'></i> Juegos </a></li>
-						<li class="nav-item"><a class="nav-link" href="/chat"><i class='bx bx-chat' ></i> CosmoChat</a></li>
+						<li class="nav-item"><a class="nav-link" href="/cosmochat"><i class='bx bx-chat' ></i> CosmoChat</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/wiki"><i class='bx bxl-wikipedia'></i> WikiCosmos</a></li>
 		                <li class="nav-item"><a class="nav-link" href="/foro"><i class='bx bx-group'></i> Foro</a></li>
 		            </ul>

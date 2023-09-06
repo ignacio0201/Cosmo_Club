@@ -491,7 +491,7 @@
                 <li class="active"><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
                 <li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>
                 <li class=""><a href="/juegos" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxs-invader' ></i> Juegos</a></li>
-                <li class=""><a href="/chat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
+                <li class=""><a href="/cosmochat" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-chat' ></i> CosmoChat</a></li>
                 <li class=""><a href="/wiki" class="text-decoration-none px-3 py-2 d-block"><i class='bx bxl-wikipedia' ></i> WikiCosmo</a></li>
                 <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
             </ul>
@@ -533,7 +533,7 @@
                             <div class="d-flex justify-content-evenly rounded-5">
 
                                 
-                                <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
+                                <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem; height: 26rem;">
                                     <img src="img/sistema-solar.jpeg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                                     <div class="card-body d-flex flex-column align-items-center">
                                       <h5 class="card-title text-center">Sistema Solar</h5>
@@ -552,7 +552,7 @@
                               </div>
 
                                 <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
-                                  <img src="img/nebulosas.sp.jpg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                                  <img src="img/nebulosas.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                                   <div class="card-body d-flex flex-column align-items-center">
                                     <h5 class="card-title text-center">Nebulosas</h5>
                                     <p class="card-text mb-0 text-justify">En este curso, explorarás el fascinante mundo de las nebulosas. A través de las unidades decubrirás cómo su estudio revela pistas sobre la evolución de las galaxias y la creación de nuevas estrellas.</p>
@@ -567,7 +567,7 @@
                         <div class="carousel-item">
                             <div class="d-flex justify-content-evenly rounded-5 col-sm-12 ">
                               <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
-                                <img src="img/agujeros-negros.jpg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                                <img src="img/agujeros-negros.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                                 <div class="card-body d-flex flex-column align-items-center">
                                   <h5 class="card-title text-center">Agujeros Negros</h5>
                                   <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
