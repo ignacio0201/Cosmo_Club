@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CosmoClub</title>
     <link rel="icon" type="image/x-icon" href="img/icon.ico">
-    <link rel="stylesheet" href="./css/perfil-user.css">
-	<link rel="stylesheet" href="./css/preloader.css">
+    <link rel="stylesheet" href="../css/perfil-user.css">
+	<link rel="stylesheet" href="../css/preloader.css">
 	<!--Iconos-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -526,55 +526,55 @@
 					<!--Profile-->
 					<header class="d-flex justify-content-between">
 						<h2 class="text-uppercase">Mi Perfil</h2>
-						<a href="/perfil/${user.id}"><i class='bx bx-edit'></i></a>
+						<a href="/perfil/${user.id}"><i class='user text-dark bx bx-edit'></i></a>
 					</header>
 
 					<div class="d-flex justify-content-center">
 						<form method="post" action="/perfil" enctype="multipart/form-data" id="imageUploadForm">
-							
-								<label for="profile-image" class="rounded-circle" style="cursor: pointer;">
-									<img src="data:image/jpeg;base64,${userImageBase64}" class="img-perfil rounded-circle object-fit-cover" alt="Profile Image">
-									<input id="profile-image" type="file" name="profileImage" style="display: none;" accept="image/*">
-								</label>
-							
+							<label for="profile-image" class="rounded-circle" style="cursor: pointer;">
+								<img src="data:image/jpeg;base64,${userImageBase64}" class="img-perfil rounded-circle object-fit-cover" alt="Profile Image">
+								<input id="profile-image" type="file" name="profileImage" style="display: none;" accept="image/*">
+							</label>
 						</form>
 					</div>
 					
-					<div class="d-flex flex-column mt-3">
+					<div class="d-flex justify-content-center flex-column mt-3">
+
 						<div class="row">
-							<p class="mb-0 ms-3 d-flex align-items-center">
-								<i class='bx bx-user'></i>
+							<p class="user d-flex align-items-center start">
+							  <i class='me-2 bx bx-user'></i>
 							  ${user.name} ${user.last_name}
 							</p>
 						  </div>
+						  
+
 						  <div class="row">
-							<p class="mb-0 ms-3 d-flex align-items-center">
-								<i class='bx bx-envelope'></i>
+							<p class="user d-flex align-items-center start">
+								<i class='me-2 bx bx-envelope'></i>
 							  ${user.email}
 							</p>
 						  </div>
 
-						  <div class="row">
-							<c:choose>
-								<c:when test="${empty user.pais}">
-									<p class="ms-4"><i class='bx bx-world'></i>No se ha seleccionado un país.</p>
-								</c:when>
-								<c:otherwise>
-									<p class="ms-4"><i class='bx bx-world'></i> País: ${user.pais}</p>
-								</c:otherwise>
-							</c:choose>
+						<div class="row">
+							<div class="user d-flex align-items-center start">
+								<c:choose>
+									<c:when test="${empty user.pais}">
+										<p class="user d-flex align-items-center start"><i class='me-2 bx bx-world'></i>No se ha seleccionado un país.</p>
+									</c:when>
+									<c:otherwise>
+										<p class="user d-flex align-items-center start"><i class='me-2 bx bx-world'></i> País: ${user.pais}</p>
+									</c:otherwise>
+								</c:choose>
+							</div>
 							
-						  </div>
-						
+						</div>
 						
 					</div>
 					
 
-					<div class="d-flex flex-column align-items-center">
-						<header class="text center">
-							<h5 class="text-uppercase">Sobre mí</h5>
-						</header>
-						<div class="row descripcion">
+					<div class="d-flex flex-column">
+						<h5 class="text-uppercase ">Sobre mí</h5>
+						<div class="descripcion">
 						 <c:choose>
 							<c:when test="${empty user.descripcion}">
 								<p>No hay descripción disponible.</p>
@@ -623,7 +623,7 @@
 								</div>
 						</div>
 						<footer class="text-center">
-							<p>Necesitas realizar 2 actividades más para subir al nivel 11</p>
+							<p>Necesitas realizar 2 actividades mas para subir al nivel 11</p>
 						</footer>
 					</div>
 				</div>
@@ -639,7 +639,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 	
 
-	<script src="./js/perfil-user.js"></script>
-	<script src="./js/preloader.js"></script>
+	<script src="/js/perfil-user.js"></script>
+	<script src="/js/preloader.js"></script>
 </body>
 </html>

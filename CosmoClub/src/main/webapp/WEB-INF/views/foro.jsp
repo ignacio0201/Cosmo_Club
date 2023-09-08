@@ -499,12 +499,9 @@
 		<div class="content p-5">
 	
 			<div class="form-container bg-white border rounded-3 p-4">
-				<form:form action="/crear-post" method="post" modelAttribute="newPost">
+				<form:form action="/crear-post" method="post" modelAttribute="newPost" enctype="multipart/form-data">
 					<h4>Crea un post</h4>
 					<hr>
-					
-					
-					
 						
 					<form:input path="title" type ="text" placeholder="Título del post..." />
 					<form:errors path="title"/>
@@ -515,7 +512,7 @@
 					<input type="hidden" id="user" name="user" value="${user.id}" />
 					<input type="submit" value="Create">
 					
-					<input type="file"/>
+					<input type="file" name="post_img"/>
 				</form:form>
 			</div>
 			

@@ -101,6 +101,7 @@ footer p{
 }
 .descripcion{
 	font-size: 20px;
+    height: 110px;
 }
 
 
@@ -165,8 +166,19 @@ hr.h-color{
 .icono-perfil{
     width: 15px;
 }
+.user{
+    font-size: 30px;
+    
+}
+/*NAVBAR STYLE*/
 .img-nav {
     width: 4rem;
     height: 4rem;
     object-fit: contain;
+}
+.rounded-circle-border-nav{
+    display: inline-block;
+    border: 2px solid rgb(0, 194, 215); /* Color y grosor del borde */
+    border-radius: 50%; /* Asegura que el borde sea redondeado */
+    padding: 2px; /* Espacio entre el borde y la imagen */
 }

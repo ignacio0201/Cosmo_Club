@@ -25,6 +25,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.cosmoclub.cache.ImageCache;
 import com.cosmoclub.components.PaisesDelMundo;
 import com.cosmoclub.models.Comment;
+import com.cosmoclub.logicaNegocio.Foro;
 import com.cosmoclub.models.Post;
 import com.cosmoclub.models.User;
 import com.cosmoclub.repositories.UserRepository;
@@ -57,6 +58,9 @@ public class UserController {
 
 	@Autowired
 	private PaisesDelMundo paises;
+	
+	@Autowired
+	private Foro foro;
 
 	
 	@GetMapping("/")
@@ -385,18 +389,21 @@ public class UserController {
 	}
 
 	@PostMapping("/crear-post")
-	public String crearPost(@Valid @ModelAttribute("newPost") Post newPost, BindingResult result, Model model, HttpSession session) {
+	public String crearPost(@Valid @ModelAttribute("newPost") Post newPost, @RequestParam("post_img") MultipartFile post_img, BindingResult result, Model model, HttpSession session) {
 		if (result.hasErrors()) {
 			Long userId = (Long) session.getAttribute("userId");
 	        User user = userService.findUserById(userId);
 	        model.addAttribute("user", user);
+	        
 	        List<Post> allPosts = postService.findAllPosts();
 	        model.addAttribute("allPosts", allPosts);
 			return "views/foro.jsp";
 		}
 		Long userId = (Long) session.getAttribute("userId");
 		User user = userService.findUserById(userId);
-		postService.createPost(newPost);
+		Post post = postService.createPost(newPost);
+		foro.guardarImgPost(post, post_img);
+		
 		return "redirect:/foro";
 	}
 	

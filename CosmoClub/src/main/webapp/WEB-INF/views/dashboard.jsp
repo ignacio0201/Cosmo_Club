@@ -597,7 +597,8 @@
                         </a>
                       </div>
                       <div class="col-auto d-none d-lg-block">
-                        <!--<img class="bd-placeholder-img" width="200" height="250"  src="" alt="">-->
+                        <!--AQUI VA LA IMAGEN DEL FORO
+                          <img class="bd-placeholder-img" width="200" height="250"  src="" alt="">-->
                       </div>
                     </div>
 
@@ -609,8 +610,6 @@
 
             <div class="col-sm-4 col-12 p-3">
                 <!--Foto del día-->
-                
-                <!--Foto del día-->
                 <div class="p-2 bg-white border rounded-4 text-center">
                   <h2 class="family-pixel text-uppercase">Foto astronomica del dia</h2>
                   <div class="img-fluid">
@@ -621,7 +620,6 @@
                   
               </div>
               <!--Foto del día-->
-                <!--Foto del día-->
 
                 <!--Conectados-->
                 <div class="conectados bg-white p-3 mt-3 border rounded-4 overflow-y-scroll">

@@ -1,0 +1,109 @@
+/* Fonts */
+@font-face {
+    font-family: Pixel;
+    src: url(../fonts/poxel/poxel-font.ttf);
+}
+@font-face {
+    font-family: Altone;
+    src: url(../fonts/altone/AltoneTrial-Regular.ttf);
+}
+@font-face {
+    font-family: Sanva;
+    src: url(../fonts/sanva/sanva\ font.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/monserrat/MontserratAlternates-Light.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+/*sidebar style*/
+
+#side_nav{
+    background: url(../img/sidebar-foto-2.png);
+    background-size: cover;
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.4s;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins;
+}
+.icono {
+    width: 10rem;
+    align-items: center;
+}
+.content{
+    min-height: 100vh;
+    width: 100%;
+    font-family: Poppins;
+    background: #F4FAFB;
+}
+hr.h-color{
+    background: white;
+}
+
+.sidebar li.active{
+    background: white;
+    border-radius: 8px;
+}
+.sidebar li.active a, 
+.sidebar li.active a:hover{
+    color: darkblue;
+}
+.sidebar li a{
+    color: white;
+    font-size: 20px;
+}
+@media(max-width: 767px){
+    #side_nav{
+        margin-left: -250px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+    #side_nav.active{
+        margin-left: 0;
+    
+    }
+}
+
+.profile{
+	width: 525px;
+	height: 750px;
+	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
+}
+.actividad{
+	width: 525px;
+	height: 375px;
+	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
+}
+.actividad ul li{
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+.nivel{
+	width: 525px;
+	height: 300px;
+	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
+}
+/*NAVBAR STYLE*/
+.img-nav {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+.rounded-circle-border-nav{
+    display: inline-block;
+    border: 2px solid rgb(0, 194, 215); /* Color y grosor del borde */
+    border-radius: 50%; /* Asegura que el borde sea redondeado */
+    padding: 2px; /* Espacio entre el borde y la imagen */
+}
+.family-pixel{
+    font-family: Pixel;
+}
