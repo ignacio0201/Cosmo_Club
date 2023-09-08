@@ -185,7 +185,7 @@
 				</div>
 				<div class="col-1"></div>
 				<div class="col-6 d-flex align-items-center">
-					<img alt="" src="../img/ponerfotoforo.jpg" width="800" height="400">
+					<img alt="" src="../img/foto-foro.png" width="800" height="400">
 				</div>
 	        </div>
         </div>

@@ -566,9 +566,6 @@
                     </div>
                 </nav>
 
-
-
-
                 <div class="container-fluid background">
 
                     <div class="gallery p-3">

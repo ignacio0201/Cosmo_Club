@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,12 +14,9 @@
 	<!--Iconos-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-	<div class="main-container d-flex">
+	<div class="d-flex">
 		<div class="preloader">
 			<svg
 			  class="outer-space"
@@ -474,6 +472,7 @@
 		
 			<h3 class="title"></h3>
 		</div>
+
 		<div class="sidebar" id="side_nav">
 			<div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
 				<h1 class="fs-4">
@@ -493,46 +492,87 @@
 				<li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
 			</ul>
 		</div>
-		<div class="content container-fluid">
-			
-			<div class=" p-5 d-flex flex-row justify-content-between">
-				<div class="perfil rounded-5 border border-secondary-subtle p-3 d-flex flex-column">
-					<header class="text-center d-flex justify-content-between align-items-center">
-						<h2 class="mx-auto mb-0">Mi Perfil</h2>
-						<a href="/perfil/${user.id}"><i class="bi bi-pencil"></i></a>
+		<!--Main-->
+		<div class="content">
+			<!--NavBar-->
+			<nav class="navbar navbar-expand-md bg-white">
+				<div class="container-fluid justify-content-between">
+				  <h1 class="family-pixel text-uppercase">Buen dia, ${user.name} ${user.last_name}!</h1>
+				  <div class="d-flex flex-column align-items-center">
+					<h3 class="progress-title my-2">NIVEL</h3>
+					<div class="progress">
+						<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
+					</div>
+				  </div>
+				  <div class="dropdown dropstart">
+					<a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
+					</a>
+					<ul class="dropdown-menu">
+						<li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="/perfil">Configuración</a></li>
+						<li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+					</ul>
+				</div>
+				</div>
+			</nav>
+			<!--NavBar-->
+
+			<!--Perfil-->
+			<div class="d-flex justify-content-center align-self-center mt-5">
+
+				<div class="d-flex flex-column me-5 border rounded-5 profile p-5">
+					<!--Profile-->
+					<header class="d-flex justify-content-between">
+						<h2 class="text-uppercase">Mi Perfil</h2>
+						<a href="/perfil/${user.id}"><i class='bx bx-edit'></i></a>
 					</header>
-					  <form method="post" action="/perfil" enctype="multipart/form-data" id="imageUploadForm">
-						<div class="profile-img d-flex justify-content-center mt-3">
-							<label for="profile-image" class="img-perfil rounded-circle me-2" style="cursor: pointer;">
-								<img src="data:image/jpeg;base64,${userImageBase64}" class="rounded-circle object-fit-cover justify-content-center" alt="Profile Image" style="height: 300px; width: 300px; position: absolute; left: 425px;">
-								<input id="profile-image" type="file" name="profileImage" style="display: none;" accept="image/*">
-							</label>
-						</div>
-					</form>
-					
-					<div class="d-flex flex-column mt-3" style="position: absolute; top: 425px;">
-						<div class="row">
-							<p class="nombre mb-0 ms-3"><i class="bi bi-person me-5"></i>${user.name} ${user.last_name}</p>
-						</div>
-						
-						<div class="row">
-							<p class="email ms-4 mb-0"><i class="bi bi-envelope-fill me-5 "></i>${user.email}</p>
-						</div>
-						<div class="row">
+
+					<div class="d-flex justify-content-center">
+						<form method="post" action="/perfil" enctype="multipart/form-data" id="imageUploadForm">
 							
+								<label for="profile-image" class="rounded-circle" style="cursor: pointer;">
+									<img src="data:image/jpeg;base64,${userImageBase64}" class="img-perfil rounded-circle object-fit-cover" alt="Profile Image">
+									<input id="profile-image" type="file" name="profileImage" style="display: none;" accept="image/*">
+								</label>
+							
+						</form>
+					</div>
+					
+					<div class="d-flex flex-column mt-3">
+						<div class="row">
+							<p class="mb-0 ms-3 d-flex align-items-center">
+								<i class='bx bx-user'></i>
+							  ${user.name} ${user.last_name}
+							</p>
+						  </div>
+						  <div class="row">
+							<p class="mb-0 ms-3 d-flex align-items-center">
+								<i class='bx bx-envelope'></i>
+							  ${user.email}
+							</p>
+						  </div>
+
+						  <div class="row">
 							<c:choose>
 								<c:when test="${empty user.pais}">
-									<p class="pais ms-4"><i class="bi bi-globe me-5"></i>No se ha seleccionado un país.</p>
+									<p class="ms-4"><i class='bx bx-world'></i>No se ha seleccionado un país.</p>
 								</c:when>
 								<c:otherwise>
-									<p class="pais ms-4"><i class="bi bi-globe me-5"></i> País: ${user.pais}</p>
+									<p class="ms-4"><i class='bx bx-world'></i> País: ${user.pais}</p>
 								</c:otherwise>
 							</c:choose>
-						</div>
+							
+						  </div>
+						
+						
 					</div>
-					<div class="d-flex flex-column align-items-center" style="position: absolute; top: 625px; left: 415px;">
+					
+
+					<div class="d-flex flex-column align-items-center">
 						<header class="text center">
-							<h5>Sobre mí</h5>
+							<h5 class="text-uppercase">Sobre mí</h5>
 						</header>
 						<div class="row descripcion">
 						 <c:choose>
@@ -547,10 +587,10 @@
 					</div>
 				</div>
 		
-				<div class="d-flex flex-column justify-content-between ">
+				<div class="d-flex flex-column justify-content-between">
 					<div class="actividad rounded-5 border border-secondary-subtle p-4">
 						<header class="text-center">
-							<h2>Mi actividad</h2>
+							<h2 class="text-uppercase">Mi actividad</h2>
 							<div class="dropdown custom-dropdown">
 								<a class="btn btn-secondary dropdown-toggle bg-transparent text-body border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Ultimo mes
@@ -574,7 +614,7 @@
 		
 					<div class="nivel rounded-5 border border-secondary-subtle p-4 px-5">
 						<header class="text-center">
-							<h2>Nivel 10</h2>
+							<h2 class="text-uppercase">Nivel 10</h2>
 						</header>
 						 <div class="d-flex flex-column align-items-center">
 								<h3 class="progress-title">NIVEL</h3>
@@ -587,10 +627,16 @@
 						</footer>
 					</div>
 				</div>
+
 			</div>
+			<!--Perfil-->
 		</div>
+		<!--Main-->
 	</div>
 
+	
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 	
 
 	<script src="./js/perfil-user.js"></script>
