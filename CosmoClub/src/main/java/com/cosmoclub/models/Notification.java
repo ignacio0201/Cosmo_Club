@@ -30,9 +30,6 @@ public class Notification {
     @JoinColumn(name="user_id")
     private User user;
 	
-	@OneToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="message_id")
-    private Message message;
 	
 	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="post_id")
@@ -81,13 +78,7 @@ public class Notification {
 		this.user = user;
 	}
 
-	public Message getMessage() {
-		return message;
-	}
-
-	public void setMessage(Message message) {
-		this.message = message;
-	}
+	
 
 	public Post getPost() {
 		return post;

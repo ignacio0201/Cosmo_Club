@@ -7,12 +7,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import com.cosmoclub.models.Plantilla;
 import com.cosmoclub.models.Tag;
 
-@Repository
 public interface PlantillaRepository extends CrudRepository<Plantilla, Long> {
 	
 	List<Plantilla> findAll();

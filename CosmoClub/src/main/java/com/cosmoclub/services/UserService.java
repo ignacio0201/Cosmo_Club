@@ -72,6 +72,8 @@ public class UserService {
             return null; 
         }
     }
-	
+	public List <User> findUsersLike(String q){
+		return userRepo.findByNameLike(q);
+}
 
 }
