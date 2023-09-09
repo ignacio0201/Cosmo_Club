@@ -41,8 +41,7 @@ import jakarta.validation.Valid;
 @Controller
 public class UserController {
 	
-	@Autowired
-	private UserRepository userRepository;
+	
 
 	@Autowired
 	private UserService userService;
@@ -395,8 +394,7 @@ public class UserController {
 	        model.addAttribute("allPosts", allPosts);
 			return "views/foro.jsp";
 		}
-		Long userId = (Long) session.getAttribute("userId");
-		User user = userService.findUserById(userId);
+		
 		Post post = postService.createPost(newPost);
 		foro.guardarImgPost(post, post_img);
 		
