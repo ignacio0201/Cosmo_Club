@@ -507,6 +507,7 @@
 				  <div class="dropdown dropstart">
 					<a type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
+						
 					</a>
 					<ul class="dropdown-menu">
 						<li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>

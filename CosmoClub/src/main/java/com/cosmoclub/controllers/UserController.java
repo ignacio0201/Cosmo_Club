@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cosmoclub.cache.ImageCache;
+import com.cosmoclub.components.CalcularTiempoTranscurrido;
 import com.cosmoclub.components.PaisesDelMundo;
 import com.cosmoclub.models.Comment;
 import com.cosmoclub.logicaNegocio.Foro;
@@ -61,6 +62,9 @@ public class UserController {
 	
 	@Autowired
 	private Foro foro;
+	
+	@Autowired
+	private CalcularTiempoTranscurrido calcTiempoTranscurrido;
 
 	
 	@GetMapping("/")
@@ -378,6 +382,23 @@ public class UserController {
 	        model.addAttribute("user", user);
 	        List<Post> allPosts = postService.findAllPosts();
 	        model.addAttribute("allPosts", allPosts);
+	        
+	     // Crear un mapa para almacenar los recuentos de comentarios por postId
+	        Map<Long, Long> commentCounts = new HashMap<>();
+	        for (Post post : allPosts) {
+	            Long postId = post.getId();
+	            Long numberCommentsDash = commentService.countCommentsByPostId(postId);
+	            commentCounts.put(postId, numberCommentsDash);
+	        }
+	        model.addAttribute("commentCounts", commentCounts);
+	        
+	     // Calcular la diferencia de tiempo y formatearla para cada comentario
+            for (Post post : allPosts) {
+            	String timeAgo = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+//                String timeAgo = commentService.calcularFecha(post.getCreatedAt());
+                post.setTimeAgo(timeAgo);
+            }
+            
 	        return "views/foro.jsp";
 	    } else {
 	        return "redirect:/";
@@ -419,7 +440,7 @@ public class UserController {
 			
 			// Calcular la diferencia de tiempo y formatearla para cada comentario
             for (Comment comment : allCommentsPost) {
-                String timeAgo = commentService.calcularFecha(comment.getCreatedAt());
+            	String timeAgo = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
                 comment.setTimeAgo(timeAgo);
             }
 			return "views/post.jsp";

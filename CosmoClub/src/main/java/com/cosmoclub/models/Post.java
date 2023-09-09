@@ -3,6 +3,7 @@ package com.cosmoclub.models;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.persistence.CascadeType;
@@ -18,6 +19,8 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotEmpty;
@@ -33,16 +36,21 @@ public class Post {
 	@NotEmpty(message = "El título no puede estar vacío.")
 	@Column(nullable = false)
 	private String title;
-
+	
 	@NotEmpty(message = "El post no puede estar vacio.")
 	@Column(columnDefinition = "TEXT", nullable = false)
 	private String content;
 	
 	@Column(columnDefinition = "DATETIME", updatable=false)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Transient
+    private String timeAgo;
+
+	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
     
@@ -65,7 +73,18 @@ public class Post {
         inverseJoinColumns = @JoinColumn(name = "user_id")
     )
     private List<User> rating_user;
-
+    
+    //FECHAS CREACION Y ACTUALIZACION
+    @PrePersist
+	protected void onCreate(){
+   		this.createdAt = new Date();
+	this.updatedAt = new Date();
+	}
+	@PreUpdate
+	protected void onUpdate(){
+    		this.updatedAt = new Date();
+	}
+    
 	public Post() {
 	}
 
@@ -160,6 +179,13 @@ public class Post {
 
 	public void setRating_user(List<User> rating_user) {
 		this.rating_user = rating_user;
+	}
+	
+	public String getTimeAgo() {
+		return timeAgo;
+	}
+	public void setTimeAgo(String timeAgo) {
+		this.timeAgo = timeAgo;
 	}
 
     

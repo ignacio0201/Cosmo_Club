@@ -10,6 +10,6 @@ public interface CommentRepository extends CrudRepository<Comment,Long>{
 	
 	List<Comment> findAllCommentByPostId(Long id);
 	
-	Long countByPostId(Long postId); //this
+	Long countByPostId(Long postId);
 	
 }

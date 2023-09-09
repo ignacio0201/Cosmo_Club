@@ -62,3 +62,19 @@ hr.h-color{
 .img-perfil {
     width: 3rem;
 }
+
+/* POSTS */
+
+.file-input{
+	display: none;
+}
+
+.foro-post-nameuser{
+	font-weight: 600;
+}
+.foro-post-number-comments{
+	color: dimgray;
+}
+.foro-post-timeago{
+	color:gray;
+}
