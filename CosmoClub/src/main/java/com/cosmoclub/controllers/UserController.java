@@ -78,11 +78,7 @@ public class UserController {
 	@GetMapping("/sesion")
 	public String sesion(@ModelAttribute("user")User user, BindingResult result, HttpSession session,Model model) {
 		Long userId = (Long) session.getAttribute("userId");
-		if(userId != null) {
-			return "redirect:/dashboard";
-		}else {
 			return "views/sesion.jsp";
-		}
 	}
 	
 	@PostMapping("/register")
