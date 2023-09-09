@@ -19,7 +19,7 @@ public class Foro {
 	@Autowired
 	private ImgPostService imgPostService;
 	
-	private final String UPLOAD_DIR = "src/main/resources/static/img/";
+	private final String UPLOAD_DIR = "src/main/resources/static/img/post-images";
 	
 	public void guardarImgPost(Post post, MultipartFile post_img) {
 		Path uploadPath = Paths.get(UPLOAD_DIR).toAbsolutePath().normalize();

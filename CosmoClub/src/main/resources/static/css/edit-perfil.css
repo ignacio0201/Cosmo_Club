@@ -79,7 +79,7 @@ hr.h-color{
 }
 .actividad{
 	width: 525px;
-	height: 375px;
+	height: 330px;
 	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
 }
 .actividad ul li{
@@ -89,9 +89,13 @@ hr.h-color{
 
 .nivel{
 	width: 525px;
-	height: 300px;
+	height: 370px;
 	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
 }
+.user-size{
+    font-size: 20px; 
+}
+
 /*NAVBAR STYLE*/
 .img-nav {
     width: 4rem;
@@ -106,4 +110,49 @@ hr.h-color{
 }
 .family-pixel{
     font-family: Pixel;
+}
+
+/*STYLE DE LA BARRA DE PROGRESO*/
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c2647;
+    margin: 0 0 10px;
+}
+.progress{
+    width: 10rem;
+    height: 30px;
+    background: #fff;
+    border-top: 5px solid #1c2647;
+    border-bottom: 5px solid #1c2647;
+    border-radius: 0;
+    margin-bottom: 25px;
+    overflow: visible;
+    position: relative;
+}
+.progress:before,
+.progress:after{
+    content: "";
+    width: 5px;
+    background: #1c2647;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    bottom: 0;
+}
+.progress:after{
+    left: auto;
+    right: -5px;
+}
+.progress .progress-bar{
+    border: none;
+    box-shadow: none;
+    -webkit-animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+    animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+}
+@-webkit-keyframes animate-positive{
+    0%{ width: 0; }
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
 }

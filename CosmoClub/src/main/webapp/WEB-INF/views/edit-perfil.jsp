@@ -521,65 +521,57 @@
 
 			<div class="d-flex justify-content-center align-self-center mt-5">
 
-				<div class="profile d-flex me-5 flex-column border rounded-5 p-5">
-
-					<header class="d-flex justify-content-between">
-						<h2 class="family-pixel text-uppercase">Editar Perfil</h2>
+				<div class="profile d-flex flex-column border rounded-5 p-5 me-5">
+					<header class="text-center">
+					  <h2 class="family-pixel text-uppercase">Editar Perfil</h2>
 					</header>
-
-					<div class="d-flex justify-content-center">
-						<form:form class="" accept-charset="UTF-8" action="/perfil/${user.id}/edit" method="POST" modelAttribute="user">
-							<div class="d-flex flex-column mt-3">
-								
-								<div class="row">
-									<form:label path="name" class=""><i class='me-2 bx bx-user'></i>Nombre:</form:label>
-									<form:input type="text" path="name" class=""/>
-									<form:errors path="name" />
-								</div>
-								
-								<div class="row">
-									
-									<form:label path="last_name" class=""><i class='me-2 bx bx-user'></i>Apellido:</form:label>
-									<form:input type="text" path="last_name" class=""/>
-									<form:errors path="last_name" />
-								</div>
-								<div class="row">
-									
-									<form:label path="email" class=""><i class='me-2 bx bx-envelope'></i>Correo Electronico:</form:label>
-									<form:input type="email" path="email" class=""/>
-									<form:errors path="email" />
-								</div>
-								<div class="row">
-									<form:label path="pais" for="pais" class=""><i class='me-2 bx bx-world'></i>Paises</form:label>
-									<form:select path="pais" class="form-select">
-										<c:forEach items="${paises}" var="paises">                    
-											<option value="${paises}">${paises}</option>             
-										</c:forEach>
-									</form:select>
-								</div>
-							</div>
-							<div class="d-flex flex-column align-items-center">
-								<header class="text center">
-									<h5><i class="bi bi-pencil-square"></i>Agrega una descripcion</h5>
-									
-								</header>
-								<form:label path="descripcion" for="" class=""></form:label>
-								<form:textarea path="descripcion" rows="4" cols="50"></form:textarea>
-								<form:errors path="descripcion" />
-							</div>
-							<footer>
-								<input type="submit" class="btn btn-primary" value="Editar Perfil" />
-							</footer>
-
-				   		</form:form>
-					</div>
-				  	
-				</div>
+					<form:form accept-charset="UTF-8" action="/perfil/${user.id}/edit" method="POST" modelAttribute="user">
+					  <div class="d-flex flex-column justify-content-center mt-3">
+						<div class="mb-3">
+						  <form:label class="user-size d-flex align-items-center start" path="name"><i class='me-2 bx bx-user'></i>Nombre:</form:label>
+						  <form:input type="text" path="name" class="form-control" />
+						  <form:errors path="name" />
+						</div>
+						<div class="mb-3">
+						  <form:label class="user-size d-flex align-items-center start" path="last_name"><i class='me-2 bx bx-user'></i>Apellido:</form:label>
+						  <form:input type="text" path="last_name" class="form-control" />
+						  <form:errors path="last_name" />
+						</div>
+						<div class="mb-3">
+						  <form:label class="user-size d-flex align-items-center start" path="email"><i class='me-2 bx bx-envelope'></i>Correo Electrónico:</form:label>
+						  <form:input type="email" path="email" class="form-control" />
+						  <form:errors path="email" />
+						</div>
+						<div class="mb-3">
+						  <form:label class="user-size d-flex align-items-center start" path="pais" for="pais"><i class='me-2 bx bx-world'></i>Países</form:label>
+						  <form:select path="pais" class="form-select">
+							<c:forEach items="${paises}" var="pais">
+							  <option value="${pais}">${pais}</option>
+							</c:forEach>
+						  </form:select>
+						</div>
+					  </div>
+					  <div class="d-flex flex-column align-items-center mt-4">
+						<header class="text-center mb-2">
+						  <h5 class="text-uppercase"><i class="bi bi-pencil-square"></i>Agrega una descripción</h5>
+						</header>
+						<div class="mb-3">
+						  <form:label path="descripcion"></form:label>
+						  <form:textarea path="descripcion" rows="4" cols="50" class="form-control"></form:textarea>
+						  <form:errors path="descripcion" />
+						</div>
+					  </div>
+					  <footer class="text-center mt-4">
+						<input type="submit" class="btn btn-primary" value="Editar Perfil" />
+					  </footer>
+					</form:form>
+				  </div>
+				  
 		
 				<div class="d-flex flex-column justify-content-between ">
 					<div class="actividad rounded-5 border border-secondary-subtle p-4">
 						<header class="text-center">
-							<h2 class="text-uppercase">Mi actividad</h2>
+							<h2 class="family-pixel text-uppercase">Mi actividad</h2>
 							<div class="dropdown custom-dropdown">
 								<a class="btn btn-secondary dropdown-toggle bg-transparent text-body border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Ultimo mes
@@ -590,7 +582,7 @@
 								</ul>
 							</div>
 						</header>
-						<div class="d-flex justify-content-center mt-3">
+						<div class="d-flex justify-content-center">
 							<ul class="">
 							  <li class="mb-2">Has subido 2 post al foro.</li>
 							  <li class="mb-2">Has jugado 4 horas.</li>
@@ -618,10 +610,12 @@
 								<label for="confirmarContrasena">Confirmar Nueva Contraseña</label>
 								<input type="password" class="form-control" id="confirmarContrasena" name="confirmarContrasena" required>
 							</div>
-							<button type="submit" class="btn btn-light text-dark">Cambiar Contraseña</button>
+							<div class="form-group text-center mt-3">
+								<button type="submit" class="btn btn-light text-dark">Cambiar Contraseña</button>
+							  </div>
 						</form>
 						 <c:if test="${not empty error}">
-							<div class="alert alert-danger mt-3">
+							<div class="text-danger text-center mt-3">
 								${error}
 							</div>
 						</c:if>
