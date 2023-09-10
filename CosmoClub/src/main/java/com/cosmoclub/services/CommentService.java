@@ -35,6 +35,7 @@ public class CommentService {
 	}
 	
 	public Long countCommentsByPostId(Long postId) {
+		
         return commentRepo.countByPostId(postId); //this
     }
 	

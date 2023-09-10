@@ -500,7 +500,7 @@
 			</ul>
 		</div>
 		<div class="content">
-			<div class="container w-50 mt-3">
+			<div class="container w-75 mt-3">
 				<div class="form-container bg-white border rounded-3 p-4">
 					<form:form action="/crear-post" method="post" modelAttribute="newPost" enctype="multipart/form-data">
 						
@@ -514,12 +514,12 @@
 						<input type="hidden" id="user" name="user" value="${user.id}" />
 						
 						<div class="row" style="background-color: lightblue;">
-							<input class="col-6 rounded btn btn-primary mt-3 w-25 border-0 rounded-pill" type="submit" value="Post">
+							<input class="col form-control rounded btn btn-primary mt-3 w-25 border-0 rounded-pill d-inline-block" type="submit" value="Post">
 	
-							<label for="col-6 file-upload" class="custom-file-upload">
-	    						<i class="bi bi-image-fill " ></i>
+							<label for="col file-upload" class="custom-file-upload">
+	    						<i class="bi bi-image-fill d-inline-block" ></i>
 							</label>
-							<input id="file-upload" class="file-input" type="file" name="post_img" />
+							<input class="form-control" id="file-upload" class="file-input" type="file" name="post_img" />
 						</div>
 					</form:form>
 				</div>
@@ -547,17 +547,25 @@
 	            					<p class="foro-post-number-comments">
 	            						<c:choose>
 						                    <c:when test="${numberCommentsForo == 0}">
-						                        Sé la primera persona en comentar!
+						                        Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
 						                    </c:when>
 						                    <c:when test="${numberCommentsForo == 1}">
-						                        1 persona ha comentado esto
+						                        1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
 						                    </c:when>
 						                    <c:otherwise>
-						                        ${numberCommentsForo} personas han comentado esto
+						                        ${numberCommentsForo} personas han comentado <i class="bi bi-chat-dots-fill"></i>
 						                    </c:otherwise>
 						                </c:choose>
 	            					</p>
-	        					</div>  
+	        					</div>
+	        					
+	        					
+	        					<!-- <div class="col-auto d-none d-lg-block">
+                          			<c:forEach var="imagen" items="${post.images}">
+										<img class="bd-placeholder-img align-items-top" src="/img${imagen.post_images}" alt="" width="200" height="250">
+									</c:forEach>
+                      			</div> -->
+	        					
 	        				</div>	
 						</a>
 					</div>

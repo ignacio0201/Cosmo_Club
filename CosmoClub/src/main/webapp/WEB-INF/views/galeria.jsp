@@ -530,7 +530,7 @@
                             <i class='bx bx-align-left'></i>
                             <span></span>
                         </button>
-                        <h1 class="welcome-text text-uppercase my-3">Buen dia, ${user.name} ${user.last_name}!</h1>
+                        <h1 class="welcome-text text-uppercase my-3">${saludar}, ${user.name} ${user.last_name}!</h1>
 
                         <!-- Botón del menú para pantallas pequeñas -->
                         <button class="btn me-2 navbar-toggler" type="button" data-bs-toggle="collapse"

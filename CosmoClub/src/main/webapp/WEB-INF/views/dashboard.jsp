@@ -18,6 +18,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -503,7 +505,7 @@
         <!--NavBar-->
         <nav class="navbar navbar-expand-md bg-white mt-3">
           <div class="container-fluid justify-content-between">
-            <h1 class="family-pixel text-uppercase">Buen dia, ${user.name} ${user.last_name}!</h1>
+            <h1 class="family-pixel text-uppercase">${saludar}, ${user.name} ${user.last_name}!</h1>
             <div class="d-flex flex-column align-items-center">
               <h3 class="progress-title my-2">NIVEL</h3>
               <div class="progress">
@@ -586,8 +588,11 @@
                           <strong class="d-inline-block mb-2 me-3 text-primary-emphasis">
                             <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
                           </strong>${post.user.name} ${post.user.last_name}
+                          
+							<p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
                         </h3>
-                        <div class="mb-1 text-body-secondary">${numberCommentsDash} personas han comentado esto</div>
+                        
+                        
                         <p class="card-text mb-auto">
                           <c:set var="limitedContent" value="${fn:substring(post.content, 0, 200)}" />
                           ${limitedContent}...
@@ -595,16 +600,32 @@
                         <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
                           Continuar leyendo...
                         </a>
+                        
+                        <div class="mb-1 text-body-secondary mt-2">
+                        	<c:choose>
+						        <c:when test="${numberCommentsDash == 0}">
+						        	Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
+						        </c:when>
+						        <c:when test="${numberCommentsDash == 1}">
+						        	1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
+						        </c:when>
+						        <c:otherwise>
+						       		${numberCommentsDash} personas han comentado <i class="bi bi-chat-dots-fill"></i>
+						    	</c:otherwise>
+							</c:choose>
+                        </div>
+                        
                       </div>
                       <div class="col-auto d-none d-lg-block">
-                        <!--AQUI VA LA IMAGEN DEL FORO
-                          <img class="bd-placeholder-img" width="200" height="250"  src="" alt="">-->
+                        	<!-- AQUI VA LA IMAGEN DEL FORO -->
+                          	<c:forEach var="imagen" items="${post.images}">
+								<img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="" width="200" height="250"">
+							</c:forEach>
                       </div>
                     </div>
 
                   </c:forEach>
                 </div>
-                    <!--Parte del foro-->
                 <!--Parte del foro-->
             </div>
 

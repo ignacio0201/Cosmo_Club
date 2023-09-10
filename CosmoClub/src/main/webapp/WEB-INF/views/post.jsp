@@ -22,7 +22,19 @@
 			<img class="img-post" src="/img${imagen.post_images}" alt="" style="width: 300px; height: 300px;">
 		</c:forEach>
 
-		<p style="color: orange;">${numberCommentsPost} personas han comentado esto</p>
+		<p style="color: orange;">
+		<c:choose>
+			<c:when test="${numberCommentsPost == 0}">
+				Sé la primera persona en comentar!
+			</c:when>
+			<c:when test="${numberCommentsPost == 1}">
+				1 persona ha comentado
+			</c:when>
+			<c:otherwise>
+				${numberCommentsPost} personas han comentado
+			</c:otherwise>
+		</c:choose>
+		</p>
 		
 		
 		<div class="form-container">
