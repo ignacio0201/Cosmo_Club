@@ -1,24 +1,22 @@
-.content{
-    min-height: 100vh;
-    width: 100%;
-    font-family: Poppins;
-    background: #dffaff;
+.rating {
+    display: flex;
+    
 }
-.img-perfil {
-    width: 3rem;
+.estrellas {
+    font-size: 32px;
+    color: #ddd;
+    transition: color 0.3s;
+    cursor: pointer;
 }
-.foro-post-timeago{
-	color:gray;
+
+ .estrellas:hover{
+	  color: gold;
+	  cursor: default;
+ }
+.estrellas.checked {
+    color: gold;
+    cursor: default;
 }
-.comentario-form{
-	max-height: 300px;
-}
-.btn-comentar{
-	background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
-	color: white;
-	font-weight: 600;
-	transition: background-image 0.3s;
-}
-.btn-comentar:hover{
-	background-image: linear-gradient(to right, #48AAC9, #1E75A7, #0A488F);
-}
+
+
+
