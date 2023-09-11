@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>CosmoClub</title>
-    <link rel="icon" type="image/x-icon" href="../img/icon.ico">
+	<link rel="icon" type="image/x-icon" href="../img/icons/logo_negro.ico">
  	<link rel="stylesheet" href="../css/edit-perfil.css">
 	<link rel="stylesheet" href="../css/preloader.css">
 	<!--Iconos-->
@@ -476,13 +476,13 @@
 		<div class="sidebar" id="side_nav">
 			<div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
 				<h1 class="fs-4">
-				  <img class="icono" src="../img/logo.jpeg" alt="">
-				  <span class="text-white">CosmoClub</span>
-				</h1>
+					<img class="logo-sidebar mb-3" src="../img/logo_blanco.png" alt="">
+					<span class="text-white family-pixel text-uppercase">CosmoClub</span>
+				  </h1>
 				<button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fa-solid fa-bars-staggered"></i></button>
 			</div>
 	
-			<ul class="list-unstyled px-2">
+			<ul class="list-unstyled px-5">
 				<li class="active"><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
 				<li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
 				<li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>

@@ -19,7 +19,9 @@
     font-family: Poppins;
     src: url(../fonts/Poppins/Poppins-Light.ttf);
 }
-/*sidebar style*/
+body{
+    background-color: aliceblue;
+}
 
 #side_nav{
     background: url(../img/sidebar-foto-2.png);
@@ -37,14 +39,13 @@
 .sidebar span{
     font-size: 30px;
 }
-.logo-sidebar {
-    width: 13rem;
-}
 .content{
     min-height: 100vh;
     width: 100%;
     font-family: Poppins;
-    background: #F4FAFB;
+    background: rgb(76, 77, 133);
+    background-image: url(../img/img-chat/pixel2.png);
+    background-repeat: repeat;
 }
 hr.h-color{
     background: white;
@@ -74,35 +75,23 @@ hr.h-color{
     
     }
 }
-
-.profile{
-	width: 525px;
-	height: 750px;
-	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
+.family-pixel{
+    font-family: Pixel;
 }
-.actividad{
-	width: 525px;
-	height: 330px;
-	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
+.logo-sidebar {
+    width: 13rem;
 }
-.actividad ul li{
-	font-size: 20px;
-	letter-spacing: 1px;
+.icono-navbar{
+    width: 2rem;
 }
-
-.nivel{
-	width: 525px;
-	height: 370px;
-	background: linear-gradient(90deg, rgba(224,224,249,1) 0%, rgba(222,244,249,1) 100%);
-}
-.user-size{
-    font-size: 20px; 
-}
-
-/*NAVBAR STYLE*/
 .img-nav {
     width: 4rem;
     height: 4rem;
+    object-fit: contain;
+}
+.img-perfil {
+    width: 3rem;
+    height: 3rem;
     object-fit: contain;
 }
 .rounded-circle-border-nav{
@@ -110,9 +99,6 @@ hr.h-color{
     border: 2px solid rgb(0, 194, 215); /* Color y grosor del borde */
     border-radius: 50%; /* Asegura que el borde sea redondeado */
     padding: 2px; /* Espacio entre el borde y la imagen */
-}
-.family-pixel{
-    font-family: Pixel;
 }
 
 /*STYLE DE LA BARRA DE PROGRESO*/
@@ -159,3 +145,6 @@ hr.h-color{
 @keyframes animate-positive{
     0%{ width: 0; }
 }
+
+
+/*CHAT CSS*/

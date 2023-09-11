@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CosmoClub</title>
-    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <link rel="icon" type="image/x-icon" href="img/icons/logo_negro.ico">
     <script src="https://kit.fontawesome.com/9e0d9f4598.js" crossorigin="anonymous"></script>
     <!--CSS personalizado-->
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -19,7 +19,7 @@
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -485,13 +485,13 @@
       <div class="sidebar" id="side_nav">
         <div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
             <h1 class="fs-4">
-              <img class="icono" src="img/logo.jpeg" alt="">
-              <span class="text-white">CosmoClub</span>
+              <img class="logo-sidebar mb-3" src="img/logo_blanco.png" alt="">
+              <span class="text-white family-pixel text-uppercase">CosmoClub</span>
             </h1>
             <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fa-solid fa-bars-staggered"></i></button>
         </div>
 
-        <ul class="list-unstyled px-2">
+        <ul class="list-unstyled px-5">
             <li class="active"><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
             <li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
             <li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>
@@ -501,11 +501,11 @@
             <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
         </ul>
       </div>
-    <div class="content container-fluid">
+    <div class="content">
         <!--NavBar-->
-        <nav class="navbar navbar-expand-md bg-white mt-3">
+        <nav class="navbar navbar-expand-md bg-white">
           <div class="container-fluid justify-content-between">
-            <h1 class="family-pixel text-uppercase">${saludar}, ${user.name} ${user.last_name}!</h1>
+            <h1 class="family-pixel text-uppercase ms-5">${saludar}, ${user.name} ${user.last_name}!</h1>
             <div class="d-flex flex-column align-items-center">
               <h3 class="progress-title my-2">NIVEL</h3>
               <div class="progress">
@@ -522,16 +522,15 @@
                   <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
                   <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
               </ul>
-          </div>
+            </div>
           </div>
         </nav>
         <!--NavBar-->
-        <div class="row">
-
-            <div class="col-sm-8 col-12 p-3">
+        <div class="row container-fluid">
+            <div class="col-sm-8 col-12 p-4">
                 <!--Carrusel con los cursos--> 
-                <div class="cursos mb-3 p-3 bg-white border rounded-4"> 
-                    <h3>CURSOS</h3>
+                <div class="cursos mb-5 p-4 bg-white border rounded-5"> 
+                    <h2 class="family-pixel text-uppercase">CURSOS</h2>
                     <div class="container">
                       <span id="rateMe1"></span>
                     </div>
@@ -539,25 +538,25 @@
                     <div id="carouselExample" class="carousel slide">
                       <div class="carousel-inner">
                         <div class="carousel-item active">
-                          <a href="/curso"><img src="img/sistema-solar.jpeg" class="d-block w-100 img-cursos" alt="..."></a>                      
+                          <a href="/curso"><img src="img/img-cursos/sistema-solar.jpeg" class="d-block w-100 img-cursos" alt="curso-sistemasolar"></a>                      
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Sistema solar</h4>
                           </div>
                         </div>
                         <div class="carousel-item">
-                          <a href=""><img src="img/planetas.png" class="d-block w-100 img-cursos" alt="..."></a>                      
+                          <a href=""><img src="img/img-cursos/planetas.png" class="d-block w-100 img-cursos" alt="curso-planetas"></a>                      
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Exo Planetas</h4>
                           </div>
                         </div>
                         <div class="carousel-item">
-                          <a href=""><img src="img/sol.png" class="d-block w-100 img-cursos" alt="..."></a>
+                          <a href=""><img src="img/img-cursos/sol.png" class="d-block w-100 img-cursos" alt="curso-sol"></a>
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Estrellas</h4>
                           </div>
                         </div>
                         <div class="carousel-item">
-                          <a href=""><img src="img/galaxia.png" class="d-block w-100 img-cursos" alt="..."></a>
+                          <a href=""><img src="img/img-cursos/galaxia.png" class="d-block w-100 img-cursos" alt="curso-galaxia"></a>
                           <div class="carousel-caption d-none d-md-block">
                             <h4>Galaxias</h4>
                           </div>
@@ -577,7 +576,8 @@
                 <!--Carrusel con los cursos--> 
                 
                 <!--Parte del foro-->
-                <div class="foro p-3 bg-white border rounded-4 overflow-y-scroll">
+                <div class="foro p-4 bg-white border rounded-5 overflow-y-scroll">
+                  <h2 class="family-pixel text-uppercase">Ultimas publicaciones:</h2>
 
                   <c:forEach items="${allPosts}" var="post">
                        <c:set var="postId" value="${post.id}" />
@@ -588,8 +588,7 @@
                           <strong class="d-inline-block mb-2 me-3 text-primary-emphasis">
                             <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
                           </strong>${post.user.name} ${post.user.last_name}
-                          
-							<p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
+                          <p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
                         </h3>
                         
                         
@@ -629,21 +628,21 @@
                 <!--Parte del foro-->
             </div>
 
-            <div class="col-sm-4 col-12 p-3">
+            <div class="col-sm-4 col-12 p-4">
                 <!--Foto del día-->
-                <div class="p-2 bg-white border rounded-4 text-center">
+                <div class="p-2 bg-white border rounded-5 text-center">
                   <h2 class="family-pixel text-uppercase">Foto astronomica del dia</h2>
                   <div class="img-fluid">
-                  <!--<video id="pic" src="https://www.youtube.com/watch?v=QmCFdFGNwmo" alt="NASA Picture Of The Day"></video>-->
-                  <iframe width="400" height="340" src="https://www.youtube.com/embed/QmCFdFGNwmo?si=Sp8Y5IS2-pWVLPn0?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                  <img class="rounded-4" id="pic" src="" alt="NASA Picture Of The Day"/>
                   </div>
-                  <h3 id="title"></h3>
-                  
-              </div>
-              <!--Foto del día-->
+
+                  <p id="date" class="family-pixel" style="font-size: 30px;"></p>
+                  <h4 id="title"></h4>
+                </div>
+                <!--Foto del día-->
 
                 <!--Conectados-->
-                <div class="conectados bg-white p-3 mt-3 border rounded-4 overflow-y-scroll">
+                <div class="conectados bg-white p-3 mt-5 border rounded-5 overflow-y-scroll">
                   <div class="border border-white px-4">
                     <h3 class="family-pixel text-uppercase">Usuarios conectados</h3>
                     <c:forEach var="user" items="${connectedUsers}">

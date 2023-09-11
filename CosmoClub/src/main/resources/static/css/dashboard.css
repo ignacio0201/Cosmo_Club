@@ -26,8 +26,9 @@ body{
 #side_nav{
     background: url(../img/sidebar-foto-2.png);
     background-size: cover;
-    min-width: 250px;
-    max-width: 250px;
+    background-position: center;
+    min-width: 320px;
+    max-width: 320px;
     transition: all 0.4s;
 }
 .sidebar{
@@ -35,11 +36,14 @@ body{
     flex-direction: column;
     font-family: Poppins;
 }
+.sidebar span{
+    font-size: 30px;
+}
 .content{
     min-height: 100vh;
     width: 100%;
     font-family: Poppins;
-    background: #d5f9fd;
+    background: #e5fcff;
 }
 hr.h-color{
     background: white;
@@ -47,7 +51,7 @@ hr.h-color{
 
 .sidebar li.active{
     background: white;
-    border-radius: 8px;
+    border-radius: 30px;
 }
 .sidebar li.active a, 
 .sidebar li.active a:hover{
@@ -55,7 +59,7 @@ hr.h-color{
 }
 .sidebar li a{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
 }
 @media(max-width: 767px){
     #side_nav{
@@ -72,9 +76,8 @@ hr.h-color{
 .family-pixel{
     font-family: Pixel;
 }
-.icono {
-    width: 10rem;
-    align-items: center;
+.logo-sidebar {
+    width: 13rem;
 }
 .icono-navbar{
     width: 2rem;
@@ -101,12 +104,22 @@ hr.h-color{
 .progress {
     width: 15rem;
 }
-.foro{
-    height: 48vh;
+.foro {
+    height: 540px;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Oculta la barra de desplazamiento de Firefox */
+    -ms-overflow-style: none; /* Oculta la barra de desplazamiento de Internet Explorer y Edge */
 }
+
+.foro::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento de Webkit (Chrome, Safari, Opera) */
+}
+
 .conectados {
-    height: 35%;
+    height: 265px;
+    overflow: hidden; /* Oculta la barra de desplazamiento */
 }
+
 .checked {
     color: orange;
 }
@@ -114,8 +127,8 @@ hr.h-color{
     object-fit: cover;
 }
 #pic {
-    width: 90%;
-    height: 100%;
+    width: 500px;
+    height: 450px;
     object-fit: cover;
 }
 .rounded-circle-border {

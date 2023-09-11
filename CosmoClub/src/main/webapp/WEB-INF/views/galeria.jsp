@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CosmoClub</title>
-        <link rel="icon" type="image/x-icon" href="img/icon.ico">
+        <link rel="icon" type="image/x-icon" href="img/logo_negro.ico">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="/css/gallery.css">
         <link rel="stylesheet" href="/css/preloader.css">
@@ -493,23 +493,22 @@
 
         <div class="wrapper">
             <!-- Sidebar  -->
-
             <nav class="sidebar" id="sidebar">
                 <div id="dismiss">
                     <i class="fas fa-arrow-left"></i>
                 </div>
 
                 <div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
-                    <h1 class="fs-4">
-                        <img class="logo" src="img/logo.jpeg" alt="">
-                        <span class="text-white">CosmoClub</span>
-                    </h1>
+                  <h1 class="fs-4">
+                    <img class="logo-sidebar mb-3" src="img/logo_blanco.png" alt="">
+                    <span class="text-white family-pixel text-uppercase">CosmoClub</span>
+                  </h1>
                     <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i
                             class="fa-solid fa-bars-staggered"></i></button>
                 </div>
 
 
-                <ul class="list-unstyled px-2">
+                <ul class="list-unstyled px-5">
                     <li class=""><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
                     <li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book'></i> Aprender</a></li>
                     <li class="active"><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images'></i> Galeria</a></li>
@@ -522,9 +521,9 @@
 
             </nav>
 
-            <!-- Page Content  -->
+            <!-- Contenido  -->
             <div id="content">
-                <nav class="navbar navbar-expand-md navbar-light bg-body-tertiary">
+                <nav class="navbar navbar-expand-md navbar-light bg-white border">
                     <div class="container-fluid">
                         <button type="button" id="sidebarCollapse" class="btn me-2">
                             <i class='bx bx-align-left'></i>
@@ -541,7 +540,6 @@
 
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                             <div class="col-md-4 col-12 d-flex align-items-center text-center">
-                                <!-- Contenedor para centrar vertical y horizontalmente -->
                                 <div class="d-flex flex-column align-items-center">
                                     <h3 class="progress-title my-2">NIVEL</h3>
                                     <div class="progress">

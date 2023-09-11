@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CosmoClub</title>
-    <link rel="icon" type="image/x-icon" href="img/icon.jpeg">
+    <link rel="icon" type="image/x-icon" href="img/logo_negro.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/sesion.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"> <img class="logo" src="../img/logo.jpeg" alt="Logo de la pagina" width="70px"><span class="logo-name">COSMOCLUB</span></a>
+                <a class="navbar-brand" href="/"> <img class="logo" src="../img/logo_blanco.png" alt="Logo de la pagina" width="70px"><span class="logo-name">COSMOCLUB</span></a>
             </div>
         </nav>
     </header>

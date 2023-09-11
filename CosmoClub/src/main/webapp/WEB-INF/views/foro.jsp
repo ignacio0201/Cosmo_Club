@@ -483,13 +483,13 @@
 		<div class="sidebar" id="side_nav">
 			<div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
 				<h1 class="fs-4">
-				  <img class="icono" src="img/logo.jpeg" alt="">
-				  <span class="text-white">CosmoClub</span>
-				</h1>
+					<img class="logo-sidebar mb-3" src="img/logo_blanco.png" alt="">
+					<span class="text-white family-pixel text-uppercase">CosmoClub</span>
+				  </h1>
 				<button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fa-solid fa-bars-staggered"></i></button>
 			</div>
 	
-			<ul class="list-unstyled px-2">
+			<ul class="list-unstyled px-5">
 				<li class=""><a href="/dashboard" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-home'></i> Dashboard</a></li>
 				<li class=""><a href="/aprender" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-book' ></i> Aprender</a></li>
 				<li class=""><a href="/galeria" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-images' ></i> Galeria</a></li>
@@ -500,6 +500,28 @@
 			</ul>
 		</div>
 		<div class="content">
+			<nav class="navbar navbar-expand-md bg-white">
+				<div class="container-fluid justify-content-between">
+				  <h1 class="family-pixel text-uppercase">${saludar}, ${user.name} ${user.last_name}!</h1>
+				  <div class="d-flex flex-column align-items-center">
+					<h3 class="progress-title my-2">NIVEL</h3>
+					<div class="progress">
+						<div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
+					</div>
+				  </div>
+				  <div class="dropdown dropstart">
+					<a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
+					</a>
+					<ul class="dropdown-menu">
+						<li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="/perfil">Configuración</a></li>
+						<li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+					</ul>
+				</div>
+				</div>
+			</nav>
 			<div class="container w-75 mt-3">
 				<div class="form-container bg-white border rounded-3 p-4">
 					<form:form action="/crear-post" method="post" modelAttribute="newPost" enctype="multipart/form-data">

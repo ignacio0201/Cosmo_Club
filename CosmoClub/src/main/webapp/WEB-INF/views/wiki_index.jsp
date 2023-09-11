@@ -13,6 +13,8 @@
 	<!--CSS personalizado-->
 	<link rel="stylesheet" href="/css/indexwiki.css">
 	<link rel="stylesheet" href="/css/preloader.css">
+	<!--Iconos-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <!--Fonts-->
@@ -20,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
-<body class="body family-poppins">
+<body class="main-container d-flex">
 	<div class="preloader">
 		<svg
 		  class="outer-space"
@@ -476,16 +478,15 @@
 	
 		<h3 class="title"></h3>
 	</div>
-
-	<div class="sidebar bg-info">
-		<div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
+	<div class="sidebar" id="side_nav">
+        <div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
             <h1 class="fs-4">
-              <img class="icono" src="img/icon.jpeg" alt="">
-              <h2 class="mb-5 text-center family-pixel text-uppercase"><a href="/wiki">WikiCosmos</a></h2>
+              <img class="logo-sidebar mb-3" src="img/logo_blanco.png" alt="">
+              <span class="text-white family-pixel text-uppercase">CosmoClub</span>
             </h1>
+            <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fa-solid fa-bars-staggered"></i></button>
         </div>
-    	
-	    <div class="accordion" id="accordionExample">
+		<div class="accordion px-4" id="accordionExample">
 	        <c:forEach var="etiqueta" items="${articulosPorEtiqueta}">
 	            <div class="accordion-item mb-3">
 	                <h2 class="accordion-header">
@@ -505,59 +506,85 @@
 	            </div>
 	        </c:forEach>
 	    </div>
-	</div>
+        
+      </div>
 
 
-	<div class="container">
-		<nav class="navbar navbar-expand-lg bg-white mb-2">
-		    <div class="container-fluid">
+	<div class="content">
+		<nav class="navbar navbar-expand-md bg-white">
+		    <div class="container-fluid justify-content-between">
 		        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
 		            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		            <span class="navbar-toggler-icon"></span>
 		        </button>
 		        <div class="collapse navbar-collapse" id="navbarNav">
 		            <ul class="navbar-nav">
-		                <li class="nav-item"><a class="nav-link active" href="/dashboard"><i class='bx bx-home'></i> Dashboard</a></li>
-		                <li class="nav-item"><a class="nav-link" href="/aprender"><i class='bx bx-book'></i> Aprender</a></li>
-		                <li class="nav-item"><a class="nav-link" href="/galeria"><i class='bx bx-images'></i> Galeria</a></li>
-		                <li class="nav-item"><a class="nav-link" href="/juegos"><i class='bx bxs-invader'></i> Juegos </a></li>
+						<li class="nav-item"><a class="nav-link" href="/dashboard"><i class='bx bx-home'></i> Dashboard</a></li>
+						<li class="nav-item"><a class="nav-link" href="/aprender"><i class='bx bx-book'></i> Aprender</a></li>
+						<li class="nav-item"><a class="nav-link" href="/galeria"><i class='bx bx-images'></i> Galeria</a></li>
+						<li class="nav-item"><a class="nav-link" href="/juegos"><i class='bx bxs-invader'></i> Juegos </a></li>
 						<li class="nav-item"><a class="nav-link" href="/cosmochat"><i class='bx bx-chat' ></i> CosmoChat</a></li>
-		                <li class="nav-item"><a class="nav-link" href="/wiki"><i class='bx bxl-wikipedia'></i> WikiCosmos</a></li>
-		                <li class="nav-item"><a class="nav-link" href="/foro"><i class='bx bx-group'></i> Foro</a></li>
-		            </ul>
+						<li class="nav-item"><a class="nav-link" href="/wiki"><i class='bx bxl-wikipedia'></i> WikiCosmos</a></li>
+						<li class="nav-item"><a class="nav-link" href="/foro"><i class='bx bx-group'></i> Foro</a></li>
+					</ul>
+					
 		        </div>
+				<div class="dropdown dropstart">
+					<a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
+					</a>
+					<ul class="dropdown-menu">
+						<li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="/perfil">Configuración</a></li>
+						<li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+					</ul>
+				</div>
 		    </div>
 		</nav>
 
 		<div class="d-flex flex-column justify-content-center p-4">
-			<div class="border bg-white">
+			<div class="bienvenida border bg-white">
 				<div class="p-4 d-flex flex-column align-items-center justify-content-around">
 					<h1 class="family-pixel text-uppercase">Bienvenidos a WikiCosmos</h1>
 					<p> Una enciclopedia de contenido libre sobre astronomia, que todos pueden editar y agregar articulos.
 					</p>
 				</div>
-				
 			</div>
-			<div class="">
+			<div class="div2">
 				<div class="mt-3 p-4 d-flex flex-column align-items-center justify-content-center bg-white border">
-					<p>
+					<p class="parrafo">
     					Actualmente hay <a href="/buscar?articulo=">${cantidadArticulos} Artículos</a> en la Wiki.
 					</p>
 					
 					<form action="/buscar" method="post">
-						<label class="">Busca aqui un articulo</label>
+						<label class="parrafo"><p>Busca aquí un articulo</p></label>
 						<input class="search" type="search" id="inputArticulo" name="articulo" placeholder="Busca un articulo">
-						<input class="btn btn-success " type="submit" value="New Search" />
+						<input class="btn btn-success" type="submit" value="New Search" />
 					</form>
-					
-					<form:form class="" accept-charset="UTF-8" action="/wiki" method="POST" modelAttribute="tag">
-						<form:label path="etiqueta" for="etiqueta">Añade una Etiqueta</form:label>
+
+					<!-- Trigger/Open The Modal -->
+					<button class="btn btn-primary" id="myBtn">Añade una etiqueta</button>
+
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<form:form class="parrafo" accept-charset="UTF-8" action="/wiki" method="POST" modelAttribute="tag">
+						<form:label path="etiqueta" for="etiqueta"><p>Añade una Etiqueta</p></form:label>
 						<form:input path="etiqueta" type="text" id="etiqueta"></form:input>
-						<form:errors path="etiqueta" />
-							<div class="">
-						    	<button class="btn btn-primary" type="submit">Añadir Etiqueta</button>
+						<form:errors path="etiqueta"/>
+							<div class="parrafo">
+						    	<button class="btn btn-primary" type="submit"><p>Añadir Etiqueta</p></button>
 						  </div>
-					</form:form>
+						</form:form>
+					</div>
+
+					</div>
+					
+					
 				</div>
 				
 			</div>
@@ -569,7 +596,7 @@
 			    <c:if test="${not empty ultimoArticulo}">
 			        <h3>${ultimoArticulo.titulo}</h3>
 			        <c:if test="${not empty ultimoArticulo.etiquetas}">
-			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...<a href="/wiki/${ultimoArticulo.id}"> Leer más</a></p>
+			            <p>${fn:substring(ultimoArticulo.contenido, 0, 450)}...<a href="/wiki/${ultimoArticulo.id}"> Leer más</a></p>
 			        </c:if>
 			        <c:if test="${empty ultimoArticulo.etiquetas}">
 			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...</p>

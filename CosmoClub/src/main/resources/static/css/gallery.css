@@ -3,6 +3,9 @@
     font-family: Pixel;
     src: url(../fonts/poxel/poxel-font.ttf);
 }
+.family-pixel{
+    font-family: Pixel;
+}
 @font-face {
     font-family: Altone;
     src: url(../fonts/altone/AltoneTrial-Regular.ttf);
@@ -29,17 +32,21 @@
 ----------------------------------------------------- */
 
 #sidebar {
-    width: 250px;
+    width: 320px;
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -320px;
     height: 100vh;
     z-index: 999;
     background: url(../img/sidebar-foto-2.png);
     background-size: cover;
+    background-position: center;
     color: #fff;
     transition: all 0.3s;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.sidebar span{
+    font-size: 30px;
 }
 
 #sidebar.active {
@@ -70,7 +77,7 @@
 }
 .sidebar li.active{
     background: white;
-    border-radius: 8px;
+    border-radius: 30px;
 }
 .sidebar li.active a, 
 .sidebar li.active a:hover{
@@ -78,7 +85,7 @@
 }
 .sidebar li a{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 
@@ -96,9 +103,8 @@
     top: 0;
     right: 0;
 }
-.icono {
-    width: 10rem;
-    align-items: center;
+.logo-sidebar {
+    width: 13rem;
 }
 
 

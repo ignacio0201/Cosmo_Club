@@ -1,8 +1,31 @@
+/* Fonts */
+@font-face {
+    font-family: Pixel;
+    src: url(../fonts/poxel/poxel-font.ttf);
+}
+@font-face {
+    font-family: Altone;
+    src: url(../fonts/altone/AltoneTrial-Regular.ttf);
+}
+@font-face {
+    font-family: Sanva;
+    src: url(../fonts/sanva/sanva\ font.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/monserrat/MontserratAlternates-Light.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
 #side_nav{
     background: url(../img/sidebar-foto-2.png);
     background-size: cover;
-    min-width: 250px;
-    max-width: 250px;
+    background-position: center;
+    min-width: 320px;
+    max-width: 320px;
     transition: all 0.4s;
 }
 .sidebar{
@@ -10,11 +33,14 @@
     flex-direction: column;
     font-family: Poppins;
 }
+.sidebar span{
+    font-size: 30px;
+}
 .content{
     min-height: 100vh;
     width: 100%;
     font-family: Poppins;
-    background: #dffaff;
+    background: #e5fcff;
 }
 hr.h-color{
     background: white;
@@ -22,7 +48,7 @@ hr.h-color{
 
 .sidebar li.active{
     background: white;
-    border-radius: 8px;
+    border-radius: 30px;
 }
 .sidebar li.active a, 
 .sidebar li.active a:hover{
@@ -30,7 +56,7 @@ hr.h-color{
 }
 .sidebar li a{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
 }
 @media(max-width: 767px){
     #side_nav{
@@ -47,20 +73,27 @@ hr.h-color{
 .family-pixel{
     font-family: Pixel;
 }
-.icono {
-    width: 10rem;
-    align-items: center;
+.logo-sidebar {
+    width: 13rem;
 }
 .icono-navbar{
     width: 2rem;
 }
-.img-cursos {
-    width: 15rem;
-    height: 15rem;
-    object-fit: cover;
-}
 .img-perfil {
-    width: 3rem;
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+.img-nav {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+  }
+.rounded-circle-border-nav{
+    display: inline-block;
+    border: 2px solid rgb(0, 194, 215); /* Color y grosor del borde */
+    border-radius: 50%; /* Asegura que el borde sea redondeado */
+    padding: 2px; /* Espacio entre el borde y la imagen */
 }
 
 /* POSTS */
@@ -75,4 +108,49 @@ hr.h-color{
 }
 .foro-post-timeago{
 	color:gray;
+}
+
+/*STYLE DE LA BARRA DE PROGRESO*/
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c2647;
+    margin: 0 0 10px;
+}
+.progress{
+    width: 10rem;
+    height: 30px;
+    background: #fff;
+    border-top: 5px solid #1c2647;
+    border-bottom: 5px solid #1c2647;
+    border-radius: 0;
+    margin-bottom: 25px;
+    overflow: visible;
+    position: relative;
+}
+.progress:before,
+.progress:after{
+    content: "";
+    width: 5px;
+    background: #1c2647;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    bottom: 0;
+}
+.progress:after{
+    left: auto;
+    right: -5px;
+}
+.progress .progress-bar{
+    border: none;
+    box-shadow: none;
+    -webkit-animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+    animation: 2s linear 0s normal none infinite running progress-bar-stripes,animate-positive 1s;
+}
+@-webkit-keyframes animate-positive{
+    0%{ width: 0; }
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
 }
