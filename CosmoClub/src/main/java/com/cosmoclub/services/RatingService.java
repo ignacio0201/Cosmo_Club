@@ -1,6 +1,8 @@
 package com.cosmoclub.services;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,9 +49,31 @@ public class RatingService {
 		return ratingRepo.findByPost(post);
 	}
 	
-	public Rating ratingByUserAndPost(User user, Post post) {
-		
-		return ratingRepo.findByUserAndPost(user, post);
+	 public Double getUserRatingForPost(User user, Post post) {
+	        Rating rating = ratingRepo.findByUserAndPost(user, post);
+	        if (rating != null) {
+	            return rating.getRating();
+	        }
+	        return null;
+	    }
+
+	public void save(Rating rating) {
+		ratingRepo.save(rating);
 		
 	}
+	
+	public Map<Long, Double> getUserRatingsForPosts(User user) {
+	    List<Rating> userRatings = ratingRepo.findByUser(user);
+	    Map<Long, Double> userRatingsMap = new HashMap<>();
+	    
+	    for (Rating rating : userRatings) {
+	        userRatingsMap.put(rating.getPost().getId(), rating.getRating());
+	    }
+	    
+	    return userRatingsMap;
+	}
+	
+	 public List<Rating> findRatingsByUser(User user) {
+	        return ratingRepo.findRatingsByUser(user);
+	    }
 }

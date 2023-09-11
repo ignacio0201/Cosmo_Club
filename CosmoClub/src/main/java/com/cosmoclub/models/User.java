@@ -98,6 +98,9 @@ public class User {
     )
     private List<Post> rating_post;
     
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Rating> ratings;
+    
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Progress> progress;
     
@@ -143,6 +146,14 @@ public class User {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public List<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
 	}
 
 	public String getName() {
@@ -322,6 +333,7 @@ public class User {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
 	
 }
 

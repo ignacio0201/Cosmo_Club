@@ -535,45 +535,57 @@
                      <c:set var="postId" value="${post.id}" />
                      <c:set var="numberCommentsDash" value="${commentCounts[postId]}" />
                     <div class="row bg-white g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                      <div class="col p-4 d-flex flex-column position-static">
-                        <h5 class="mb-0">
-                          <strong class="d-inline-block mb-2 me-3">
-                            <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
-                          </strong>${post.user.name} ${post.user.last_name}
-                          
-							<p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
-                        </h5>
-                        
-                        <h3>${post.title}</h3>
-                        <p class="card-text mb-auto">
-                          <c:set var="limitedContent" value="${fn:substring(post.content, 0, 350)}" />
-                          ${limitedContent}...
-                        </p>
-                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
-                          Continuar leyendo...
-                        </a>
-                        
-                        <div class="mb-1 text-body-secondary mt-3">
-                        	<c:choose>
-						        <c:when test="${numberCommentsDash == 0}">
-						        	Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
-						        </c:when>
-						        <c:when test="${numberCommentsDash == 1}">
-						        	1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
-						        </c:when>
-						        <c:otherwise>
-						       		${numberCommentsDash} personas han comentado <i class="bi bi-chat-dots-fill"></i>
-						    	</c:otherwise>
-							</c:choose>
-                        </div>
-                        
-                      </div>
-                      <div class="col-auto d-none d-lg-block">
-                        	<!-- AQUI VA LA IMAGEN DEL FORO -->
-                          	<c:forEach var="imagen" items="${post.images}">
-								<img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="" width="300" height="250">
-							</c:forEach>
-                      </div>
+	                      <div class="col p-4 d-flex flex-column position-static">
+	                        <h5 class="mb-0">
+	                          <strong class="d-inline-block mb-2 me-3">
+	                            <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
+	                          </strong>${post.user.name} ${post.user.last_name}
+	                          
+								<p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
+	                        </h5>
+	                       <c:set var="averageRating" value="${postRatings[post.id]}" />
+							<div class="mb-1 text-body-secondary mt-3">
+							    Promedio de calificaciones:
+							    <div class="rating estrellas">
+							        <i class="bi bi-star-fill estrella ${averageRating >= 1 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 2 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 3 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 4 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 5 ? 'checked' : ''}"></i>
+							    </div>
+							    <p>${averageRating}</p>
+							</div>
+	                        
+	                        <h3>${post.title}</h3>
+	                        <p class="card-text mb-auto">
+	                          <c:set var="limitedContent" value="${fn:substring(post.content, 0, 350)}" />
+	                          ${limitedContent}...
+	                        </p>
+	                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover ">Continuar leyendo...</a>
+	                        
+	                        <div class="mb-1 text-body-secondary mt-3">
+	                        	<c:choose>
+							        <c:when test="${numberCommentsDash == 0}">
+							        	Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
+							        </c:when>
+							        <c:when test="${numberCommentsDash == 1}">
+							        	1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
+							        </c:when>
+							        <c:otherwise>
+							       		${numberCommentsDash} personas han comentado <i class="bi bi-chat-dots-fill"></i>
+							    	</c:otherwise>
+								</c:choose>
+	                        </div>
+	                         <!-- Agrega esta sección para mostrar el promedio de calificaciones -->
+						    
+	                      </div>
+	                      <div class="col-auto d-none d-lg-block">
+	                        	<!-- AQUI VA LA IMAGEN DEL FORO -->
+	                          	<c:forEach var="imagen" items="${post.images}">
+									<img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="" width="300" height="250">
+								</c:forEach>
+	                      </div>
+	                      
                     </div>
 
                   </c:forEach>
@@ -590,6 +602,7 @@
 	
 
 	<script src="../js/preloader.js"></script>
+	<script src="../js/foro.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 </body>

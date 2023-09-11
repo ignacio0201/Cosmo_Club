@@ -91,3 +91,21 @@ hr.h-color{
 .foro-post-timeago{
 	color:gray;
 }
+
+.rating {
+    display: flex;
+    
+}
+.estrella {
+    font-size: 32px;
+    color: #ddd;
+    transition: color 0.3s;
+   
+}
+
+
+.estrella.checked {
+    color: gold;
+}
+
+

@@ -1,0 +1,22 @@
+.rating {
+    display: flex;
+    
+}
+.estrellas {
+    font-size: 32px;
+    color: #ddd;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+ .estrellas:hover{
+	  color: gold;
+	  cursor: default;
+ }
+.estrellas.checked {
+    color: gold;
+    cursor: default;
+}
+
+
+
