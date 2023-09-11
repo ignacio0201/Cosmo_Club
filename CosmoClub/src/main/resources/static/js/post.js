@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 ratingInput.value = value;
             }
 
-            // Actualiza las clases "checked" para las estrellas de este post
+           
             starsForPost.forEach(function(starForPost, index) {
                 if (index < value) {
                     starForPost.classList.add("checked");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
             
-             // Agrega clases para deshabilitar hover y cambiar el cursor
+            
             starsForPost.forEach(function(starForPost) {
                 starForPost.classList.add("disabled");
             });
@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 starForPost.style.pointerEvents = "none";
             });
 
-            // Envía el formulario al servidor cuando se hace clic en una estrella
+            
             const formulario = document.querySelector(`form#rating-${postId}-form`);
             if (formulario) {
-                formulario.submit(); // Envía el formulario manualmente
+                formulario.submit();
             }
         }
     }
