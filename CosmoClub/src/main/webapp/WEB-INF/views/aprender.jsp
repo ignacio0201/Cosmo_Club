@@ -538,7 +538,7 @@
                                     <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
                                       <h5 class="card-title text-center">Sistema Solar</h5>
                                       <p class="card-text mb-0 text-justify">El curso sobre el Sistema Solar es una aventura educativa que te llevará a explorar nuestro vecindario cósmico. Aprenderás sobre el sol, los 8 planetas y sus lunas, asteroides y cometas que componen nuestro sistema.</p>
-                                      <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">INSCRITO</a>
+                                      <a href="#" class="btn btn-primary mt-2 w-50 border-0 rounded-pill ">INSCRITO</a>
                                   </div>
                                 </div>
 
@@ -547,7 +547,7 @@
                                   <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
                                     <h5 class="card-title text-center">Galaxias</h5>
                                     <p class="card-text mb-0 text-justify">El curso de Galaxias es un viaje a través del espacio que explora la formación y evolución de las galaxias, destacando sus aspectos cósmicos, como la distribución de la materia y la interacción gravitatoria entre ellas.</p>
-                                    <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                    <a href="#" class="btn btn-primary mt-2 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                                 </div>
                               </div>
 
@@ -556,7 +556,7 @@
                                   <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
                                     <h5 class="card-title text-center">Nebulosas</h5>
                                     <p class="card-text mb-0 text-justify">En este curso, explorarás el fascinante mundo de las nebulosas. A través de las unidades decubrirás cómo su estudio revela pistas sobre la evolución de las galaxias y la creación de nuevas estrellas.</p>
-                                    <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                    <a href="#" class="btn btn-primary mt-2 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                                 </div>
                               </div>
                               
@@ -570,24 +570,24 @@
                                 <img src="img/agujeros-negros.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                                 <div class="card-body d-flex flex-column align-items-center">
                                   <h5 class="card-title text-center">Agujeros Negros</h5>
-                                  <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                  <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                  <p class="card-text mb-0 text-justify">El curso sobre Agujeros Negros te sumerge en un fascinante viaje cósmico que explora la formación y características de estos misteriosos fenómenos a medida que te adentres en el tema.</p>
+                                  <a href="#" class="btn btn-primary mt-2 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                               </div>
                             </div>
                             <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
                               <img src="img/planetas.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                               <div class="card-body d-flex flex-column align-items-center">
                                 <h5 class="card-title text-center">Exo Planetas</h5>
-                                <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                <p class="card-text mb-0 text-justify">El curso sobre Exoplanetas te transporta a un emocionante viaje interestelar. A medida que te sumerjas en esta temática, descubrirás cómo los astrónomos han identificado exoplanetas.</p>
+                                <a href="#" class="btn btn-primary mt-2 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                             </div>
                             </div>
                             <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
                               <img src="img/sol.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
                               <div class="card-body d-flex flex-column align-items-center">
                                 <h5 class="card-title text-center">Sol</h5>
-                                <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                                <p class="card-text mb-0 text-justify">Este curso sobre el Sol es un emocionante viaje hacia la estrella que da vida a nuestro sistema solar. Explorarás la anatomía del Sol, desde su núcleo ardiente hasta su atmósfera brillante.</p>
+                                <a href="#" class="btn btn-primary mt-2 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                             </div>
                             </div>
                           </div>

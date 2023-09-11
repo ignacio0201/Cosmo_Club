@@ -605,7 +605,7 @@
 							</div>
                         
                         
-                        <p class="card-text mb-auto">
+                        <p class="text-break card-text mb-auto">
                           <c:set var="limitedContent" value="${fn:substring(post.content, 0, 200)}" />
                           ${limitedContent}...
                         </p>

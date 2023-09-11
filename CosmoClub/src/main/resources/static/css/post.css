@@ -1,3 +1,27 @@
+.content{
+    min-height: 100vh;
+    width: 100%;
+    font-family: Poppins;
+    background: #dffaff;
+}
+.img-perfil {
+    width: 3rem;
+}
+.foro-post-timeago{
+	color:gray;
+}
+.comentario-form{
+	max-height: 300px;
+}
+.btn-comentar{
+	background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
+	color: white;
+	font-weight: 600;
+	transition: background-image 0.3s;
+}
+.btn-comentar:hover{
+	background-image: linear-gradient(to right, #48AAC9, #1E75A7, #0A488F);
+}
 .rating {
     display: flex;
     
