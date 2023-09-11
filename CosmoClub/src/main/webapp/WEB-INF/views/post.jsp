@@ -9,8 +9,17 @@
 <title>CosmoClub</title>
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<!-- CSS Personalizado -->
+<link rel="stylesheet" href="../css/post.css">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
+
 <body>
+	
+	
+	
+	
 	<div class="container rounded border">
 
 		<a href="/foro">Volver al foro</a>
@@ -21,7 +30,22 @@
 		<c:forEach var="imagen" items="${post.images}">
 			<img class="img-post" src="/img${imagen.post_images}" alt="" style="width: 600px; height: 600px;">
 		</c:forEach>
-
+			
+		<form class="mt-4" accept-charset="UTF-8" action="/post/${post.id}/rating" method="POST" id="rating-${post.id}-form">
+		    <div class="mb-3">
+		        <label for="rating-${post.id}" class="form-label">Calificacion:</label>
+		        <input type="hidden" name="rating" id="rating-${post.id}" value="${userRatings[post.id] != null ? userRatings[post.id] : 0}">
+		        <div class="rating">
+		            <i class="bi bi-star-fill estrellas ${userRating >= 1 ? 'checked' : ''}" data-value="1" data-postid="${post.id}" ${userRating != null ? 'disabled' : ''}></i>
+		            <i class="bi bi-star-fill estrellas ${userRating >= 2 ? 'checked' : ''}" data-value="2" data-postid="${post.id}" ${userRating != null ? 'disabled' : ''}></i>
+		            <i class="bi bi-star-fill estrellas ${userRating >= 3 ? 'checked' : ''}" data-value="3" data-postid="${post.id}" ${userRating != null ? 'disabled' : ''}></i>
+		            <i class="bi bi-star-fill estrellas ${userRating >= 4 ? 'checked' : ''}" data-value="4" data-postid="${post.id}" ${userRating != null ? 'disabled' : ''}></i>
+		            <i class="bi bi-star-fill estrellas ${userRating >= 5 ? 'checked' : ''}" data-value="5" data-postid="${post.id}" ${userRating != null ? 'disabled' : ''}></i>
+		        </div>
+		    </div>
+		    <input type="submit" style="display: none;">
+		</form>
+		
 		<p style="color: orange;">
 		<c:choose>
 			<c:when test="${numberCommentsPost == 0}">
@@ -65,7 +89,7 @@
 		
 	</div>
 	
-	
+<script src="../js/post.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 </body>

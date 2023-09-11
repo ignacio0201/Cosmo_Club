@@ -167,10 +167,18 @@ public class UserController {
 	            // Agrega el Base64 al modelo
 	            model.addAttribute("userImageBase64", userImageBase64);
 	        }
+	        
 
 	        // Agregar el código para obtener y agregar los recuentos de comentarios aquí
 	        List<Post> allPosts = postService.findAllPosts();
 	        model.addAttribute("allPosts", allPosts);
+	        
+	        Map<Long, Double> postRatings = new HashMap<>();
+	        for (Post post : allPosts) {
+	            Double averageRating = postService.calculateAverageRating(post.getId()); // Usar el ID del post actual
+	            postRatings.put(post.getId(), averageRating);
+	        }
+	        model.addAttribute("postRatings", postRatings);
 
 	        // Crear un mapa para almacenar los recuentos de comentarios por postId
 	        Map<Long, Long> commentCounts = new HashMap<>();
@@ -365,7 +373,7 @@ public class UserController {
 	        if (BCrypt.checkpw(contrasenaActual, user.getPassword())) {
 	            // Verificar que la nueva contraseña y la confirmación coincidan
 	            if (nuevaContrasena.equals(confirmarContrasena)) {
-	                // Aplicar validaciones de complejidad de contraseña aquí si es necesario
+	               
 
 	                // Encriptar la nueva contraseña
 	                String hashedNuevaContrasena = BCrypt.hashpw(nuevaContrasena, BCrypt.gensalt());
@@ -374,122 +382,18 @@ public class UserController {
 	                user.setPassword(hashedNuevaContrasena);
 	                userService.save(user);
 
-	                // Redirigir al formulario de edición de perfil
+	               
 	                return "redirect:/perfil";
 	            } else {
-	                // Las contraseñas nueva y confirmar no coinciden, agrega un mensaje de error
+	          
 	                redirectAttributes.addFlashAttribute("error", "Las contraseñas nuevas no coinciden.");
 	            }
 	        } else {
-	            // La contraseña actual es incorrecta, agrega un mensaje de error
+	          
 	            redirectAttributes.addFlashAttribute("error", "La contraseña actual es incorrecta.");
 	        }
 	    }
-
-	    // Redirigir al formulario de edición de perfil
 	    return "redirect:/perfil/" + id;
-	}
-	
-	@GetMapping("/foro")
-	public String foro(@ModelAttribute("newPost") Post newPost, HttpSession session, Model model) {
-		Long userId = (Long) session.getAttribute("userId");
-	    if (userId != null) {
-	        User user = userService.findUserById(userId);
-	        model.addAttribute("user", user);
-	        List<Post> allPosts = postService.findAllPosts();
-	        model.addAttribute("allPosts", allPosts);
-	        
-	     // Crear un mapa para almacenar los recuentos de comentarios por postId
-	        Map<Long, Long> commentCounts = new HashMap<>();
-	        for (Post post : allPosts) {
-	            Long postId = post.getId();
-	            Long numberCommentsDash = commentService.countCommentsByPostId(postId);
-	            commentCounts.put(postId, numberCommentsDash);
-	        }
-	        model.addAttribute("commentCounts", commentCounts);
-	        
-	     // Calcular la diferencia de tiempo y formatearla para cada comentario
-            for (Post post : allPosts) {
-            	String timeAgo = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
-                post.setTimeAgo(timeAgo);
-            }
-            
-	        return "views/foro.jsp";
-	    } else {
-	        return "redirect:/";
-	    }
-	}
-
-	@PostMapping("/crear-post")
-	public String crearPost(@Valid @ModelAttribute("newPost") Post newPost, @RequestParam("post_img") MultipartFile post_img, BindingResult result, Model model, HttpSession session) {
-		if (result.hasErrors()) {
-			Long userId = (Long) session.getAttribute("userId");
-	        User user = userService.findUserById(userId);
-	        model.addAttribute("user", user);
-	        
-	        List<Post> allPosts = postService.findAllPosts();
-	        model.addAttribute("allPosts", allPosts);
-			return "views/foro.jsp";
-		}
-		
-		Post post = postService.createPost(newPost);
-		foro.guardarImgPost(post, post_img);
-		
-		return "redirect:/foro";
-	}
-	
-	@GetMapping("/post/{id}")
-	public String verPost(@PathVariable("id") Long postId, @ModelAttribute("newComment") Comment newComment, HttpSession session, Model model) {
-		Long userId = (Long) session.getAttribute("userId");
-		if (userId != null) {
-			User user = userService.findUserById(userId);
-			Post post = postService.findPost(postId);
-			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
-			Long numberCommentsPost = commentService.countCommentsByPostId(postId); //this
-	        
-			model.addAttribute("user", user);
-			model.addAttribute("post", post);
-			model.addAttribute("allCommentsPost", allCommentsPost);
-			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
-			
-			// Calcular la diferencia de tiempo y formatearla para cada comentario
-            for (Comment comment : allCommentsPost) {
-            	String timeAgo = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
-                comment.setTimeAgo(timeAgo);
-            }
-			return "views/post.jsp";
-		} else {
-	        return "redirect:/";
-	    }
-	}
-	
-	@PostMapping("/post/{postId}/comment")
-	public String comentarPost(@PathVariable("postId") Long postId, @Valid @ModelAttribute("newComment") Comment newComment, BindingResult result, HttpSession session, Model model) {
-		if (result.hasErrors()) {
-			Long userId = (Long) session.getAttribute("userId");
-			User user = userService.findUserById(userId);
-			Post post = postService.findPost(postId);
-			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
-			Long numberCommentsPost = commentService.countCommentsByPostId(postId); //this
-			model.addAttribute("user", user);
-			model.addAttribute("post", post);
-			model.addAttribute("allCommentsPost", allCommentsPost);
-			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
-			return "views/post.jsp";
-		}
-		Long userId = (Long) session.getAttribute("userId");
-	    User user = userService.findUserById(userId);
-	    Post post = postService.findPost(postId);
-	    
-	    List<Comment> comments = post.getComments();
-	    newComment.setUser(user);
-	    newComment.setPost(post);
-	    comments.add(newComment);
-	    post.setComments(comments);
-	    
-	    commentService.createComment(newComment);
-	    postService.createPost(post);
-		return "redirect:/post/" + post.getId();
 	}
 	
 	

@@ -590,13 +590,25 @@
                           </strong>${post.user.name} ${post.user.last_name}
                           <p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
                         </h3>
+                         <c:set var="averageRating" value="${postRatings[post.id]}" />
+							<div class="mb-1 text-body-secondary mt-3">
+							    Promedio de calificaciones:
+							    <div class="rating estrellas">
+							        <i class="bi bi-star-fill estrella ${averageRating >= 1 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 2 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 3 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 4 ? 'checked' : ''}"></i>
+							        <i class="bi bi-star-fill estrella ${averageRating >= 5 ? 'checked' : ''}"></i>
+							    </div>
+							    <p>${averageRating}</p>
+							</div>
                         
                         
                         <p class="card-text mb-auto">
                           <c:set var="limitedContent" value="${fn:substring(post.content, 0, 200)}" />
                           ${limitedContent}...
                         </p>
-                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
+                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover">
                           Continuar leyendo...
                         </a>
                         

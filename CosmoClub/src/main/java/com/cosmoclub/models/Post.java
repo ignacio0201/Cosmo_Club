@@ -74,7 +74,16 @@ public class Post {
     )
     private List<User> rating_user;
     
-    //FECHAS CREACION Y ACTUALIZACION
+    @OneToMany(mappedBy="post", fetch = FetchType.LAZY)
+    private List<Rating> ratings;
+    
+    public List<Rating> getRatings() {
+		return ratings;
+	}
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
+	}
+	//FECHAS CREACION Y ACTUALIZACION
     @PrePersist
 	protected void onCreate(){
    		this.createdAt = new Date();

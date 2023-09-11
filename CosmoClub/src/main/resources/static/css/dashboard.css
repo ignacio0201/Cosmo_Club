@@ -190,3 +190,19 @@ hr.h-color{
 @keyframes animate-positive{
     0%{ width: 0; }
 }
+
+.rating {
+    display: flex;
+    
+}
+.estrella {
+    font-size: 32px;
+    color: #ddd;
+    transition: color 0.3s;
+   
+}
+
+
+.estrella.checked {
+    color: gold;
+}
