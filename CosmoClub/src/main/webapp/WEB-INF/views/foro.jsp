@@ -501,75 +501,85 @@
 		</div>
 		<div class="content">
 			<div class="container w-75 mt-3">
-				<div class="form-container bg-white border rounded-3 p-4">
+				<div class="container w-75 bg-white border rounded-3 p-4">
 					<form:form action="/crear-post" method="post" modelAttribute="newPost" enctype="multipart/form-data">
 						
-							
-						<form:input class="rounded w-100 mb-2" path="title" type ="text" placeholder="Título" />
+						<h1 class="titulo-bienvenidos text-center">BIENVENIDOS AL FORO</h1>
+						<h3 class="text-center">Crea un Post y comparte con los demás!</h3>
+						<form:input class="rounded w-100 mb-2 form-control" path="title" type ="text" placeholder="Título" />
 						<form:errors path="title"/>
 						<br>
-						<form:textarea class="rounded w-100" path="content" rows="4" cols="50" placeholder="Descripción"/>
+						<form:textarea class="descripcion-post-form rounded w-100 form-control" path="content" rows="4" cols="50" placeholder="Descripción"/>
 						<form:errors path="content"/>
 						<br>
 						<input type="hidden" id="user" name="user" value="${user.id}" />
 						
-						<div class="row" style="background-color: lightblue;">
-							<input class="col form-control rounded btn btn-primary mt-3 w-25 border-0 rounded-pill d-inline-block" type="submit" value="Post">
-	
-							<label for="col file-upload" class="custom-file-upload">
-	    						<i class="bi bi-image-fill d-inline-block" ></i>
-							</label>
-							<input class="form-control" id="file-upload" class="file-input" type="file" name="post_img" />
+						<div class="row">
+							<div class="col d-flex justify-content-end align-items-center">
+								<input class="btn-post w-25 h-75 border-0 rounded-pill" type="submit" value="Post">
+							</div>
+							<div class="col bg-white">
+								<label for="file-upload" class="custom-file-upload">
+	    							<i class="bi bi-image-fill btn" style="font-size: 2rem;"></i>
+								</label>
+								<input id="file-upload" class="file-input" type="file" name="post_img" />
+							</div>
 						</div>
 					</form:form>
 				</div>
 				
 				<hr>
-				<c:forEach items="${allPosts}" var="post">
-					<c:set var="postId" value="${post.id}" />
-                    <c:set var="numberCommentsForo" value="${commentCounts[postId]}" />
-                       
-					<div class="bg-white border rounded-3 p-4 mb-3">
-						<a class="text-decoration-none text-dark" href="/post/${post.id}">
-							<img class="img-perfil rounded-circle-border-nav rounded-circle d-inline-block" src="<c:url value='${post.user.user_img}'/>" alt="">
-							<p class="foro-post-nameuser d-inline-block">${post.user.name} ${post.user.last_name}</p>
+				
+                
+                  <c:forEach items="${allPosts}" var="post">
+                     <c:set var="postId" value="${post.id}" />
+                     <c:set var="numberCommentsDash" value="${commentCounts[postId]}" />
+                    <div class="row bg-white g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                      <div class="col p-4 d-flex flex-column position-static">
+                        <h5 class="mb-0">
+                          <strong class="d-inline-block mb-2 me-3">
+                            <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
+                          </strong>${post.user.name} ${post.user.last_name}
+                          
 							<p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
-							
-							<h3 class="mt-2">${post.title}</h3>
-							<p><c:set var="limitedContent" value="${fn:substring(post.content, 0, 500)}" />
-                          	${limitedContent}...</p>
-                          	
-                          	<div class="row">
-	                          	<div class="col d-flex justify-content-start">
-	                          		<a href="/post/${post.id}">Continuar leyendo...</a>
-	                          	</div>
-	                          	<div class="col d-flex justify-content-end">
-	            					<p class="foro-post-number-comments">
-	            						<c:choose>
-						                    <c:when test="${numberCommentsForo == 0}">
-						                        Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
-						                    </c:when>
-						                    <c:when test="${numberCommentsForo == 1}">
-						                        1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
-						                    </c:when>
-						                    <c:otherwise>
-						                        ${numberCommentsForo} personas han comentado <i class="bi bi-chat-dots-fill"></i>
-						                    </c:otherwise>
-						                </c:choose>
-	            					</p>
-	        					</div>
-	        					
-	        					
-	        					<!-- <div class="col-auto d-none d-lg-block">
-                          			<c:forEach var="imagen" items="${post.images}">
-										<img class="bd-placeholder-img align-items-top" src="/img${imagen.post_images}" alt="" width="200" height="250">
-									</c:forEach>
-                      			</div> -->
-	        					
-	        				</div>	
-						</a>
-					</div>
-				</c:forEach>
+                        </h5>
+                        
+                        <h3>${post.title}</h3>
+                        <p class="card-text mb-auto">
+                          <c:set var="limitedContent" value="${fn:substring(post.content, 0, 350)}" />
+                          ${limitedContent}...
+                        </p>
+                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover stretched-link">
+                          Continuar leyendo...
+                        </a>
+                        
+                        <div class="mb-1 text-body-secondary mt-3">
+                        	<c:choose>
+						        <c:when test="${numberCommentsDash == 0}">
+						        	Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
+						        </c:when>
+						        <c:when test="${numberCommentsDash == 1}">
+						        	1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
+						        </c:when>
+						        <c:otherwise>
+						       		${numberCommentsDash} personas han comentado <i class="bi bi-chat-dots-fill"></i>
+						    	</c:otherwise>
+							</c:choose>
+                        </div>
+                        
+                      </div>
+                      <div class="col-auto d-none d-lg-block">
+                        	<!-- AQUI VA LA IMAGEN DEL FORO -->
+                          	<c:forEach var="imagen" items="${post.images}">
+								<img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="" width="300" height="250">
+							</c:forEach>
+                      </div>
+                    </div>
+
+                  </c:forEach>
+             	
+				
+				
 			</div>
 		</div>
 		

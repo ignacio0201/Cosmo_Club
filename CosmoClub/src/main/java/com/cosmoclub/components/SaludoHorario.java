@@ -11,7 +11,7 @@ public class SaludoHorario {
 	        
 	        if (horaActual.isBefore(LocalTime.of(12, 0))) {
 	            return "Buenos días";
-	        } else if (horaActual.isBefore(LocalTime.of(18, 0))) {
+	        } else if (horaActual.isBefore(LocalTime.of(20, 0))) {
 	            return "Buenas tardes";
 	        } else {
 	            return "Buenas noches";
