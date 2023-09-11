@@ -105,7 +105,7 @@ hr.h-color{
     height: 48vh;
 }
 .conectados {
-    height: 35%;
+    max-height: 30%;
 }
 .checked {
     color: orange;

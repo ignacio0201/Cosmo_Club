@@ -91,7 +91,7 @@
                         data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
                         aria-controls="collapseOne">
                         <img src="/img/ilustracionesplanetas/elsol.png" height="90" width="90"/>
-                        <h3>Unidad 1: El Sols</h3>
+                        <h3>Unidad 1: El Sol</h3>
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">

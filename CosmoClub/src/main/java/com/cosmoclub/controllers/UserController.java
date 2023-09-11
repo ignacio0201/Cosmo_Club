@@ -421,7 +421,7 @@ public class UserController {
 	}
 
 	@PostMapping("/crear-post")
-	public String crearPost(@Valid @ModelAttribute("newPost") Post newPost, @RequestParam("post_img") MultipartFile post_img, BindingResult result, Model model, HttpSession session) {
+	public String crearPost(@Valid @ModelAttribute("newPost") Post newPost, @RequestParam(name = "post_img", required = false) MultipartFile post_img ,  BindingResult result, Model model, HttpSession session) {
 		if (result.hasErrors()) {
 			Long userId = (Long) session.getAttribute("userId");
 	        User user = userService.findUserById(userId);
@@ -429,11 +429,28 @@ public class UserController {
 	        
 	        List<Post> allPosts = postService.findAllPosts();
 	        model.addAttribute("allPosts", allPosts);
+	        
+	     // Crear un mapa para almacenar los recuentos de comentarios por postId
+	        Map<Long, Long> commentCounts = new HashMap<>();
+	        for (Post post : allPosts) {
+	            Long postId = post.getId();
+	            Long numberCommentsDash = commentService.countCommentsByPostId(postId);
+	            commentCounts.put(postId, numberCommentsDash);
+	        }
+	        model.addAttribute("commentCounts", commentCounts);
+	        
+	     // Calcular la diferencia de tiempo y formatearla para cada post
+            for (Post post : allPosts) {
+            	String timeAgo = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+                post.setTimeAgo(timeAgo);
+            }
 			return "views/foro.jsp";
 		}
 		
 		Post post = postService.createPost(newPost);
+		
 		foro.guardarImgPost(post, post_img);
+//		@RequestParam("post_img") MultipartFile post_img,
 		
 		return "redirect:/foro";
 	}
@@ -452,10 +469,14 @@ public class UserController {
 			model.addAttribute("allCommentsPost", allCommentsPost);
 			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
 			
+			// Calcular la diferencia de tiempo y formatearla para el post
+            String timeAgoPost = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+            post.setTimeAgo(timeAgoPost);
+			
 			// Calcular la diferencia de tiempo y formatearla para cada comentario
             for (Comment comment : allCommentsPost) {
-            	String timeAgo = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
-                comment.setTimeAgo(timeAgo);
+            	String timeAgoComment = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
+                comment.setTimeAgo(timeAgoComment);
             }
 			return "views/post.jsp";
 		} else {
