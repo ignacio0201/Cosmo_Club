@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Pixel;
+    src: url(../fonts/poxel/poxel-font.ttf);
+}
+
 #side_nav{
     background: url(../img/sidebar-foto-2.png);
     background-size: cover;
@@ -61,4 +66,28 @@ hr.h-color{
 }
 .img-perfil {
     width: 3rem;
+}
+
+/* POSTS */
+.titulo-bienvenidos{
+	font-family: Pixel;
+}
+#file-upload{
+	display: none;
+}
+.btn-post{
+	background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
+	color: white;
+	font-weight: 600;
+	transition: background-image 0.3s;
+}
+.btn-post:hover{
+	background-image: linear-gradient(to right, #48AAC9, #1E75A7, #0A488F);
+}
+.descripcion-post-form{
+	max-height: 400px;
+}
+
+.foro-post-timeago{
+	color:gray;
 }

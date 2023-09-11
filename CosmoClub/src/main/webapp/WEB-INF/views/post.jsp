@@ -9,8 +9,17 @@
 <title>CosmoClub</title>
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<!-- CSS Personalizado -->
+<link rel="stylesheet" href="../css/post.css">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
+
 <body>
+	
+	
+	
+	
 	<div class="container rounded border">
 
 		<a href="/foro">Volver al foro</a>
@@ -22,7 +31,19 @@
 			<img class="img-post" src="/img${imagen.post_images}" alt="" style="width: 300px; height: 300px;">
 		</c:forEach>
 
-		<p style="color: orange;">${numberCommentsPost} personas han comentado esto</p>
+		<p style="color: orange;">
+		<c:choose>
+			<c:when test="${numberCommentsPost == 0}">
+				Sé la primera persona en comentar!
+			</c:when>
+			<c:when test="${numberCommentsPost == 1}">
+				1 persona ha comentado
+			</c:when>
+			<c:otherwise>
+				${numberCommentsPost} personas han comentado
+			</c:otherwise>
+		</c:choose>
+		</p>
 		
 		
 		<div class="form-container">

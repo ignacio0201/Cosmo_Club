@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset="utf-8">
 	<title>CosmoClub</title>
     <link rel="icon" type="image/x-icon" href="../img/icon.ico">
  	<link rel="stylesheet" href="../css/edit-perfil.css">
@@ -497,7 +497,7 @@
 			<!--NavBar-->
 			<nav class="navbar navbar-expand-md bg-white">
 				<div class="container-fluid justify-content-between">
-				  <h1 class="family-pixel text-uppercase">Buen dia, ${user.name} ${user.last_name}!</h1>
+				  <h1 class="family-pixel text-uppercase">${saludar}, ${user.name} ${user.last_name}!</h1>
 				  <div class="d-flex flex-column align-items-center">
 					<h3 class="progress-title my-2">NIVEL</h3>
 					<div class="progress">
@@ -507,6 +507,7 @@
 				  <div class="dropdown dropstart">
 					<a type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="<c:url value='${user.user_img}'/>">
+						
 					</a>
 					<ul class="dropdown-menu">
 						<li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>

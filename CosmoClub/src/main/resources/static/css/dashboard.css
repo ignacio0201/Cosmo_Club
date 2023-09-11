@@ -94,6 +94,10 @@ hr.h-color{
     height: 3rem;
     object-fit: contain;
 }
+.foro-post-timeago{
+	color:gray;
+	font-size: 1rem;
+}
 .progress {
     width: 15rem;
 }

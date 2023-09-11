@@ -497,7 +497,7 @@
 			<!--NavBar-->
 			<nav class="navbar navbar-expand-md bg-white">
 				<div class="container-fluid justify-content-between">
-				  <h1 class="family-pixel text-uppercase">Buen dia, ${user.name} ${user.last_name}!</h1>
+				  <h1 class="family-pixel text-uppercase">${saludar}, ${user.name} ${user.last_name}!</h1>
 				  <div class="d-flex flex-column align-items-center">
 					<h3 class="progress-title my-2">NIVEL</h3>
 					<div class="progress">

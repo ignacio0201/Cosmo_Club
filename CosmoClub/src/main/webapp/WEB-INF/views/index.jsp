@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CosmoClub</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/icon.jpeg">
+    <link rel="icon" type="image/x-icon" href="../img/logo_negro.png">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -29,7 +29,7 @@
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand" href="/">
-                <img class="logo" src="../img/logo.jpeg" alt="Logo de la pagina">
+                <img class="logo" src="../img/logo_blanco.png" alt="Logo de la pagina">
                 <span class="logo-name">COSMOCLUB</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

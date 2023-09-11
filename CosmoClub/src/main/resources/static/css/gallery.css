@@ -62,6 +62,8 @@
 
 #dismiss:hover {
     background: #fff;
+    border-radius: 100%;
+    color: black;
 }
 #sidebar .sidebar-header {
     padding: 20px;

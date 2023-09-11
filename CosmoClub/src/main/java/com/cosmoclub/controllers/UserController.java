@@ -23,7 +23,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cosmoclub.cache.ImageCache;
+import com.cosmoclub.components.CalcularTiempoTranscurrido;
 import com.cosmoclub.components.PaisesDelMundo;
+import com.cosmoclub.components.SaludoHorario;
 import com.cosmoclub.models.Comment;
 import com.cosmoclub.logicaNegocio.Foro;
 import com.cosmoclub.models.Post;
@@ -60,6 +62,12 @@ public class UserController {
 	
 	@Autowired
 	private Foro foro;
+	
+	@Autowired
+	private CalcularTiempoTranscurrido calcTiempoTranscurrido;
+	
+	@Autowired
+	private SaludoHorario saludoHorario;
 
 	
 	@GetMapping("/")
@@ -171,9 +179,17 @@ public class UserController {
 	            Long numberCommentsDash = commentService.countCommentsByPostId(postId);
 	            commentCounts.put(postId, numberCommentsDash);
 	        }
-
 	        model.addAttribute("commentCounts", commentCounts);
+	        
+	        // Calcular la diferencia de tiempo y formatearla para cada comentario
+            for (Post post : allPosts) {
+            	String timeAgo = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+                post.setTimeAgo(timeAgo);
+            }
 
+	        String saludar = saludoHorario.obtenerSaludo();
+	        model.addAttribute("saludar", saludar);
+	        
 	        return "views/dashboard.jsp";
 	    } else {
 	        return "redirect:/";
@@ -193,11 +209,13 @@ public class UserController {
 			        if (imageData != null) {
 			            // Generar la URL de la imagen en el caché basada en el userId
 			        	 String userImageBase64 = Base64.getEncoder().encodeToString(imageData);
-
-			     
 			             model.addAttribute("userImageBase64", userImageBase64);
 			        }
 		        model.addAttribute("user", user);
+		        
+		        String saludar = saludoHorario.obtenerSaludo();
+		        model.addAttribute("saludar", saludar);
+		        
 		        return "views/aprender.jsp";
 		    } else {
 		        return "redirect:/";
@@ -241,9 +259,9 @@ public class UserController {
 	             // Agrega el Base64 al modelo
 	             model.addAttribute("userImageBase64", userImageBase64);
 	        }
-	        
-	        
 	        model.addAttribute("user", user);
+	        String saludar = saludoHorario.obtenerSaludo();
+	        model.addAttribute("saludar", saludar);
 	        return "views/galeria.jsp";
 	    } else {
 	        return "redirect:/";
@@ -263,10 +281,12 @@ public class UserController {
 	           
 	        	 String userImageBase64 = Base64.getEncoder().encodeToString(imageData);
 
-	        
 	             model.addAttribute("userImageBase64", userImageBase64);
 	        }
-
+	        
+	        String saludar = saludoHorario.obtenerSaludo();
+	        model.addAttribute("saludar", saludar);
+	        
 	        return "views/perfil-user.jsp";
 	    } else {
 	        return "redirect:/";
@@ -312,9 +332,10 @@ public class UserController {
 	
 	@GetMapping("/perfil/{id}")
 	public String editarPerfil(@PathVariable("id")Long id,Model model,@ModelAttribute("user")User user,BindingResult result) {
+		String saludar = saludoHorario.obtenerSaludo();
+        model.addAttribute("saludar", saludar);
 		model.addAttribute("user", userService.findUserById(id));
 		model.addAttribute("paises", paises.getPaises());
-		
 		return "views/edit-perfil.jsp";
 		
 	}
@@ -375,6 +396,22 @@ public class UserController {
 	        model.addAttribute("user", user);
 	        List<Post> allPosts = postService.findAllPosts();
 	        model.addAttribute("allPosts", allPosts);
+	        
+	     // Crear un mapa para almacenar los recuentos de comentarios por postId
+	        Map<Long, Long> commentCounts = new HashMap<>();
+	        for (Post post : allPosts) {
+	            Long postId = post.getId();
+	            Long numberCommentsDash = commentService.countCommentsByPostId(postId);
+	            commentCounts.put(postId, numberCommentsDash);
+	        }
+	        model.addAttribute("commentCounts", commentCounts);
+	        
+	     // Calcular la diferencia de tiempo y formatearla para cada comentario
+            for (Post post : allPosts) {
+            	String timeAgo = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+                post.setTimeAgo(timeAgo);
+            }
+            
 	        return "views/foro.jsp";
 	    } else {
 	        return "redirect:/";
@@ -415,7 +452,7 @@ public class UserController {
 			
 			// Calcular la diferencia de tiempo y formatearla para cada comentario
             for (Comment comment : allCommentsPost) {
-                String timeAgo = commentService.calcularFecha(comment.getCreatedAt());
+            	String timeAgo = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
                 comment.setTimeAgo(timeAgo);
             }
 			return "views/post.jsp";
