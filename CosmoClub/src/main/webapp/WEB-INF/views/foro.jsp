@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<div class="main-container d-flex">
+	<div class="main-container">
 		<div class="preloader">
 			<svg
 			  class="outer-space"

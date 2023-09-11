@@ -501,185 +501,180 @@
             <li class=""><a href="/foro" class="text-decoration-none px-3 py-2 d-block"><i class='bx bx-group'></i> Foro</a></li>
         </ul>
       </div>
-    <div class="content">
-        <!--NavBar-->
-        <nav class="navbar navbar-expand-md bg-white">
-          <div class="container-fluid justify-content-between">
-            <h1 class="family-pixel text-uppercase ms-5">${saludar}, ${user.name} ${user.last_name}!</h1>
-            <div class="d-flex flex-column align-items-center">
-              <h3 class="progress-title my-2">NIVEL</h3>
-              <div class="progress">
-                  <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
+      <div class="content">
+          <!--NavBar-->
+          <nav class="navbar navbar-expand-md bg-white">
+            <div class="container-fluid justify-content-between">
+              <h1 class="family-pixel text-uppercase ms-5">${saludar}, ${user.name} ${user.last_name}!</h1>
+              <div class="d-flex flex-column align-items-center">
+                <h3 class="progress-title my-2">NIVEL</h3>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 40%;"></div>
+                </div>
+              </div>
+              <div class="dropdown dropstart">
+                <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
+                </a>
+                <ul class="dropdown-menu">
+                    <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
+                    <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                </ul>
               </div>
             </div>
-            <div class="dropdown dropstart">
-              <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img class="img-nav rounded-circle-border-nav rounded-circle me-2" src="data:image/jpeg;base64,${userImageBase64}" alt="">
-              </a>
-              <ul class="dropdown-menu">
-                  <li><p class="dropdown-item">${user.name} ${user.last_name}</p></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
-                  <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
-              </ul>
-            </div>
+          </nav>
+          <!--NavBar-->
+          <div class="row container-fluid">
+              <div class="col-sm-8 col-12 p-4">
+                  <!--Carrusel con los cursos--> 
+                  <div class="cursos mb-5 p-4 bg-white border rounded-5"> 
+                      <h2 class="family-pixel text-uppercase">CURSOS</h2>
+                      <div class="container">
+                        <span id="rateMe1"></span>
+                      </div>
+                      
+                      <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <a href="/curso"><img src="img/img-cursos/sistema-solar.jpeg" class="d-block w-100 img-cursos" alt="curso-sistemasolar"></a>                      
+                            <div class="carousel-caption d-none d-md-block">
+                              <h4>Sistema solar</h4>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <a href=""><img src="img/img-cursos/planetas.png" class="d-block w-100 img-cursos" alt="curso-planetas"></a>                      
+                            <div class="carousel-caption d-none d-md-block">
+                              <h4>Exo Planetas</h4>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <a href=""><img src="img/img-cursos/sol.png" class="d-block w-100 img-cursos" alt="curso-sol"></a>
+                            <div class="carousel-caption d-none d-md-block">
+                              <h4>Estrellas</h4>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <a href=""><img src="img/img-cursos/galaxia.png" class="d-block w-100 img-cursos" alt="curso-galaxia"></a>
+                            <div class="carousel-caption d-none d-md-block">
+                              <h4>Galaxias</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+
+                  </div>
+                  <!--Carrusel con los cursos--> 
+                  
+                  <!--Parte del foro-->
+                  <div class="foro p-4 bg-white border rounded-5 overflow-y-scroll">
+                    <h2 class="family-pixel text-uppercase">Ultimas publicaciones:</h2>
+
+                    <c:forEach items="${allPosts}" var="post">
+                      <c:set var="postId" value="${post.id}" />
+                      <c:set var="numberCommentsDash" value="${commentCounts[postId]}" />
+                      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                          <h3 class="mb-0">
+                            <strong class="d-inline-block mb-2 me-3 text-primary-emphasis">
+                              <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
+                            </strong>${post.user.name} ${post.user.last_name}
+                            <p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
+                          </h3>
+                          <c:set var="averageRating" value="${postRatings[post.id]}" />
+                          <div class="text-body-secondary">
+                                <!--Promedio de calificaciones:-->
+                                <div class="rating estrellas">
+                                    <p class="mt-3 me-2">${averageRating}</p>
+                                    <i class="bi bi-star-fill estrella ${averageRating >= 1 ? 'checked' : ''}"></i>
+                                    <i class="bi bi-star-fill estrella ${averageRating >= 2 ? 'checked' : ''}"></i>
+                                    <i class="bi bi-star-fill estrella ${averageRating >= 3 ? 'checked' : ''}"></i>
+                                    <i class="bi bi-star-fill estrella ${averageRating >= 4 ? 'checked' : ''}"></i>
+                                    <i class="bi bi-star-fill estrella ${averageRating >= 5 ? 'checked' : ''}"></i>
+                                </div> 
+                          </div>
+                          <p class="card-text">
+                            <c:set var="limitedContent" value="${fn:substring(post.content, 0, 200)}" />
+                            ${limitedContent}...
+                          </p>
+                          <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover">
+                            Continuar leyendo...
+                          </a>
+                          
+                          <div class="text-body-secondary mt-2">
+                            <c:choose>
+                              <c:when test="${numberCommentsDash == 0}">
+                                Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
+                              </c:when>
+                              <c:when test="${numberCommentsDash == 1}">
+                                1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
+                              </c:when>
+                              <c:otherwise>
+                                ${numberCommentsDash} personas han comentado <i class="bi bi-chat-dots-fill"></i>
+                              </c:otherwise>
+                            </c:choose>
+                          </div>
+                          
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                          <c:forEach var="imagen" items="${post.images}">
+                              <img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="">
+                          </c:forEach>
+                        </div>
+                      </div>
+                    </c:forEach>
+                  </div>
+                  <!--Parte del foro-->
+              </div>
+
+              <div class="col-sm-4 col-12 p-4">
+                  <!--Foto del día-->
+                  <div class="p-2 bg-white border rounded-5 text-center">
+                    <h2 class="family-pixel text-uppercase">Foto astronomica del dia</h2>
+                    <div class="img-fluid">
+                    <img class="rounded-4" id="pic" src="" alt="NASA Picture Of The Day"/>
+                    </div>
+
+                    <p id="date" class="family-pixel" style="font-size: 30px;"></p>
+                    <h4 id="title"></h4>
+                  </div>
+                  <!--Foto del día-->
+
+                  <!--Conectados-->
+                  <div class="conectados bg-white p-3 mt-5 border rounded-5 overflow-y-scroll">
+                    <div class="border border-white px-4">
+                      <h3 class="family-pixel text-uppercase">Usuarios conectados</h3>
+                      <c:forEach var="user" items="${connectedUsers}">
+                        <div class="p-2">
+                          <div class="rounded-circle-border">
+                              <img class="img-perfil rounded-circle" alt="" src="<c:url value='${user.user_img}'/>">
+                          </div>
+                          <div class="d-inline-block align-middle ms-2">
+                              <p class="d-inline">${user.name} ${user.last_name} <a href="/cosmochat"><i class='bx bx-envelope'></i></a></p>
+                              <ul style="color: green; list-style-type: none; padding-left: 0; margin: 0;">
+                                  <li>Conectado</li>
+                              </ul>
+                          </div>
+                          
+                      </div>
+                      
+                      
+                    </c:forEach>
+                    </div>
+                  </div>
+                  <!--Conectados-->
+              </div>
           </div>
-        </nav>
-        <!--NavBar-->
-        <div class="row container-fluid">
-            <div class="col-sm-8 col-12 p-4">
-                <!--Carrusel con los cursos--> 
-                <div class="cursos mb-5 p-4 bg-white border rounded-5"> 
-                    <h2 class="family-pixel text-uppercase">CURSOS</h2>
-                    <div class="container">
-                      <span id="rateMe1"></span>
-                    </div>
-                    
-                    <div id="carouselExample" class="carousel slide">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <a href="/curso"><img src="img/img-cursos/sistema-solar.jpeg" class="d-block w-100 img-cursos" alt="curso-sistemasolar"></a>                      
-                          <div class="carousel-caption d-none d-md-block">
-                            <h4>Sistema solar</h4>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <a href=""><img src="img/img-cursos/planetas.png" class="d-block w-100 img-cursos" alt="curso-planetas"></a>                      
-                          <div class="carousel-caption d-none d-md-block">
-                            <h4>Exo Planetas</h4>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <a href=""><img src="img/img-cursos/sol.png" class="d-block w-100 img-cursos" alt="curso-sol"></a>
-                          <div class="carousel-caption d-none d-md-block">
-                            <h4>Estrellas</h4>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <a href=""><img src="img/img-cursos/galaxia.png" class="d-block w-100 img-cursos" alt="curso-galaxia"></a>
-                          <div class="carousel-caption d-none d-md-block">
-                            <h4>Galaxias</h4>
-                          </div>
-                        </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-
-                </div>
-                <!--Carrusel con los cursos--> 
-                
-                <!--Parte del foro-->
-                <div class="foro p-4 bg-white border rounded-5 overflow-y-scroll">
-                  <h2 class="family-pixel text-uppercase">Ultimas publicaciones:</h2>
-
-                  <c:forEach items="${allPosts}" var="post">
-                       <c:set var="postId" value="${post.id}" />
-                     <c:set var="numberCommentsDash" value="${commentCounts[postId]}" />
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                      <div class="col p-4 d-flex flex-column position-static">
-                        <h3 class="mb-0">
-                          <strong class="d-inline-block mb-2 me-3 text-primary-emphasis">
-                            <img class="img-perfil rounded-circle-border-nav rounded-circle" src="<c:url value='${post.user.user_img}'/>" alt="">
-                          </strong>${post.user.name} ${post.user.last_name}
-                          <p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
-                        </h3>
-                         <c:set var="averageRating" value="${postRatings[post.id]}" />
-							<div class="mb-1 text-body-secondary mt-3">
-							    Promedio de calificaciones:
-							    <div class="rating estrellas">
-							        <i class="bi bi-star-fill estrella ${averageRating >= 1 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 2 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 3 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 4 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 5 ? 'checked' : ''}"></i>
-							    </div>
-							    <p>${averageRating}</p>
-							</div>
-                        
-                        
-                        <p class="card-text mb-auto">
-                          <c:set var="limitedContent" value="${fn:substring(post.content, 0, 200)}" />
-                          ${limitedContent}...
-                        </p>
-                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover">
-                          Continuar leyendo...
-                        </a>
-                        
-                        <div class="mb-1 text-body-secondary mt-2">
-                        	<c:choose>
-						        <c:when test="${numberCommentsDash == 0}">
-						        	Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
-						        </c:when>
-						        <c:when test="${numberCommentsDash == 1}">
-						        	1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
-						        </c:when>
-						        <c:otherwise>
-						       		${numberCommentsDash} personas han comentado <i class="bi bi-chat-dots-fill"></i>
-						    	</c:otherwise>
-							</c:choose>
-                        </div>
-                        
-                      </div>
-                      <div class="col-auto d-none d-lg-block">
-                        	<!-- AQUI VA LA IMAGEN DEL FORO -->
-                          	<c:forEach var="imagen" items="${post.images}">
-								<img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="" width="200" height="250"">
-							</c:forEach>
-                      </div>
-                    </div>
-
-                  </c:forEach>
-                </div>
-                <!--Parte del foro-->
-            </div>
-
-            <div class="col-sm-4 col-12 p-4">
-                <!--Foto del día-->
-                <div class="p-2 bg-white border rounded-5 text-center">
-                  <h2 class="family-pixel text-uppercase">Foto astronomica del dia</h2>
-                  <div class="img-fluid">
-                  <img class="rounded-4" id="pic" src="" alt="NASA Picture Of The Day"/>
-                  </div>
-
-                  <p id="date" class="family-pixel" style="font-size: 30px;"></p>
-                  <h4 id="title"></h4>
-                </div>
-                <!--Foto del día-->
-
-                <!--Conectados-->
-                <div class="conectados bg-white p-3 mt-5 border rounded-5 overflow-y-scroll">
-                  <div class="border border-white px-4">
-                    <h3 class="family-pixel text-uppercase">Usuarios conectados</h3>
-                    <c:forEach var="user" items="${connectedUsers}">
-                      <div class="p-2">
-                        <div class="rounded-circle-border">
-                            <img class="img-perfil rounded-circle" alt="" src="<c:url value='${user.user_img}'/>">
-                        </div>
-                        <div class="d-inline-block align-middle ms-2">
-                            <p class="d-inline">${user.name} ${user.last_name} <a href="/cosmochat"><i class='bx bx-envelope'></i></a></p>
-                            <ul style="color: green; list-style-type: none; padding-left: 0; margin: 0;">
-                                <li>Conectado</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                    
-                    
-                   </c:forEach>
-                  </div>
-                </div>
-                <!--Conectados-->
-            </div>
-        </div>
-
-    </div>
+      </div>
     </div>
 
 

@@ -596,10 +596,12 @@
 			    <c:if test="${not empty ultimoArticulo}">
 			        <h3>${ultimoArticulo.titulo}</h3>
 			        <c:if test="${not empty ultimoArticulo.etiquetas}">
-			            <p>${fn:substring(ultimoArticulo.contenido, 0, 450)}...<a href="/wiki/${ultimoArticulo.id}"> Leer más</a></p>
+			            <p>${fn:substring(ultimoArticulo.contenido, 0, 700)}...</p>
+						<a class="text-dark" href="/wiki/${ultimoArticulo.id}"> Leer más</a>
 			        </c:if>
 			        <c:if test="${empty ultimoArticulo.etiquetas}">
-			            <p>${fn:substring(ultimoArticulo.contenido, 0, 350)}...</p>
+			            <p>${fn:substring(ultimoArticulo.contenido, 0, 2000)}...</p>
+						<a class="text-decoration-underline fw-bold" href="/wiki/${ultimoArticulo.id}">... Leer más</a>
 			        </c:if>
 			    </c:if>
 			</div>

@@ -124,6 +124,8 @@ hr.h-color{
     color: orange;
 }
 .bd-placeholder-img{
+    width: 260px;
+    height: 305px;
     object-fit: cover;
 }
 #pic {
@@ -193,16 +195,15 @@ hr.h-color{
 
 .rating {
     display: flex;
+    align-items: center;
     
 }
 .estrella {
-    font-size: 32px;
+    font-size: 25px;
     color: #ddd;
     transition: color 0.3s;
    
 }
-
-
 .estrella.checked {
     color: gold;
 }

@@ -527,7 +527,46 @@
         </nav>
         <!--NavBar-->
         <div class="row container-fluid">
+          <section class="row">
+            <h3>TODOS LOS JUEGOS</h3>
+              <div id="carouselExample" class="carousel slide p-5 ps-0 pe-0 pt-0 rounded-5 col-sm-12" data-bs-ride="carousel">
             
+                <div class="carousel-inner rounded-5">
+
+                    <div class="carousel-item active rounded-5 col-sm-12 ">
+                        <div class="d-flex justify-content-evenly rounded-5">
+
+                            <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
+                                <img src="img/space-ship.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                                <div class="card-body d-flex flex-column align-items-center">
+                                  <h5 class="card-title text-center">Space-Ship</h5>
+                                  <p class="card-text mb-0 text-justify">Derriba las naves espaciales</p>
+                                  <a href="/juegos/spaceship" class="btn btn-primary w-50 border-0 rounded-pill ">JUGAR</a>
+                              </div>
+                            </div>
+                   
+                            <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
+                                <img src="img/sistema-solar.jpeg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                                <div class="card-body d-flex flex-column align-items-center">
+                                  <h5 class="card-title text-center">Puzzle Espacial</h5>
+                                  <p class="card-text mb-0 text-justify">.</p>
+                                  <a href="/juegos/puzzleespacial" class="btn btn-primary w-50 border-0 rounded-pill ">JUGAR</a>
+                              </div>
+                            </div>
+
+                            <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
+                              <img src="img/nebulosas.sp.jpg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                              <div class="card-body d-flex flex-column align-items-center">
+                                <h5 class="card-title text-center">Ping-pong Espacial</h5>
+                                <p class="card-text mb-0 text-justify">.</p>
+                                <a href="/juegos/pingpongespacial" class="btn btn-primary w-50 border-0 rounded-pill ">JUGAR</a>
+                            </div>
+                          </div>
+                          
+                        </div>
+                </div>
+               </div>
+          </section>
         </div>
 
     </div>

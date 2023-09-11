@@ -245,6 +245,11 @@ public class UserController {
 		Long userId = (Long) session.getAttribute("userId");
 		return "views/juegos.jsp";
 	}
+	@GetMapping("/juegos/puzzleespacial")
+	public String puzzle(HttpSession session, Model model) {
+		Long userId = (Long) session.getAttribute("userId");
+		return "views/puzzleespacial.jsp";
+	}
 	@GetMapping("/cosmochat")
 	public String chat(HttpSession session, Model model) {
 		Long userId = (Long) session.getAttribute("userId");

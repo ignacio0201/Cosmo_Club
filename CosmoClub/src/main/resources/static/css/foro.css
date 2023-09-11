@@ -32,15 +32,32 @@
     display: flex;
     flex-direction: column;
     font-family: Poppins;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 320px; /* Ajusta el ancho del sidebar según tus necesidades */
+    background-color: #f8f9fa;
+    transition: all 0.4s;
 }
 .sidebar span{
     font-size: 30px;
 }
+@media (max-width: 767px) {
+    .sidebar {
+      margin-left: -320px;
+    }
+  
+    .sidebar.active {
+      margin-left: 0;
+    }
+  }
 .content{
-    min-height: 100vh;
-    width: 100%;
-    font-family: Poppins;
-    background: #e5fcff;
+    margin-left: 320px; /* Alinea el contenido a la derecha del sidebar */
+    padding: 20px;
+    background-color: #e5fcff;
+    overflow-y: auto;
 }
 hr.h-color{
     background: white;
