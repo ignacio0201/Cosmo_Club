@@ -26,8 +26,8 @@
 
         .imgEsquina {
             position: absolute;
-            left: -50%;
-            top: -70%;
+            left: -30%;
+            top: -40%;
             width: 109rem;
             z-index: -1;
         }
@@ -42,6 +42,16 @@
         .sol {
             margin-top: 8rem;
             height: 0px;
+        }
+        #estructura img{
+            position: absolute;
+            top: 150rem;
+            left: 37%;
+        }
+        #estructura h1{
+            position: absolute;
+            top: 142rem;
+            left: 37%;
         }
 
         .corona {
@@ -205,8 +215,8 @@
 
         .butonde {
             position: absolute;
-            left: 85%;
-            top: 238rem;
+            left: 91%;
+            top: 331rem;
             width: fit-content;
         }
 
@@ -226,7 +236,7 @@
         .butondes {
             position: absolute;
             left: 0%;
-            top: 200rem;
+            top: 271rem;
             width: fit-content;
         }
 

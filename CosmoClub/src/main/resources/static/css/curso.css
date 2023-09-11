@@ -3,9 +3,6 @@
     font-family: Pixel;
     src: url(../fonts/poxel/poxel-font.ttf);
 }
-.family-pixel{
-    font-family: Pixel;
-}
 @font-face {
     font-family: Altone;
     src: url(../fonts/altone/AltoneTrial-Regular.ttf);
@@ -22,6 +19,10 @@
     font-family: Poppins;
     src: url(../fonts/Poppins/Poppins-Light.ttf);
 }
+body {
+    font-family: Poppins;
+}
+
 #side_nav{
     background: url(../img/sidebar-foto-2.png);
     background-size: cover;
@@ -34,15 +35,22 @@
     display: flex;
     flex-direction: column;
     font-family: Poppins;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 320px; /* Ajusta el ancho del sidebar según tus necesidades */
+    background-color: #f8f9fa;
+    transition: all 0.4s;
 }
 .sidebar span{
     font-size: 30px;
 }
 .content{
-    min-height: 100vh;
-    width: 100%;
-    font-family: Poppins;
-    background: #d5f9fd;
+    margin-left: 320px; /* Alinea el contenido a la derecha del sidebar */
+    background-color: #e5fcff;
+    overflow-y: auto;
 }
 hr.h-color{
     background: white;
@@ -69,9 +77,10 @@ hr.h-color{
     }
     #side_nav.active{
         margin-left: 0;
+    
     }
 }
-.content h1{
+.family-pixel{
     font-family: Pixel;
 }
 .logo-sidebar {
@@ -97,16 +106,12 @@ hr.h-color{
     padding: 2px; /* Espacio entre el borde y la imagen */
 }
 
-
 /*STYLE DE LA BARRA DE PROGRESO*/
 .progress-title{
     font-size: 18px;
     font-weight: 700;
     color: #1c2647;
     margin: 0 0 10px;
-}
-.progress-bar{
-	background-image: linear-gradient(#4e2bfc, #0ec8f6);
 }
 .progress{
     width: 10rem;
@@ -146,39 +151,48 @@ hr.h-color{
     0%{ width: 0; }
 }
 
-
-/*STYLE DEL CURSO EN SI*/
-
-.img-mycourses1{
-    height: 12rem;
-    object-fit: cover;
-}
-.img-mycourses2{
-    height: 12rem;
-    object-fit: cover;
+.accordion {
+    --bs-accordion-btn-padding-y: 4rem;
+    box-shadow: none;
 }
 
-.title-1{
-	height: 20px;
-	
+.accordion-button {
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+.accordion-button::after {
+    margin-top: 20px;
+    box-shadow: none;
+    margin-left: 0 !important;
 }
 
 
-.carousel-control-next-icon{
-	color: white;
-	background-color: #225D97;
-	border-radius: 50px;
-	padding: 10px;
-}
-#carouselExample a{
-    background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
-}
-.carousel-item{
-    height: 420px;
-}
-#contain_moon{
-    text-align: center; 
-    padding-top: 10px; 
-    padding-bottom: 10px;
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    border-radius: 15px;
+    box-shadow: none;
 }
 
+:root,
+[data-bs-theme=light] {
+    --bs-border-radius: 1rem;
+    box-shadow: none;
+}
+
+.accordion-item {
+    border: none;
+    border-radius: 15px;
+}
+
+.border-top {
+    border-top: none !important;
+}
+
+.accordion-body {
+    text-align: center;
+}

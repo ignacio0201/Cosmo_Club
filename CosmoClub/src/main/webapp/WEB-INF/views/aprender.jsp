@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Montserrat+Alternates&display=swap"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   
@@ -521,112 +522,105 @@
               </div>
             </nav>
             <!--NavBar-->
-            <div class="content p-5">
-
-                  <section class="row">
-                    <h3>TODOS LOS CURSOS</h3>
-                      <div id="carouselExample" class="carousel slide p-3 ps-0 pe-0 pt-0 rounded-5 col-sm-12" data-bs-ride="carousel">
-                    
-                        <div class="carousel-inner bg-white rounded-5">
-
-                            <div class="carousel-item active rounded-5 col-sm-12 ">
-                                <div class="d-flex justify-content-evenly rounded-5">
-
-                                    
-                                    <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem; height: 23rem;">
-                                        <img src="img/img-cursos/sistema-solar.jpeg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
-                                        <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
-                                          <h5 class="card-title text-center">Sistema Solar</h5>
-                                          <p class="card-text mb-0 text-justify">El curso sobre el Sistema Solar es una aventura educativa que te llevará a explorar nuestro vecindario cósmico. Aprenderás sobre el sol, los 8 planetas y sus lunas, asteroides y cometas que componen nuestro sistema.</p>
-                                          <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">INSCRITO</a>
-                                      </div>
-                                    </div>
-
-                                    <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem; height: 23rem;">
-                                      <img src="img/img-cursos/galaxia.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
-                                      <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
-                                        <h5 class="card-title text-center">Galaxias</h5>
-                                        <p class="card-text mb-0 text-justify">El curso de Galaxias es un viaje a través del espacio que explora la formación y evolución de las galaxias, destacando sus aspectos cósmicos, como la distribución de la materia y la interacción gravitatoria entre ellas.</p>
-                                        <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
-                                    </div>
-                                  </div>
-
-                                    <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem; height: 23rem;">
-                                      <img src="img/img-cursos/nebulosas.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
-                                      <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
-                                        <h5 class="card-title text-center">Nebulosas</h5>
-                                        <p class="card-text mb-0 text-justify">En este curso, explorarás el fascinante mundo de las nebulosas. A través de las unidades decubrirás cómo su estudio revela pistas sobre la evolución de las galaxias y la creación de nuevas estrellas.</p>
-                                        <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
-                                    </div>
-                                  </div>
-                                  
-                                </div>
-                                
-                                
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-evenly rounded-5 col-sm-12 ">
-                                  <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
-                                    <img src="img/img-cursos/agujeros-negros.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
-                                    <div class="card-body d-flex flex-column align-items-center">
-                                      <h5 class="card-title text-center">Agujeros Negros</h5>
-                                      <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                      <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
-                                  </div>
-                                </div>
-                                <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
-                                  <img src="img/img-cursos/planetas.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
-                                  <div class="card-body d-flex flex-column align-items-center">
-                                    <h5 class="card-title text-center">Exo Planetas</h5>
-                                    <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                    <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
-                                </div>
-                                </div>
-                                <div class="card col-md-4 col-sm-12 rounded-5 me-3 border-0" style="width: 21rem;">
-                                  <img src="img/img-cursos/sol.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
-                                  <div class="card-body d-flex flex-column align-items-center">
-                                    <h5 class="card-title text-center">Sol</h5>
-                                    <p class="card-text mb-0 text-justify">Curso disponible proximamente.</p>
-                                    <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
-                                </div>
-                                </div>
+            <div class="p-4">
+              <div id="carouselExample" class="carousel slide rounded-5 col-sm-12" data-bs-ride="carousel">
+                <div class="carousel-inner p-4 bg-white rounded-5">
+                  <h3 class="family-pixel text-uppercase">Todos los cursos</h3>
+                    <div class="carousel-item active rounded-5 col-sm-12 ">
+                        <div class="d-flex justify-content-evenly rounded-5">
+                          
+                            <div class="card col-md-4 col-sm-12 border rounded-5 me-3" style="width: 28rem; height: 26rem;">
+                                <img src="img/img-cursos/sistema-solar.jpeg" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                                <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
+                                  <h5 class="card-title text-center">Sistema Solar</h5>
+                                  <p class="card-text mb-0 text-justify">El curso sobre el Sistema Solar es una aventura educativa que te llevará a explorar nuestro vecindario cósmico. Aprenderás sobre el sol, los 8 planetas y sus lunas, asteroides y cometas que componen nuestro sistema.</p>
+                                  <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">INSCRITO</a>
                               </div>
+                            </div>
+
+                            <div class="card col-md-4 col-sm-12 border rounded-5 me-3" style="width: 28rem; height: 26rem;">
+                              <img src="img/img-cursos/galaxia.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                              <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
+                                <h5 class="card-title text-center">Galaxias</h5>
+                                <p class="card-text mb-0 text-justify">El curso de Galaxias es un viaje a través del espacio que explora la formación y evolución de las galaxias, destacando sus aspectos cósmicos, como la distribución de la materia y la interacción gravitatoria entre ellas.</p>
+                                <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                            </div>
                           </div>
-                      </div>
-                      
-                        <button class="carousel-control-next ps-5" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>	
-                      </div>
-                  </section>
 
-                  <section>
-                    <div class="border rounded-3 p-3 bg-white" style="width: 352px;">
-                      <h3 class="">Mis Cursos</h3>
-
-                      <div class="row justify-content-start">
-                        
-      
-                        <div class="col-md-3">
-                          <div class="card shadow-sm card-mycourses" >
-                            <a href="/curso"><img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/img-cursos/sistema-solar.jpeg" alt=""></a>
-                            <div class="card-body">
-                              <p class="text-center">Sistema Solar</p>
-                              <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
-                              </div>
+                            <div class="card col-md-4 col-sm-12 border rounded-5 me-3" style="width: 28rem; height: 26rem;">
+                              <img src="img/img-cursos/nebulosas.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                              <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
+                                <h5 class="card-title text-center">Nebulosas</h5>
+                                <p class="card-text mb-0 text-justify">En este curso, explorarás el fascinante mundo de las nebulosas. A través de las unidades decubrirás cómo su estudio revela pistas sobre la evolución de las galaxias y la creación de nuevas estrellas.</p>
+                                <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                             </div>
+                          </div>
+                          
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-evenly rounded-5 col-sm-12 ">
+                          <div class="card col-md-4 col-sm-12 border rounded-5 me-3" style="width: 28rem; height: 26rem;">
+                            <img src="img/img-cursos/agujeros-negros.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                            <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
+                              <h5 class="card-title text-center">Agujeros Negros</h5>
+                              <p class="card-text mb-0 text-justify">El curso sobre Agujeros Negros explorarás las características de estos devoradores de luz, cómo se forman y su impacto en el espacio y el tiempo. Prepárate para desentrañar los secretos de estos objetos cósmicos enigmáticos.</p>
+                              <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                           </div>
                         </div>
-
-                      </div>
-
+                        <div class="card col-md-4 col-sm-12 border rounded-5 me-3" style="width: 28rem; height: 26rem;">
+                          <img src="img/img-cursos/planetas.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                          <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
+                            <h5 class="card-title text-center">Exo Planetas</h5>
+                            <p class="card-text mb-0 text-justify">El curso sobre Exoplanetas descubrirás mundos distantes que orbitan estrellas lejanas y aprenderás sobre la diversidad de exoplanetas. Aventúrate en la búsqueda de vida más allá de la Tierra en este apasionante curso.</p>
+                            <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                        </div>
+                        </div>
+                        <div class="card col-md-4 col-sm-12 border rounded-5 me-3" style="width: 28rem; height: 26rem;">
+                          <img src="img/img-cursos/sol.png" class="card-img-top rounded-5 rounded-bottom-0 img-mycourses1" alt="img_curso">
+                          <div class="card-body d-flex flex-column align-items-center" style="font-size: 15px;">
+                            <h5 class="card-title text-center">Sol</h5>
+                            <p class="card-text mb-0 text-justify">El curso sobre el Sol conocerás el sol, la estrella que nos da luz y vida, en detalle. Explorarás su estructura, sus ciclos de actividad y su influencia en la Tierra y el espacio. Prepárate para un emocionante viaje hacia el centro de nuestra estrella más cercana.</p>
+                            <a href="#" class="btn btn-primary mt-3 w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
+                        </div>
+                        </div>
+                        </div>
                     </div>
-                      
-                      
+              </div>
+              
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="margin-left: 10rem;"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>	
+            </div>
 
-                  </section>
+            <div class="p-3">
+              <div class="d-flex justify-content-around">
+                <div class="col-4 border rounded-5 bg-white d-flex flex-column align-items-center justify-content-center">
+                  <h3 class="family-pixel text-uppercase">Mis Cursos</h3>
+                  <div class="card shadow-sm">
+                    <a href="/curso"><img class="bd-placeholder-img img-mycourses2" width="100%" src="/img/img-cursos/sistema-solar.jpeg" alt=""></a>
+                    <div class="card-body">
+                      <p class="text-center">Sistema Solar</p>
+                      <div class="progress w-100" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-success progress-bar-lg" style="width: 10%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="col-4 border rounded-5 bg-white">
+                  <div id="contain_moon">
+                    <div style="font-weight: bold; font-size: x-large;">La Luna hoy</div>
+                    <div style="margin-top: -7px; margin-bottom: 42px; padding: 30px; filter: drop-shadow(0 0 30px hsl(220, 100%, 15%));"></div>
+                    <div style="font-size: 20px;">.</div>
+                    <div style="font-size: x-large;">.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
 
         </div>
@@ -638,6 +632,36 @@
 
     <script src="../js/aprender.js"></script>
     <script src="../js/preloader.js"></script>
+    <script>
+      (function () {
+                var d = new Date().getDate();
+                var m = document.querySelectorAll("#contain_moon div");
+                var a = new XMLHttpRequest();
+                var url =
+                  "https://www.icalendar37.net/lunar/api/?lang=es&month=" +
+                  (new Date().getMonth() + 1) +
+                  "&year=" +
+                  new Date().getFullYear() +
+                  "&size=200&lightColor=rgb(245,245,245)&shadeColor=rgb(17,17,17)&LDZ=" +
+                  new Date(new Date().getFullYear(), new Date().getMonth(), 1) /
+                    1000 +
+                  "";
+                m[1].style.height = "200px";
+                a.onreadystatechange = function () {
+                  if (a.readyState == 4 && a.status == 200) {
+                    var b = JSON.parse(a.responseText);
+                    m[1].innerHTML = b.phase[d].svg;
+                    if (typeof moon_widget_loaded == "function")
+                      moon_widget_loaded(b);
+                    m[2].innerHTML = b.phase[d].npWidget;
+                    m[3].innerHTML = "Próxima luna llena<br>" + b.nextFullMoon;
+                  }
+                };
+                a.open("GET", url, true);
+                a.send();
+              })();
+    </script>
+    
     
 </body>
 </html>

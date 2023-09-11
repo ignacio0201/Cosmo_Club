@@ -83,8 +83,7 @@ hr.h-color{
     width: 2rem;
 }
 .img-cursos {
-    width: 15rem;
-    height: 15rem;
+    height: 25rem;
     object-fit: cover;
 }
 .img-nav {
@@ -148,3 +147,12 @@ hr.h-color{
 @keyframes animate-positive{
     0%{ width: 0; }
 }
+
+.d-flex-center {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
