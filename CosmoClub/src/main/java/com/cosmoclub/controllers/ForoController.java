@@ -84,7 +84,7 @@ public class ForoController {
 	        }
 	        model.addAttribute("commentCounts", commentCounts);
 
-	        // Calcular la diferencia de tiempo y formatearla para cada comentario
+	        // Calcular la diferencia de tiempo y formatearla para cada post
 	        for (Post post : allPosts) {
 	            String timeAgo = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
 	            post.setTimeAgo(timeAgo);
@@ -131,10 +131,15 @@ public class ForoController {
 			model.addAttribute("allCommentsPost", allCommentsPost);
 			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
 			
+			// Calcular la diferencia de tiempo y formatearla para cada post
+            String timeAgoPost = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+            post.setTimeAgo(timeAgoPost);
+            
+			
 			// Calcular la diferencia de tiempo y formatearla para cada comentario
             for (Comment comment : allCommentsPost) {
-            	String timeAgo = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
-                comment.setTimeAgo(timeAgo);
+            	String timeAgoComment = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
+                comment.setTimeAgo(timeAgoComment);
             }
 			return "views/post.jsp";
 		} else {
