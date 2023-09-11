@@ -344,7 +344,7 @@ public class UserController {
 	        if (BCrypt.checkpw(contrasenaActual, user.getPassword())) {
 	            // Verificar que la nueva contraseña y la confirmación coincidan
 	            if (nuevaContrasena.equals(confirmarContrasena)) {
-	                // Aplicar validaciones de complejidad de contraseña aquí si es necesario
+	               
 
 	                // Encriptar la nueva contraseña
 	                String hashedNuevaContrasena = BCrypt.hashpw(nuevaContrasena, BCrypt.gensalt());
@@ -353,19 +353,17 @@ public class UserController {
 	                user.setPassword(hashedNuevaContrasena);
 	                userService.save(user);
 
-	                // Redirigir al formulario de edición de perfil
+	               
 	                return "redirect:/perfil";
 	            } else {
-	                // Las contraseñas nueva y confirmar no coinciden, agrega un mensaje de error
+	          
 	                redirectAttributes.addFlashAttribute("error", "Las contraseñas nuevas no coinciden.");
 	            }
 	        } else {
-	            // La contraseña actual es incorrecta, agrega un mensaje de error
+	          
 	            redirectAttributes.addFlashAttribute("error", "La contraseña actual es incorrecta.");
 	        }
 	    }
-
-	    // Redirigir al formulario de edición de perfil
 	    return "redirect:/perfil/" + id;
 	}
 	
@@ -433,11 +431,11 @@ public class UserController {
 			User user = userService.findUserById(userId);
 			Post post = postService.findPost(postId);
 			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
-			Long numberCommentsPost = commentService.countCommentsByPostId(postId); //this
+			Long numberCommentsPost = commentService.countCommentsByPostId(postId); 
 			model.addAttribute("user", user);
 			model.addAttribute("post", post);
 			model.addAttribute("allCommentsPost", allCommentsPost);
-			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
+			model.addAttribute("numberCommentsPost", numberCommentsPost); 
 			return "views/post.jsp";
 		}
 		Long userId = (Long) session.getAttribute("userId");
