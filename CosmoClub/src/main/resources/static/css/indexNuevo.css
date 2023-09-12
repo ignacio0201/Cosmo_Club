@@ -1,4 +1,15 @@
 @charset "ISO-8859-1";
+
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+*{
+	font-family: Poppins;
+}
+
+
 .sidebar {
 	position: fixed;
 	top: 0;

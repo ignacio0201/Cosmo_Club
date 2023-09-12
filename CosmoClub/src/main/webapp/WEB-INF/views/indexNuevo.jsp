@@ -26,6 +26,8 @@
 <title>WikiCosmos</title>
 </head>
 <body>
+
+	<div class="container">
 	<div class="sidebar">
     	<h2 class="mb-5 text-center"><a href="/wiki">WikiCosmos</a></h2>
 	    <div class="accordion" id="accordionExample">
@@ -49,24 +51,46 @@
 	        </c:forEach>
 	    </div>
 	</div>
-	<form style="margin-left: 320px;" accept-charset="UTF-8" method="post" action="/nuevo" onsubmit="prepareFormData()">
-		<label style="margin-left: 400px;" for="titulo">Título:</label> 
-		<input type="text" id="titulo" name="titulo" placeholder="Titulo">
-		<div id="etiquetas-seleccionadas">
+
+	
+	
+	<div class="container w-75 mt-5">
+	
+		<div class="row">
+			<div class="col ml-5">
+				<form style="" accept-charset="UTF-8" method="post" action="/nuevo" onsubmit="prepareFormData()">
+					
+					<!--  <label for="etiquetas ">Título: </label> -->
+					<input class="form-control mb-3" type="text" id="titulo" name="titulo" placeholder="Titulo">
+					
+					<div class="mb-3 rounded-pill" id="etiquetas-seleccionadas"></div>
+					
+						<input class="rounded" type="hidden" name="etiquetas" id="etiquetasInput">
+					
+						<!--  <label for="etiquetas ">Elige un tag: </label> -->
+							<select class="form-control mb-3" name="etiquetas" id="etiquetas" onchange="agregarEtiqueta()">
+							    <option value="">Selecciona una etiqueta</option>
+							    <c:forEach items="${tags}" var="tag">
+							        <option value="${tag.id}">${tag.etiqueta}</option>
+							    </c:forEach>
+							</select>
+							
+					<textarea style="" id="mytextarea" name="newWiki"><hr>Crear una nueva Wiki</textarea>
+					
+					<div class="row">
+						<div class="col mt-3">
+							<button class="rounded-pill" type="submit" style="margin-left: 40%;">Guardar</button>
+						</div>
+					</div>
+					
+				</form>
+			</div>
 		</div>
-		<input type="hidden" name="etiquetas" id="etiquetasInput">
-			<label for="etiquetas">Elige un tag: </label>
-				<select name="etiquetas" id="etiquetas" onchange="agregarEtiqueta()">
-				    <option value="">Selecciona una etiqueta...</option>
-				    <c:forEach items="${tags}" var="tag">
-				        <option value="${tag.id}">${tag.etiqueta}</option>
-				    </c:forEach>
-				</select>
-				
-		<textarea style="width: 1173px;" id="mytextarea" name="newWiki"><hr>Crear una nueva Wiki</textarea>
-		
-		<button type="submit" style="margin-left: 40%;">Guardar</button>
-	</form>
+	</div>	
+	
+	</div>
+
+	
 <script src="/js/etiquetas.js"></script>
 </body>
 </html>
