@@ -18,6 +18,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@100&family=Montserrat+Alternates&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="/js/like.js" defer></script>
+
 </head>
 
 <body>
@@ -129,6 +132,17 @@
 					
 					<p>${comment.comment}</p>
 					<p style="color: gray;">${comment.timeAgo}</p>
+					
+					 <div class="post-ratings-container" data-post-id="${comment.post.id}" data-comment-id="${comment.id}">
+					    <div class="post-rating">
+					        <span class="post-rating-button material-icons like-button" data-type="like" ${userLikeSelection == 'dislike' ? 'disabled' : ''}>thumb_up</span>
+					        <span class="post-rating-count">${likesMap[comment.id]}</span>
+					    </div>
+					    <div class="post-rating">
+					        <span class="post-rating-button material-icons dislike-button" data-type="dislike" ${userLikeSelection == 'like' ? 'disabled' : ''}>thumb_down</span>
+					        <span class="post-rating-count">${dislikesMap[comment.id]}</span>
+					    </div>
+					</div>
 				</div>
 				<hr>
 			</c:forEach>

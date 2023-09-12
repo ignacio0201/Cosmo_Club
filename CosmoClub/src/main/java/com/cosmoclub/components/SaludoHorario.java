@@ -18,5 +18,4 @@ public class SaludoHorario {
             return "Buenas noches";
         }
     }
-
 }

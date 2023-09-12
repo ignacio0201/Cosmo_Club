@@ -123,7 +123,16 @@ public class User {
    )
    private List<User> emisor;
   
+   @ManyToMany(fetch = FetchType.LAZY)
+   @JoinTable(
+       name = "likes", 
+       joinColumns = @JoinColumn(name = "user_id"), 
+       inverseJoinColumns = @JoinColumn(name = "comment_id")
+   )
+   private List<Comment> comment_likes;
    
+   @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+   private List<Like> likes;
    
    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
    private List<Notification> notification;
@@ -334,6 +343,23 @@ public class User {
 		this.descripcion = descripcion;
 	}
 
+	public List<Comment> getComment_likes() {
+		return comment_likes;
+	}
+
+	public void setComment_likes(List<Comment> comment_likes) {
+		this.comment_likes = comment_likes;
+	}
+
+	public List<Like> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(List<Like> likes) {
+		this.likes = likes;
+	}
+	
+	
 	
 }
 

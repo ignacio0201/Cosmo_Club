@@ -1,9 +1,7 @@
 package com.cosmoclub.services;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +34,6 @@ public class CommentService {
 	
 	public Long countCommentsByPostId(Long postId) {
 		
-        return commentRepo.countByPostId(postId); //this
-    }
-	
+        return commentRepo.countByPostId(postId); 
+	}
 }

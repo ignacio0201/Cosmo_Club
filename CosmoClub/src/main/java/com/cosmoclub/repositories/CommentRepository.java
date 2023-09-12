@@ -12,4 +12,6 @@ public interface CommentRepository extends CrudRepository<Comment,Long>{
 	
 	Long countByPostId(Long postId);
 	
+	
+
 }

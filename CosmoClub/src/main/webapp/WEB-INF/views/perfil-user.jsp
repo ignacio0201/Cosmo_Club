@@ -549,7 +549,7 @@
 						  
 
 						  <div class="row">
-							<p class="user d-flex align-items-center start">
+							<p class="text-break user d-flex align-items-center start">
 								<i class='me-2 bx bx-envelope'></i>
 							  ${user.email}
 							</p>
