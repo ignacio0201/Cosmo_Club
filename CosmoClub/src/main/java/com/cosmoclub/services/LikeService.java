@@ -9,6 +9,8 @@ import com.cosmoclub.models.Like.LikeType;
 import com.cosmoclub.models.User;
 import com.cosmoclub.repositories.LikeRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class LikeService {
 	
@@ -37,6 +39,12 @@ public class LikeService {
 
 	public Like findByUserAndComment(User user, Comment comment) {
         return likeRepo.findByUserAndComment(user, comment);
+    }
+
+
+	@Transactional
+    public void deletePreviousVote(User user, Comment comment) {
+        likeRepo.deleteByUserAndComment(user, comment);
     }
 
 }

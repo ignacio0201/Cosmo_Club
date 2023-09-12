@@ -83,4 +83,9 @@
     color: #FF0000; /* Cambia esto por tus estilos */
 }
 
+.post-rating-button[disabled] {
+    cursor: default;
+    color: #ccc; /* Cambia esto por el color que desees para los botones deshabilitados */
+}
+
 

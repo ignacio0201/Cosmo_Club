@@ -131,15 +131,14 @@
 					<p style="color: gray;">${comment.timeAgo}</p>
 					
 					 <div class="post-ratings-container" data-post-id="${comment.post.id}" data-comment-id="${comment.id}">
-					 
-						<div class="post-rating">
-							<span class="post-rating-button material-icons">thumb_up</span>
-							<span class="post-rating-count">${likesMap[comment.id]}</span>
-						</div>
-						<div class="post-rating">
-							<span class="post-rating-button material-icons">thumb_down</span>
-							 <span class="post-rating-count">${dislikesMap[comment.id]}</span>
-						</div>
+					    <div class="post-rating">
+					        <span class="post-rating-button material-icons like-button" data-type="like" ${userLikeSelection == 'dislike' ? 'disabled' : ''}>thumb_up</span>
+					        <span class="post-rating-count">${likesMap[comment.id]}</span>
+					    </div>
+					    <div class="post-rating">
+					        <span class="post-rating-button material-icons dislike-button" data-type="dislike" ${userLikeSelection == 'like' ? 'disabled' : ''}>thumb_down</span>
+					        <span class="post-rating-count">${dislikesMap[comment.id]}</span>
+					    </div>
 					</div>
 				</div>
 				<hr>

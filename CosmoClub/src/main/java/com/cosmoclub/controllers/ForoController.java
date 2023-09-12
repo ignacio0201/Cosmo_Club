@@ -233,7 +233,11 @@ public class ForoController {
 	}
 	
 	@PostMapping("/{postId}/comments/{commentId}/{likeOrDislike}")
-	public ResponseEntity<Map<String, Object>> likeOrDislikeComment(@PathVariable("postId") Long postId,@PathVariable("commentId") Long commentId,@PathVariable("likeOrDislike") String likeOrDislike,HttpSession session
+	public ResponseEntity<Map<String, Object>> likeOrDislikeComment(
+	    @PathVariable("postId") Long postId,
+	    @PathVariable("commentId") Long commentId,
+	    @PathVariable("likeOrDislike") String likeOrDislike,
+	    HttpSession session
 	) {
 	    Long userId = (Long) session.getAttribute("userId");
 
@@ -246,27 +250,39 @@ public class ForoController {
 	            // Buscar un registro existente de Like para este usuario y comentario
 	            Like existingLike = likeService.findByUserAndComment(user, comment);
 
-	            if (existingLike != null) {
-	                // El usuario ya ha registrado su acción previamente, elimina el registro
-	                likeService.deleteLike(existingLike);
-	            } else {
-	                // Crear una nueva instancia de Like
-	                Like like = new Like();
+	            if ("like".equals(likeOrDislike)) {
+	                if (existingLike != null && existingLike.getTipo() == LikeType.ME_GUSTA) {
+	                    // El usuario ya dio "Me gusta" previamente al mismo comentario, elimina el registro
+	                    likeService.deleteLike(existingLike);
+	                } else {
+	                    // Eliminar cualquier voto anterior (ya sea "Me gusta" o "No me gusta")
+	                    likeService.deletePreviousVote(user, comment);
 
-	                // Establecer el tipo de like (ME_GUSTA o NO_ME_GUSTA)
-	                if ("like".equals(likeOrDislike)) {
+	                    // Crear un nuevo registro de "Me gusta"
+	                    Like like = new Like();
 	                    like.setTipo(LikeType.ME_GUSTA);
-	                } else if ("dislike".equals(likeOrDislike)) {
-	                    like.setTipo(LikeType.NO_ME_GUSTA);
+	                    like.setComentario(comment);
+	                    like.setUser(user);
+	                    likeService.saveLike(like);
 	                }
-	               
-	                like.setComentario(comment);
-	                like.setUser(user);
+	            } else if ("dislike".equals(likeOrDislike)) {
+	                if (existingLike != null && existingLike.getTipo() == LikeType.NO_ME_GUSTA) {
+	                    // El usuario ya dio "No me gusta" previamente al mismo comentario, elimina el registro
+	                    likeService.deleteLike(existingLike);
+	                } else {
+	                    // Eliminar cualquier voto anterior (ya sea "Me gusta" o "No me gusta")
+	                    likeService.deletePreviousVote(user, comment);
 
-	                likeService.saveLike(like);
+	                    // Crear un nuevo registro de "No me gusta"
+	                    Like dislike = new Like();
+	                    dislike.setTipo(LikeType.NO_ME_GUSTA);
+	                    dislike.setComentario(comment);
+	                    dislike.setUser(user);
+	                    likeService.saveLike(dislike);
+	                }
 	            }
 
-	            // Calcular la cantidad de "me gusta" y "no me gusta" desde el repositorio
+	            // Obtener los nuevos contadores después de realizar el voto
 	            Long likesCount = likeService.countLikesByCommentAndType(comment, LikeType.ME_GUSTA);
 	            Long dislikesCount = likeService.countLikesByCommentAndType(comment, LikeType.NO_ME_GUSTA);
 
