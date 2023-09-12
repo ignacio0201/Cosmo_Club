@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cosmoclub.components.CalcularTiempoTranscurrido;
+import com.cosmoclub.components.SaludoHorario;
 import com.cosmoclub.logicaNegocio.Foro;
 import com.cosmoclub.models.Comment;
 import com.cosmoclub.models.Like;
@@ -166,6 +167,7 @@ public class ForoController {
 	        model.addAttribute("user", user);
 	        model.addAttribute("post", post);
 	        model.addAttribute("allCommentsPost", allCommentsPost);
+	        model.addAttribute("numberCommentsPost", numberCommentsPost);
 	        model.addAttribute("likesMap", likesMap);
 	        model.addAttribute("dislikesMap", dislikesMap);
 
