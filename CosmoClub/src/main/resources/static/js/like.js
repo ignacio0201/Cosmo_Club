@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Función para manejar clics en "Me gusta" o "No me gusta"
+  
     const handleLikeOrDislike = async (tipo, likeButton, dislikeButton, likeCount, dislikeCount, postId, commentId) => {
     const count = tipo === "like" ? likeCount : dislikeCount;
     const button = tipo === "like" ? likeButton : dislikeButton;
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 // La solicitud se completó con éxito
                 const data = await response.json();
-                // Actualizar el contador en el cliente si es necesario
+           
             } else {
                 // Manejar errores de la solicitud si es necesario
             }
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
             otherCount.textContent = Math.max(0, Number(otherCount.textContent) - 1);
         }
 
-        // Guardar la nueva selección del usuario en localStorage
+      
         localStorage.setItem(`userLikeSelection_${commentId}`, tipo);
 
         // Actualizar la apariencia del botón y el contador
@@ -62,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 // La solicitud se completó con éxito
                 const data = await response.json();
-                // Actualizar el contador en el cliente si es necesario
+        
             } else {
-                // Manejar errores de la solicitud si es necesario
+           
             }
         } catch (error) {
             console.error("Error al realizar la solicitud AJAX:", error);
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const likeCount = container.querySelector(".post-rating:first-child .post-rating-count");
         const dislikeCount = container.querySelector(".post-rating:last-child .post-rating-count");
 
-        // Verificar y aplicar la selección almacenada en localStorage
+      
         const userSelection = localStorage.getItem(`userLikeSelection_${commentId}`);
         if (userSelection === "like") {
             likeButton.classList.add("post-rating-selected");

@@ -259,12 +259,10 @@ public class ForoController {
 	                } else if ("dislike".equals(likeOrDislike)) {
 	                    like.setTipo(LikeType.NO_ME_GUSTA);
 	                }
-
-	                // Asignar el comentario y el usuario al like
+	               
 	                like.setComentario(comment);
 	                like.setUser(user);
 
-	                // Guardar el like en la base de datos
 	                likeService.saveLike(like);
 	            }
 
