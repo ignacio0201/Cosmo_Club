@@ -48,6 +48,7 @@ body {
     font-size: 30px;
 }
 .content{
+    font-family: Poppins;
     margin-left: 320px; /* Alinea el contenido a la derecha del sidebar */
     background-color: #e5fcff;
     overflow-y: auto;

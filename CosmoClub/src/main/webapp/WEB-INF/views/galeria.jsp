@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CosmoClub</title>
-        <link rel="icon" type="image/x-icon" href="img/logo_negro.ico">
+        <link rel="icon" type="image/x-icon" href="img/icons/logo_negro.ico">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="/css/gallery.css">
         <link rel="stylesheet" href="/css/preloader.css">

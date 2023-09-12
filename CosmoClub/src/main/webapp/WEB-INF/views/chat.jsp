@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CosmoClub</title>
-    <link rel="icon" type="image/x-icon" href="img/logo_negro.ico">
+    <link rel="icon" type="image/x-icon" href="img/icons/logo_negro.ico">
     <script src="https://kit.fontawesome.com/9e0d9f4598.js" crossorigin="anonymous"></script>
     <!--CSS personalizado-->
     <link rel="stylesheet" href="../css/chat.css">
@@ -526,8 +526,11 @@
           </div>
         </nav>
         <!--NavBar-->
-        <div class="row bg-chat">
-            
+        <div class="row bg-chat ">
+        	
+        	<div class="col d-flex justify-content-center align-items-center rounded mt-5">
+            	<img class="w-50" src="img/foto_chat.jpg">
+            </div>
         </div>
 
     </div>

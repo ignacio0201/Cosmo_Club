@@ -20,7 +20,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  
     <div class="main-container d-flex">
       <div class="preloader">
         <svg
@@ -477,7 +476,6 @@
     
         <h3 class="title"></h3>
       </div>
-
         <div class="sidebar" id="side_nav">
             <div class="img-icon-nav header-box px-3 pt-3 pb-4 d-flex flex-column align-items-center text-center">
               <h1 class="fs-4">

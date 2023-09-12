@@ -499,7 +499,7 @@
             <!--NavBar-->
             <nav class="navbar navbar-expand-md bg-white">
               <div class="container-fluid justify-content-between">
-                <h1 class="family-pixel text-uppercase ms-5">${saludar}, ${user.name} ${user.last_name}!</h1>
+                <h1 class="family-pixel text-uppercase">${saludar}, ${user.name} ${user.last_name}!</h1>
                 <div class="d-flex flex-column align-items-center">
                   <h3 class="progress-title my-2">NIVEL</h3>
                   <div class="progress">
@@ -516,7 +516,7 @@
                       <li><a class="dropdown-item" href="/perfil">Configuración</a></li>
                       <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
                   </ul>
-                </div>
+              </div>
               </div>
             </nav>
             <!--NavBar-->

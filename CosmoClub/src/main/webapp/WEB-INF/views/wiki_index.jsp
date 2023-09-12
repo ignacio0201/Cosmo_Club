@@ -9,7 +9,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WikiCosmos</title>
-    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <link rel="icon" type="image/x-icon" href="img/icons/logo_negro.ico">
 	<!--CSS personalizado-->
 	<link rel="stylesheet" href="/css/indexwiki.css">
 	<link rel="stylesheet" href="/css/preloader.css">

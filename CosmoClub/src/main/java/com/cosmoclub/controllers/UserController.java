@@ -232,11 +232,13 @@ public class UserController {
 	
 	@GetMapping("/curso")
 	public String curso(HttpSession session, Model model) {
-		String saludar = saludoHorario.obtenerSaludo();
+		Long userId = (Long) session.getAttribute("userId");
+		User user = userService.findUserById(userId);
+        model.addAttribute("user", user);
+
+        String saludar = saludoHorario.obtenerSaludo();
         model.addAttribute("saludar", saludar);
 		
-		Long userId = (Long) session.getAttribute("userId");
-		model.addAttribute("user", userService.findUserById(userId));
 		return "views/curso.jsp";
 	}
 	@GetMapping("/unidad")
@@ -244,6 +246,7 @@ public class UserController {
 		Long userId = (Long) session.getAttribute("userId");
 		return "views/unidad.jsp";
 	}
+	
 	@GetMapping("/juegos")
 	public String juegos(HttpSession session, Model model) {
 		Long userId = (Long) session.getAttribute("userId");

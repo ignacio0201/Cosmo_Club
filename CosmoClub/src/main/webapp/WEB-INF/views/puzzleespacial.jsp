@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide Puzzle</title>
+    <title>CosmoClub</title>
+    <link rel="icon" type="image/x-icon" href="/img/icons/logo_negro.ico">
     <!DOCTYPE html>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
