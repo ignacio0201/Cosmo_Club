@@ -232,7 +232,11 @@ public class UserController {
 	
 	@GetMapping("/curso")
 	public String curso(HttpSession session, Model model) {
+		String saludar = saludoHorario.obtenerSaludo();
+        model.addAttribute("saludar", saludar);
+		
 		Long userId = (Long) session.getAttribute("userId");
+		model.addAttribute("user", userService.findUserById(userId));
 		return "views/curso.jsp";
 	}
 	@GetMapping("/unidad")

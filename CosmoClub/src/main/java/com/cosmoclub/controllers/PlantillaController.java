@@ -237,11 +237,16 @@ public class PlantillaController {
 	}
 
 	@GetMapping("/wiki/{id}")
-	public String articulo(@PathVariable Long id, Model model) {
+	public String articulo(@PathVariable Long id, Model model, HttpSession session) {
 		    
 		
 	    @SuppressWarnings("unchecked")
 		Map<Tag, List<Plantilla>> articulosPorEtiqueta = (Map<Tag, List<Plantilla>>) servletContext.getAttribute("articulosPorEtiqueta");
+	    
+	    Long userId = (Long) session.getAttribute("userId");
+
+		User user = userService.findUserById(userId);
+        model.addAttribute("user", user);
 		
 		
 		Plantilla wiki = plantillaService.findPlantillaById(id);
