@@ -5,17 +5,18 @@ import java.time.LocalTime;
 
 @Component
 public class SaludoHorario {
-	
-	    public String obtenerSaludo() {
-	        LocalTime horaActual = LocalTime.now();
-	        
-	        if (horaActual.isBefore(LocalTime.of(12, 0))) {
-	            return "Buenos días";
-	        } else if (horaActual.isBefore(LocalTime.of(20, 0))) {
-	            return "Buenas tardes";
-	        } else {
-	            return "Buenas noches";
-	        }
-	    }
-	
+
+    public static String obtenerSaludo() {
+        LocalTime horaActual = LocalTime.now();
+        int hora = horaActual.getHour();
+
+        if (hora >= 6 && hora < 12) {
+            return "Buenos dias";
+        } else if (hora >= 12 && hora < 18) {
+            return "Buenas tardes";
+        } else {
+            return "Buenas noches";
+        }
+    }
+
 }

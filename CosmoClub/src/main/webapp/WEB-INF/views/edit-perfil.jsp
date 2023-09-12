@@ -563,7 +563,7 @@
 						</div>
 					  </div>
 					  <footer class="text-center mt-4">
-						<input type="submit" class="btn btn-primary" value="Editar Perfil" />
+						<input type="submit" class="btn btn-light text-dark" value="Editar Perfil" />
 					  </footer>
 					</form:form>
 				  </div>
@@ -596,7 +596,7 @@
 		
 					<div class="nivel rounded-5 border border-secondary-subtle p-4 px-5">
 						<header class="text-center">
-							<h2 class="family-pixel text-uppercase">Cambiar Contraseña</h2>
+							<h2 class="family-pixel text-uppercase">Cambiar Clave</h2>
 						</header>
 						<form method="post" action="/perfil/${user.id}/editpwd">
 							<div class="form-group">
