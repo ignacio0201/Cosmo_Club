@@ -551,11 +551,9 @@
 				</div>
 				
 				<hr>
-				
-                
                   <c:forEach items="${allPosts}" var="post">
                      <c:set var="postId" value="${post.id}" />
-                     <c:set var="numberCommentsDash" value="${commentCounts[postId]}" />
+                     <c:set var="numberCommentsForo" value="${commentCounts[postId]}" />
                     <div class="row bg-white g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 	                      <div class="col p-4 d-flex flex-column position-static">
 	                        <h5 class="mb-0">
@@ -566,45 +564,46 @@
 								<p class="foro-post-timeago d-inline-block">&#8226 ${post.timeAgo}</p>
 	                        </h5>
 	                       <c:set var="averageRating" value="${postRatings[post.id]}" />
-							<div class="mb-1 text-body-secondary mt-3">
-							    Promedio de calificaciones:
-							    <div class="rating estrellas">
-							        <i class="bi bi-star-fill estrella ${averageRating >= 1 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 2 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 3 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 4 ? 'checked' : ''}"></i>
-							        <i class="bi bi-star-fill estrella ${averageRating >= 5 ? 'checked' : ''}"></i>
-							    </div>
-							    <p>${averageRating}</p>
-							</div>
 	                        
-	                        <h3>${post.title}</h3>
-	                        <p class="card-text mb-auto">
-	                          <c:set var="limitedContent" value="${fn:substring(post.content, 0, 350)}" />
+	                        <h4 class="text-break">${post.title}</h4>
+	                        <p class="text-break card-text mb-auto">
+	                          <c:set var="limitedContent" value="${fn:substring(post.content, 0, 150)}" />
 	                          ${limitedContent}...
 	                        </p>
 	                        <a href="/post/${post.id}" class="icon-link gap-1 icon-link-hover ">Continuar leyendo...</a>
 	                        
 	                        <div class="mb-1 text-body-secondary mt-3">
 	                        	<c:choose>
-							        <c:when test="${numberCommentsDash == 0}">
+							        <c:when test="${numberCommentsForo == 0}">
 							        	Sé la primera persona en comentar! <i class="bi bi-chat-dots-fill"></i>
 							        </c:when>
-							        <c:when test="${numberCommentsDash == 1}">
+							        <c:when test="${numberCommentsForo == 1}">
 							        	1 persona ha comentado <i class="bi bi-chat-dots-fill"></i>
 							        </c:when>
 							        <c:otherwise>
-							       		${numberCommentsDash} personas han comentado <i class="bi bi-chat-dots-fill"></i>
+							       		${numberCommentsForo} personas han comentado <i class="bi bi-chat-dots-fill"></i>
 							    	</c:otherwise>
 								</c:choose>
 	                        </div>
-	                         <!-- Agrega esta sección para mostrar el promedio de calificaciones -->
+	                         <!-- PROMEDIO CALIFICACIONES-->
+							 <c:set var="averageRating" value="${postRatings[post.id]}" />
+							 <div class="mb-1 text-body-secondary mt-2">
+								 <div class="rating estrellas d-inline">
+									 <i class="bi bi-star-fill estrella ${averageRating >= 1 ? 'checked' : ''}"></i>
+									 <i class="bi bi-star-fill estrella ${averageRating >= 2 ? 'checked' : ''}"></i>
+									 <i class="bi bi-star-fill estrella ${averageRating >= 3 ? 'checked' : ''}"></i>
+									 <i class="bi bi-star-fill estrella ${averageRating >= 4 ? 'checked' : ''}"></i>
+									 <i class="bi bi-star-fill estrella ${averageRating >= 5 ? 'checked' : ''}"></i>
+								  </div>
+									  <p class="d-inline">${averageRating}</p>
+							 </div>                 
+						  <!-- PROMEDIO CALIFICACIONES--> 
 						    
 	                      </div>
 	                      <div class="col-auto d-none d-lg-block">
-	                        	<!-- AQUI VA LA IMAGEN DEL FORO -->
 	                          	<c:forEach var="imagen" items="${post.images}">
-									<img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="" width="300" height="250">
+									<img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="foto-post" style="width: 260px;
+									height: 362px;">
 								</c:forEach>
 	                      </div>
 	                      

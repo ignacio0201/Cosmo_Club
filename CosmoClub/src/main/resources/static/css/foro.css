@@ -54,8 +54,8 @@
     }
   }
 .content{
+    font-family: Poppins;
     margin-left: 320px; /* Alinea el contenido a la derecha del sidebar */
-    padding: 20px;
     background-color: #e5fcff;
     overflow-y: auto;
 }
@@ -197,4 +197,9 @@ hr.h-color{
     color: gold;
 }
 
+.bd-placeholder-img{
+    width: 260px;
+    height: 362px;
+    object-fit: cover;
+}
 

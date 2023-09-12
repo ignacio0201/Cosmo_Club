@@ -507,7 +507,7 @@
 	        </c:forEach>
 	    </div>
         
-      </div>
+    </div>
 
 
 	<div class="content">

@@ -1,3 +1,44 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+.content{
+	font-family: Poppins;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Poppins;
+    background: #dffaff;
+    
+}
+.volver-foro {
+    color: black; 
+    background-color: white;
+    padding: 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.volver-foro:hover {
+    color: white;
+    background-color: black;
+}
+.img-perfil {
+    width: 3rem;
+}
+.foro-post-timeago{
+	color:gray;
+}
+.comentario-form{
+	max-height: 300px;
+}
+.btn-comentar{
+	background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
+	color: white;
+	font-weight: 600;
+	transition: background-image 0.3s;
+}
+.btn-comentar:hover{
+	background-image: linear-gradient(to right, #48AAC9, #1E75A7, #0A488F);
+}
 .rating {
     display: flex;
     
@@ -17,6 +58,3 @@
     color: gold;
     cursor: default;
 }
-
-
-

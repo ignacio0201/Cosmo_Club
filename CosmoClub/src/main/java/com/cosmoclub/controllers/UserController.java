@@ -243,6 +243,12 @@ public class UserController {
 	@GetMapping("/juegos")
 	public String juegos(HttpSession session, Model model) {
 		Long userId = (Long) session.getAttribute("userId");
+		User user = userService.findUserById(userId);
+        model.addAttribute("user", user);
+
+        String saludar = saludoHorario.obtenerSaludo();
+        model.addAttribute("saludar", saludar);
+
 		return "views/juegos.jsp";
 	}
 	@GetMapping("/juegos/puzzleespacial")
@@ -253,6 +259,11 @@ public class UserController {
 	@GetMapping("/cosmochat")
 	public String chat(HttpSession session, Model model) {
 		Long userId = (Long) session.getAttribute("userId");
+		User user = userService.findUserById(userId);
+        model.addAttribute("user", user);
+
+        String saludar = saludoHorario.obtenerSaludo();
+        model.addAttribute("saludar", saludar);
 		return "views/chat.jsp";
 	}
 	

@@ -53,6 +53,9 @@ public class ForoController {
 	@Autowired
 	private RatingService ratingService;
 	
+	@Autowired
+	private SaludoHorario saludoHorario;
+	
 	
 	@GetMapping("/foro")
 	public String foro(@ModelAttribute("newPost") Post newPost, HttpSession session, Model model) {
@@ -89,6 +92,9 @@ public class ForoController {
 	            String timeAgo = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
 	            post.setTimeAgo(timeAgo);
 	        }
+	        
+	        String saludar = saludoHorario.obtenerSaludo();
+	        model.addAttribute("saludar", saludar);
 
 	        return "views/foro.jsp";
 	    } else {
@@ -121,20 +127,23 @@ public class ForoController {
 			User user = userService.findUserById(userId);
 			Post post = postService.findPost(postId);
 			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
-			Long numberCommentsPost = commentService.countCommentsByPostId(postId); //this
+			Long numberCommentsPost = commentService.countCommentsByPostId(postId);
 			
+			// Calcular la diferencia de tiempo y formatearla para cada post
+            String timeAgoPost = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+            post.setTimeAgo(timeAgoPost);
+            
 			Double userRating = ratingService.getUserRatingForPost(user, post);
 			model.addAttribute("userRating", userRating);
-	        
 			model.addAttribute("user", user);
 			model.addAttribute("post", post);
 			model.addAttribute("allCommentsPost", allCommentsPost);
-			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
+			model.addAttribute("numberCommentsPost", numberCommentsPost);
 			
 			// Calcular la diferencia de tiempo y formatearla para cada comentario
             for (Comment comment : allCommentsPost) {
-            	String timeAgo = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
-                comment.setTimeAgo(timeAgo);
+            	String timeAgoComment = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
+                comment.setTimeAgo(timeAgoComment);
             }
 			return "views/post.jsp";
 		} else {

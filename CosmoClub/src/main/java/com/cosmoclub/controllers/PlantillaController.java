@@ -19,13 +19,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cosmoclub.components.SaludoHorario;
 import com.cosmoclub.events.ArticuloEvent;
 import com.cosmoclub.models.Plantilla;
 import com.cosmoclub.models.Tag;
+import com.cosmoclub.models.User;
 import com.cosmoclub.services.PlantillaService;
 import com.cosmoclub.services.TagService;
+import com.cosmoclub.services.UserService;
 
 import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 @Controller
@@ -41,9 +45,15 @@ public class PlantillaController {
 	
 	@Autowired
 	private ApplicationEventPublisher eventPublisher;
+	
+	@Autowired
+	private UserService userService;
+
+	@Autowired
+	private SaludoHorario saludoHorario;
 
 	@GetMapping("/wiki")
-	public String indice(Model model,@ModelAttribute("tag")Tag tag,BindingResult result) {
+	public String indice(HttpSession session, Model model,@ModelAttribute("tag")Tag tag,BindingResult result) {
 		@SuppressWarnings("unchecked")
 		Map<Tag, List<Plantilla>> articulosPorEtiqueta = (Map<Tag, List<Plantilla>>) servletContext.getAttribute("articulosPorEtiqueta");
 		
@@ -61,6 +71,14 @@ public class PlantillaController {
 		    }
 		model.addAttribute("ultimosArticulos", ultimosArticulos);
 		model.addAttribute("cantidadArticulos", cantidadArticulos);
+		
+		Long userId = (Long) session.getAttribute("userId");
+
+		User user = userService.findUserById(userId);
+        model.addAttribute("user", user);
+
+        String saludar = saludoHorario.obtenerSaludo();
+        model.addAttribute("saludar", saludar);
 		
 		return "views/wiki_index.jsp";
 	}

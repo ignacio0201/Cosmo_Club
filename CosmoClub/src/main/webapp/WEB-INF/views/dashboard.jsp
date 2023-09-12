@@ -627,7 +627,7 @@
                         </div>
                         <div class="col-auto d-none d-lg-block">
                           <c:forEach var="imagen" items="${post.images}">
-                              <img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="">
+                              <img class="bd-placeholder-img" src="/img${imagen.post_images}" alt="foto-post">
                           </c:forEach>
                         </div>
                       </div>
