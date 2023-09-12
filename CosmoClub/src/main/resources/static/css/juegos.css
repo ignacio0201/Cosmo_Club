@@ -156,3 +156,13 @@ hr.h-color{
     justify-content: center;
     text-align: center;
   }
+  
+  .btn{
+	background-image: linear-gradient(to right, #59D9E4, #2A93C7, #0D5FB5);
+	color: white;
+	font-weight: 600;
+	transition: background-image 0.3s;
+}
+  .btn:hover{
+	  background-image: linear-gradient(to right, #48AAC9, #1E75A7, #0A488F);
+  }
