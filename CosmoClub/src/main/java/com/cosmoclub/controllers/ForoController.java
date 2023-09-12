@@ -1,10 +1,13 @@
 package com.cosmoclub.controllers;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,13 +20,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cosmoclub.components.CalcularTiempoTranscurrido;
-import com.cosmoclub.components.SaludoHorario;
 import com.cosmoclub.logicaNegocio.Foro;
 import com.cosmoclub.models.Comment;
+import com.cosmoclub.models.Like;
+import com.cosmoclub.models.Like.LikeType;
 import com.cosmoclub.models.Post;
 import com.cosmoclub.models.Rating;
 import com.cosmoclub.models.User;
 import com.cosmoclub.services.CommentService;
+import com.cosmoclub.services.LikeService;
 import com.cosmoclub.services.PostService;
 import com.cosmoclub.services.RatingService;
 import com.cosmoclub.services.UserService;
@@ -52,6 +57,9 @@ public class ForoController {
 	
 	@Autowired
 	private RatingService ratingService;
+	
+	@Autowired
+	private LikeService likeService;
 	
 	
 	@GetMapping("/foro")
@@ -116,33 +124,45 @@ public class ForoController {
 	
 	@GetMapping("/post/{id}")
 	public String verPost(@PathVariable("id") Long postId, @ModelAttribute("newComment") Comment newComment, HttpSession session, Model model) {
-		Long userId = (Long) session.getAttribute("userId");
-		if (userId != null) {
-			User user = userService.findUserById(userId);
-			Post post = postService.findPost(postId);
-			List<Comment> allCommentsPost = commentService.commentsByPost(postId);
-			Long numberCommentsPost = commentService.countCommentsByPostId(postId); //this
-			
-			Double userRating = ratingService.getUserRatingForPost(user, post);
-			model.addAttribute("userRating", userRating);
-	        
-			model.addAttribute("user", user);
-			model.addAttribute("post", post);
-			model.addAttribute("allCommentsPost", allCommentsPost);
-			model.addAttribute("numberCommentsPost", numberCommentsPost); //this
-			
-			// Calcular la diferencia de tiempo y formatearla para cada post
-            String timeAgoPost = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
-            post.setTimeAgo(timeAgoPost);
-            
-			
-			// Calcular la diferencia de tiempo y formatearla para cada comentario
-            for (Comment comment : allCommentsPost) {
-            	String timeAgoComment = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
-                comment.setTimeAgo(timeAgoComment);
-            }
-			return "views/post.jsp";
-		} else {
+	    Long userId = (Long) session.getAttribute("userId");
+	    if (userId != null) {
+	        User user = userService.findUserById(userId);
+	        Post post = postService.findPost(postId);
+	        List<Comment> allCommentsPost = commentService.commentsByPost(postId);
+
+	        // Calcular la diferencia de tiempo y formatearla para cada post
+	        String timeAgoPost = calcTiempoTranscurrido.calcularFecha(post.getCreatedAt());
+	        post.setTimeAgo(timeAgoPost);
+
+	        Map<Long, Long> likesMap = new HashMap<>();
+	        Map<Long, Long> dislikesMap = new HashMap<>();
+
+	       
+	        for (Comment comment : allCommentsPost) {
+	            String timeAgoComment = calcTiempoTranscurrido.calcularFecha(comment.getCreatedAt());
+	            comment.setTimeAgo(timeAgoComment);
+
+	            // Contar la cantidad de "me gusta" y "no me gusta" para cada comentario
+	            // Contar la cantidad de "me gusta" para este comentario
+	            Long likesCount = likeService.countLikesByCommentAndType(comment, LikeType.ME_GUSTA);
+	            likesMap.put(comment.getId(), likesCount);
+
+	            // Contar la cantidad de "no me gusta" para este comentario
+	            Long dislikesCount = likeService.countLikesByCommentAndType(comment, LikeType.NO_ME_GUSTA);
+	            dislikesMap.put(comment.getId(), dislikesCount);
+	        }
+
+	        Double userRating = ratingService.getUserRatingForPost(user, post);
+	        model.addAttribute("userRating", userRating);
+
+	        model.addAttribute("user", user);
+	        model.addAttribute("post", post);
+	        model.addAttribute("allCommentsPost", allCommentsPost);
+	        model.addAttribute("likesMap", likesMap);
+	        model.addAttribute("dislikesMap", dislikesMap);
+
+	        return "views/post.jsp";
+	    } else {
 	        return "redirect:/";
 	    }
 	}
@@ -211,4 +231,61 @@ public class ForoController {
 
 	    return "redirect:/post/" + postId;
 	}
+	
+	@PostMapping("/{postId}/comments/{commentId}/{likeOrDislike}")
+	public ResponseEntity<Map<String, Object>> likeOrDislikeComment(@PathVariable("postId") Long postId,@PathVariable("commentId") Long commentId,@PathVariable("likeOrDislike") String likeOrDislike,HttpSession session
+	) {
+	    Long userId = (Long) session.getAttribute("userId");
+
+	    if (userId != null) {
+	        User user = userService.findUserById(userId);
+	        Post post = postService.findPost(postId);
+	        Comment comment = commentService.findcommentById(commentId);
+
+	        if (user != null && post != null && comment != null) {
+	            // Buscar un registro existente de Like para este usuario y comentario
+	            Like existingLike = likeService.findByUserAndComment(user, comment);
+
+	            if (existingLike != null) {
+	                // El usuario ya ha registrado su acción previamente, elimina el registro
+	                likeService.deleteLike(existingLike);
+	            } else {
+	                // Crear una nueva instancia de Like
+	                Like like = new Like();
+
+	                // Establecer el tipo de like (ME_GUSTA o NO_ME_GUSTA)
+	                if ("like".equals(likeOrDislike)) {
+	                    like.setTipo(LikeType.ME_GUSTA);
+	                } else if ("dislike".equals(likeOrDislike)) {
+	                    like.setTipo(LikeType.NO_ME_GUSTA);
+	                }
+
+	                // Asignar el comentario y el usuario al like
+	                like.setComentario(comment);
+	                like.setUser(user);
+
+	                // Guardar el like en la base de datos
+	                likeService.saveLike(like);
+	            }
+
+	            // Calcular la cantidad de "me gusta" y "no me gusta" desde el repositorio
+	            Long likesCount = likeService.countLikesByCommentAndType(comment, LikeType.ME_GUSTA);
+	            Long dislikesCount = likeService.countLikesByCommentAndType(comment, LikeType.NO_ME_GUSTA);
+
+	            // Crear un mapa para la respuesta JSON
+	            Map<String, Object> response = new HashMap<>();
+	            response.put("message", "Me gusta registrado correctamente");
+	            response.put("likesCount", likesCount);
+	            response.put("dislikesCount", dislikesCount);
+
+	            // Devolver la respuesta JSON
+	            return ResponseEntity.ok(response);
+	        }
+	    }
+
+	    // Manejar el caso en el que no se encuentre el usuario, el post o el comentario
+	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Collections.singletonMap("message", "No se pudo registrar el me gusta"));
+	}
+		 
 }
+

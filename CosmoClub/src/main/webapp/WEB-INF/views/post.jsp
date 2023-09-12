@@ -17,6 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@100&family=Montserrat+Alternates&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="/js/like.js" defer></script>
+
 </head>
 
 <body>
@@ -126,23 +129,27 @@
 					
 					<p>${comment.comment}</p>
 					<p style="color: gray;">${comment.timeAgo}</p>
+					
+					 <div class="post-ratings-container" data-post-id="${comment.post.id}" data-comment-id="${comment.id}">
+					 
+						<div class="post-rating">
+							<span class="post-rating-button material-icons">thumb_up</span>
+							<span class="post-rating-count">${likesMap[comment.id]}</span>
+						</div>
+						<div class="post-rating">
+							<span class="post-rating-button material-icons">thumb_down</span>
+							 <span class="post-rating-count">${dislikesMap[comment.id]}</span>
+						</div>
+					</div>
 				</div>
 				<hr>
 			</c:forEach>
 	   </div>
 	   			 	
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<script src="../js/post.js"></script>	
+<script src="../js/post.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+
 </body>
 </html>
