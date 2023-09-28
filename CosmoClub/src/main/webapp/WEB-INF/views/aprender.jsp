@@ -522,8 +522,8 @@
             <!--NavBar-->
             <div class="p-4">
               <div id="carouselExample" class="carousel slide rounded-5 col-sm-12" data-bs-ride="carousel">
-                <div class="carousel-inner p-4 bg-white rounded-5">
-                  <h3 class="family-pixel text-uppercase">Todos los cursos</h3>
+                <div class="carousel-inner p-4 rounded-5">
+                  <h3 style="font-size: 40px;" class="family-pixel text-uppercase text-center">Todos los cursos</h3>
                     <div class="carousel-item active rounded-5 col-sm-12 ">
                         <div class="d-flex justify-content-evenly rounded-5">
                           

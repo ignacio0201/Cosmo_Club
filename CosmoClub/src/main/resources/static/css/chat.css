@@ -149,6 +149,8 @@ hr.h-color{
 @keyframes animate-positive{
     0%{ width: 0; }
 }
-
+.w-75{
+    width: 73% !important;
+}
 
 /*CHAT CSS*/

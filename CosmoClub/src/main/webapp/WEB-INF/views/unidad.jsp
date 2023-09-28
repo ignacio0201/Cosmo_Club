@@ -508,8 +508,8 @@
                 </a>
             </div>
             <div class="col-7 border border-white rounded-4 p-4">
-                <h1>RADICACIÓN SOLAR</h1>
-                <p>la radiación solar es la energía emitida por el Sol, que se propaga en todas las direcciones
+                <h1>RADIACIÓN SOLAR</h1>
+                <p>La radiación solar es la energía emitida por el Sol, que se propaga en todas las direcciones
                     a través del espacio mediante ondas electromagnéticas. Esa energía es el motor que determina
                     la dinámica de los procesos atmosféricos y el clima. La energía procedente del Sol es radiación
                     electromagnética proporcionada por las reacciones del hidrogeno en el núcleo del Sol por fusión

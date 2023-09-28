@@ -560,7 +560,7 @@
 					<form action="/buscar" method="post">
 						<label class="parrafo"><p>Busca aquí un articulo</p></label>
 						<input class="search" type="search" id="inputArticulo" name="articulo" placeholder="Busca un articulo">
-						<input class="btn btn-success" type="submit" value="New Search" />
+						<input class="btn btn-success" type="submit" value="Buscar" />
 					</form>
 
 					<!-- Trigger/Open The Modal -->

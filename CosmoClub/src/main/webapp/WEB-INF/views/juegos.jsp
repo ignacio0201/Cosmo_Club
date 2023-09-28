@@ -554,7 +554,7 @@
                 <div class="card-body d-flex flex-column align-items-center">
                   <h5 class="card-title text-center">Ping-pong Espacial</h5>
                   <p class="card-text mt-2 text-justify">¡Ganale al PC!</p>
-                  <a href="/juegos/pingpongespacial" class="btn btn-primary w-50 border-0 rounded-pill ">JUGAR</a>
+                  <a href="/juegos/pingpongespacial" class="btn btn-primary w-50 border-0 rounded-pill ">PROXIMAMENTE</a>
                 </div>
               </div>
         

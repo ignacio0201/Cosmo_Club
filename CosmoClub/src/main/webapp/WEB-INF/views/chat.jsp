@@ -529,7 +529,7 @@
         <div class="row bg-chat ">
         	
         	<div class="col d-flex justify-content-center align-items-center rounded mt-5">
-            	<img class="w-50" src="img/foto_chat.jpg">
+            	<img class="w-75" src="img/foto_chat.jpg">
             </div>
         </div>
 

@@ -263,6 +263,12 @@ public class UserController {
 		Long userId = (Long) session.getAttribute("userId");
 		return "views/puzzleespacial.jsp";
 	}
+	@GetMapping("/juegos/spaceship")
+	public String spaceship() {
+		
+		return "views/spaceship.jsp";
+	}
+	
 	@GetMapping("/cosmochat")
 	public String chat(HttpSession session, Model model) {
 		Long userId = (Long) session.getAttribute("userId");

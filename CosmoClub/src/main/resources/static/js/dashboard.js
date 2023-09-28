@@ -40,20 +40,17 @@ req.send();
 
 
 req.addEventListener("load", function(){
-    if(req.status == 200 && req.readyState == 4){
+    if (req.status == 200 && req.readyState == 4) {
         var response = JSON.parse(req.responseText);
         
-        // Obtener la fecha en un objeto Date
-        var rawDate = new Date(response.date);
-        
-        // Formatear la fecha en DD-MM-YY
-        var formattedDate = rawDate.getDate().toString().padStart(2, '0') + '-' +
-                            (rawDate.getMonth() + 1).toString().padStart(2, '0') + '-' +
-                            rawDate.getFullYear().toString().slice(-2);
-        
+        // Mostrar el título
         document.getElementById("title").textContent = response.title;
+        
+        // Mostrar la fecha
+        document.getElementById("date").textContent = response.date;
+        
+        // Mostrar la imagen
         document.getElementById("pic").src = response.hdurl;
-        document.getElementById("date").textContent = formattedDate;
     }
 })
 
